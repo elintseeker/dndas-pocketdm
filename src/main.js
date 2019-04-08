@@ -6,6 +6,14 @@ import './registerServiceWorker';
 
 Vue.config.productionTip = false;
 
+router.beforeEach((to, from, next) => {
+  const pageTitle = to.name;
+  const defaultTitle = ' - DnD Adventure System Pocket DM'; // page title
+
+  document.title = pageTitle + ' ' + defaultTitle;
+  next();
+});
+
 new Vue({
   router,
   store,

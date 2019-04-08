@@ -1,6 +1,6 @@
 <template>
   <div class="page houserules">
-    <h1>House rules for any DnD Adventure System Games</h1>
+    <h1>{{ $route.name }}</h1>
 
     <dl>
       <dt>Simple Initiative System I</dt>
