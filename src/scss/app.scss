@@ -1,0 +1,60 @@
+@import './variables';
+@import '../node_modules/milligram/src/Blockquote';
+@import '../node_modules/milligram/src/Button';
+@import '../node_modules/milligram/src/Code';
+@import '../node_modules/milligram/src/Divider';
+@import '../node_modules/milligram/src/Form';
+@import '../node_modules/milligram/src/Grid';
+@import '../node_modules/milligram/src/Link';
+@import '../node_modules/milligram/src/List';
+@import '../node_modules/milligram/src/Spacing';
+@import '../node_modules/milligram/src/Table';
+@import '../node_modules/milligram/src/Typography';
+@import '../node_modules/milligram/src/Image';
+@import '../node_modules/milligram/src/Utility';
+
+
+*,
+*:after,
+*:before{
+	box-sizing: inherit;
+}
+
+// The base font-size is set at 62.5% for having the convenience
+// of sizing rems in a way that is similar to using px: 1.6rem = 16px
+html {
+	box-sizing: border-box;
+	font-size: 62.5%;
+}
+// Default body styles
+body {
+  margin: 0; padding: 16px 16px 96px;
+  font-family: $base-font;
+	color: $black;
+	font-size: 1.6em; // Currently ems cause chrome bug misinterpreting rems on body element
+	font-weight: 300;
+	letter-spacing: .01em;
+	line-height: 1.6;
+
+  background-color: #ececec;
+  overscroll-behavior: none;
+}
+
+#app {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  h1 {
+    margin-top: 0;
+  }
+
+  p {
+    margin-top: 0;
+    
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@import 'ui/nav';
