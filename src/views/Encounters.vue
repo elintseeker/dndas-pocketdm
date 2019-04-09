@@ -1,6 +1,6 @@
 <template>
-  <div class="about">
-    <h1>{{ $route.meta.title }}</h1>
+  <div class="content about">
+    <h1 class="title is-4 is-centered">{{ $route.meta.title }}</h1>
 
     <p>Bacon ipsum dolor amet filet mignon sirloin strip steak spare ribs chuck pork loin. Bresaola ribeye hamburger shank kevin. Turducken capicola brisket hamburger, cow andouille doner pastrami flank ball tip t-bone chuck. Corned beef ribeye chuck, sirloin swine buffalo prosciutto pastrami ball tip meatball turkey capicola turducken. Cupim tail prosciutto rump beef ribs picanha. Corned beef ham ground round shankle. Turducken burgdoggen cupim t-bone kielbasa prosciutto short ribs hamburger biltong turkey boudin filet mignon jerky.</p>
 

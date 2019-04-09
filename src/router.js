@@ -8,14 +8,17 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'DnD Adventure System Pocket DM',
+      name: 'home',
+      meta: {
+        title: 'DnD Adventure System - Pocket DM'
+      },
       component: Home
     },
     {
       path: '/about',
       name: 'about',
       meta: {
-        title: 'About the app'
+        title: 'About DnDAS PocketDM'
       },
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route

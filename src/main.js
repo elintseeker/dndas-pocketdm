@@ -6,9 +6,10 @@ import './registerServiceWorker';
 
 Vue.config.productionTip = false;
 
+// construct the page titles
 router.beforeEach((to, from, next) => {
-  const pageTitle = to.name;
-  const defaultTitle = ' - DnD Adventure System Pocket DM'; // page title
+  const pageTitle = to.meta.title;
+  const defaultTitle = ' - DnD Adventure System Pocket DM'; 
 
   document.title = pageTitle + ' ' + defaultTitle;
   next();

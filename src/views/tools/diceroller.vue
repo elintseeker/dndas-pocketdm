@@ -1,20 +1,19 @@
 <template>
   <div class="roller">
-    <div class="wrap">
-      <div class="result" v-if="rolled !== 0">{{ rolled }}</div>
-      <div class="result" v-else>d20</div>
+    <div class="result" v-if="rolled !== 0">{{ rolled }}</div>
+    <div class="result" v-else>d20</div>
 
-      <button type="button" @click="roll()" :disabled="disabledButton">Roll d20</button>
-      <button type="button" @click="reset">Reset</button>
+    <button type="button" class="button is-primary is-large is-fullwidth" @click="roll()" :disabled="disabledButton">Roll d20</button>
 
-      <div class="roller-history" v-if="rolledHistory.length">
-        <strong class="sub-title">Roll History ({{ rollHistoryLimit }} rolls max):</strong>
+    <div class="roller-history" v-if="rolledHistory.length">
+      <strong class="subtitle is-6">Roll History <small>({{ rollHistoryLimit }} max)</small>:</strong>
 
-        <ul>
-          <li v-for="item in rolledHistory" :key="item.id">{{ item }}</li>
-        </ul>
-      </div>
+      <ul>
+        <li v-for="item in rolledHistory" :key="item.id">{{ item }}</li>
+      </ul>
     </div>
+
+    <p class="is-centered" v-if="rolled !== 0"><a href="#" class="button is-text" @click="reset">Reset/Clear</a></p>
   </div>
 </template>
 
@@ -52,45 +51,37 @@ export default {
 
 <style lang="scss" scoped>
   .result {
+    margin: 0 auto;
     font-size: 8em;
   }
 
   .roller { 
-    margin-top: 64px;
+    margin: 32px auto 16px;
+    max-width: 288px;
 
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 
     text-align: center; 
-
-    .wrap {
-      max-width: 320px;
-    }
   }
 
   .roller-history { 
-    margin: 16px auto; 
-    max-width: 288px; 
+    margin: 16px auto 0; 
 
-    .sub-title { 
-      display: block;
+    .subtitle { 
       margin-bottom: 16px; 
     }
 
     ul {
-      margin: 0;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-gap: 4px;
+
+      margin: 16px 0;
       padding: 0;
       list-style: none;
-
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-
-      li { 
-        margin: 0 1px 8px 1px;
-        min-width: 55px;
-      }
     }
   }
 </style>
