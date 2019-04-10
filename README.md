@@ -1,4 +1,7 @@
-# dndas-dm
+# DnD Adventure System - Pocket DM
+An app/utility for playing Dungeons & Dragons Adventure System Board Games. Developed with Vue.js
+
+In progress... see at https://pocketdm.netlify.com
 
 ## Project setup
 ```
