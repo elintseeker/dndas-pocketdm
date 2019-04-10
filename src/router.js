@@ -79,6 +79,16 @@ export default new Router({
           }
         },
         {
+          path: 'whathero',
+          name: 'whathero',
+          meta: {
+            title: 'What hero should I play today?',
+          },
+          component: function () { 
+            return import('./views/tools/whathero.vue');
+          }
+        },
+        {
           path: '',
           name: 'tools',
           meta: {

@@ -1,7 +1,7 @@
 <template>
   <div class="content home">
     <div>
-      <img src="../assets/logo.png" class="logo" alt="Pocket DM" />
+      <img src="@/assets/logo.png" class="logo" alt="Pocket DM" />
       <h1 class="appname">{{ $route.meta.title  }}</h1>
     </div>
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->

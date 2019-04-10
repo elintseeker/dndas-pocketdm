@@ -1,0 +1,115 @@
+{
+  "heading": [
+    "Your hero is a ",
+    "Alright, a ",
+    "You're going to be a ",
+    "Go forth ",
+    "Yup, a standard "
+  ],
+  "herotype": {
+    "fighter": {
+      "dailyNum": 2,
+      "daily": [
+        "Come and Get it",
+        "Precise Strike",
+        "Brute Strike",
+        "Dragon's Breath"
+      ],
+      "atwillNum": 2,
+      "atwill": [
+        "Cleave",
+        "Trapping Strike",
+        "Tide of Iron"
+      ],
+      "utilityNum": 1,
+      "utility": [
+        "Get Over There",
+        "Bodyguard"
+      ]
+    },
+    "rogue": {
+      "dailyNum": 1,
+      "daily": [
+        "Deep Cut",
+        "Dagger Barrage",
+        "Riposte Strike"
+      ],
+      "atwillNum": 2,
+      "atwill": [
+        "Snipe Shot",
+        "Backstab",
+        "Deft Strike"
+      ],
+      "utilityNum": 2,
+      "utility": [
+        "Stealth",
+        "Great Leap",
+        "Sneak Attack",
+        "Spring Away"
+      ]
+    },
+    "cleric": {
+      "dailyNum": 1,
+      "daily": [
+        "Hallowed Advance",
+        "Flame Strike",
+        "Beacon of Hope"
+      ],
+      "atwillNum": 2,
+      "atwill": [
+        "Healing Strike",
+        "Divine Flaire",
+        "Lance of Faith"
+      ],
+      "utilityNum": 2,
+      "utility": [
+        "Consecrated Ground",
+        "Bless",
+        "Healing Word",
+        "Shield of Faith"
+      ]
+    },
+    "ranger": {
+      "dailyNum": 1,
+      "daily": [
+        "Split the Tree",
+        "Bounding Attack",
+        "Attacks on the Run"
+      ],
+      "atwillNum": 2,
+      "atwill": [
+        "Hit and Run",
+        "Careful Attack",
+        "Twin Shot",
+        "Hunter's Shot"
+      ],
+      "utilityNum": 1,
+      "utility": [
+        "Unbalancing Parry",
+        "Yield Ground",
+        "Crucial Aid"
+      ]
+    },
+    "wizard": {
+      "dailyNum": 1,
+      "daily": [
+        "Fireball",
+        "Lightning Bolt",
+        "Freezing Cloud"
+      ],
+      "atwillNum": 2,
+      "atwill": [
+        "Magic Missle",
+        "Thunderwave",
+        "Scorching Burst"
+      ],
+      "utilityNum": 2,
+      "utility": [
+        "Fey Step",
+        "Dispel Magic",
+        "Shield",
+        "Illusionary Crowd"
+      ]
+    }
+  }
+}
