@@ -1,12 +1,16 @@
 <template>
   <div class="content monstergen">
-    
+    <router-link :to="{ name: 'tools' }" class="button-back">
+      <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="svg-icon" viewBox="0 0 256 512">
+        <path fill="currentColor" d="M238 476l8-8c4-4 4-12 0-17L50 256 246 61c4-5 4-13 0-17l-8-8c-4-4-12-4-16 0L10 248c-4 4-4 12 0 16l212 212c4 4 12 4 16 0z"/>
+      </svg>
+    </router-link>
+
     <div>
       <strong class="red" v-if="difficulty == 3">Hard mode is on!</strong>
       <span v-else>&nbsp;</span>
     </div>
     
-
     <div class="monstercount">
       <strong v-if="monsterCount === null"> -- </strong>
       <strong v-else><span v-if="showCount">{{ monsterCount }} Monsters</span></strong>
@@ -20,7 +24,7 @@
     <datalist id="tickmarks">
       <option value="1" label="Chicken" />
       <option value="2" label="Normal" />
-      <option value="3" label="Hardcore" />
+      <option value="3" label="Hardcore" class="red" />
     </datalist>
   </div>
 </template>
@@ -99,7 +103,7 @@ datalist {
     width: 33.333%;
     font-weight: bold; 
     &:first-child { color: skyblue; text-align: left; }
-    &:last-child { color: red; text-align: right; }
+    &:last-child { text-align: right; }
   }
 }
 </style>
