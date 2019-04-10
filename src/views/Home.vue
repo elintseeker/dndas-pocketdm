@@ -3,6 +3,7 @@
     <div>
       <img src="@/assets/logo.png" class="logo" alt="Pocket DM" />
       <h1 class="appname">{{ $route.meta.title  }}</h1>
+      <small>v0.01</small>
     </div>
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
   </div>
@@ -29,9 +30,10 @@
   align-items: center;
   justify-content: center;
   height: 80%;
+  text-align: center;
 
   .appname {
-    margin: 16px 0 0;
+    margin: 16px 0;
     font-size: 18px;
   }
 }
