@@ -40,5 +40,13 @@
       </router-link>
       <span>Monsters</span>
     </div>
+    <div class="nav-item">
+      <router-link :to="{ name: 'tileevents' }" class="icon">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="svg-icon" viewBox="0 0 448 512">
+          <path fill="currentColor" d="M448 360V24a24 24 0 0 0-24-24H96C43 0 0 43 0 96v320c0 53 43 96 96 96h328a24 24 0 0 0 24-24v-16c0-7.5-3.5-14.3-8.9-18.7a223 223 0 0 1 0-74.7A23.8 23.8 0 0 0 448 360zM128 134a6 6 0 0 1 6-6h212a6 6 0 0 1 6 6v20a6 6 0 0 1-6 6H134a6 6 0 0 1-6-6v-20zm0 64a6 6 0 0 1 6-6h212a6 6 0 0 1 6 6v20a6 6 0 0 1-6 6H134a6 6 0 0 1-6-6v-20zm253.4 250H96a32 32 0 1 1 0-64h285.4a360 360 0 0 0 0 64z"/>
+        </svg>
+      </router-link>
+      <span>Named Tile Events</span>
+    </div>
   </div>
 </template>

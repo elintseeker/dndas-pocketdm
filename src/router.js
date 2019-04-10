@@ -99,6 +99,16 @@ export default new Router({
           }
         },
         {
+          path: 'tileevents',
+          name: 'tileevents',
+          meta: {
+            title: 'Named Tile Events',
+          },
+          component: function () { 
+            return import('./views/tools/tileevents.vue');
+          }
+        },
+        {
           path: '',
           name: 'tools',
           meta: {
