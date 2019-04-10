@@ -1,5 +1,11 @@
 <template>
   <div class="roller">
+    <router-link :to="{ name: 'tools' }" class="button-back">
+      <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="svg-icon" viewBox="0 0 256 512">
+        <path fill="currentColor" d="M238 476l8-8c4-4 4-12 0-17L50 256 246 61c4-5 4-13 0-17l-8-8c-4-4-12-4-16 0L10 248c-4 4-4 12 0 16l212 212c4 4 12 4 16 0z"/>
+      </svg>
+    </router-link>
+
     <div class="result" v-if="rolled !== 0">{{ rolled }}</div>
     <div class="result" v-else>d20</div>
 
@@ -15,7 +21,9 @@
       </ul>
     </div>
 
-    <p class="is-centered" v-if="rolled !== 0"><a href="#" class="button is-text" @click="reset">Reset/Clear</a></p>
+    <p class="is-centered" v-if="rolled !== 0">
+      <a href="#" @click="reset">Reset/Clear</a>
+    </p>
   </div>
 </template>
 
@@ -59,7 +67,7 @@ export default {
 
   .roller { 
     margin: 32px auto 16px;
-    max-width: 480px;
+    max-width: 600px;
 
     display: flex;
     align-items: center;
@@ -67,6 +75,10 @@ export default {
     flex-direction: column;
 
     text-align: center; 
+  }
+
+  .button {
+    max-width: 480px;
   }
 
   .roller-history { 
@@ -78,7 +90,7 @@ export default {
 
     ul {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(10, 1fr);
       grid-gap: 8px;
 
       margin: 16px auto;

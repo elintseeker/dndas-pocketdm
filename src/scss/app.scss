@@ -10,7 +10,8 @@
 html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #e1e1e1;
+  // background-color: #e1e1e1;
+  background-color: $app-bg;
   overscroll-behavior: none;
 }
 
@@ -18,7 +19,9 @@ html {
 body {
   margin: 0; padding: 16px 16px 96px;
   font-family: $base-font;
-  color: $black;
+  line-height: 1.6;
+  // color: $black;
+  color: $app-text-color;
   overscroll-behavior: none;
 }
 
@@ -35,8 +38,18 @@ h1, h2, h3 {
 
   &.sm { width: 108px; height: 108px; }
   &.about { float: left; margin: 0 16px 16px 0; }
+
+  -webkit-filter: drop-shadow(0 0 8px rgba(0,0,0,0.8));
+  filter: drop-shadow(0 0 8px rgba(0,0,0,0.8));
 }
 
+a:not([class]) {
+  color: $red;
+  text-decoration: none;
+  border-bottom: 1px solid $red;
+}
+
+.red { color: $red; }
 
 
 
@@ -55,6 +68,33 @@ h1, h2, h3 {
 
   hr {
     background-color: $gray;
+  }
+
+  table, .table,
+  .table th {
+    color: $app-text-color !important; 
+    background-color: transparent;
+  }
+
+  .card {
+    margin-bottom: 16px;
+    padding: 16px;
+    color: $app-text-color;
+    border: 1px solid #333;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.3);
+  
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  
+    [rowspan] {
+      vertical-align: center;
+    }
+  }
+
+  .footer-buttons {
+    padding: 32px 0;
   }
 }
 

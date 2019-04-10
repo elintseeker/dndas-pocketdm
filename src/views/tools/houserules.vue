@@ -1,5 +1,12 @@
 <template>
   <div class="content">
+
+    <router-link :to="{ name: 'tools' }" class="button-back">
+      <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="svg-icon" viewBox="0 0 256 512">
+        <path fill="currentColor" d="M238 476l8-8c4-4 4-12 0-17L50 256 246 61c4-5 4-13 0-17l-8-8c-4-4-12-4-16 0L10 248c-4 4-4 12 0 16l212 212c4 4 12 4 16 0z"/>
+      </svg>
+    </router-link>
+
     <div class="card">
       <h2 class="subtitle is-5">Simple Initiative System I</h2>
       <p><strong>Hero Phase:</strong> Moving to an unexplored edge triggers placement of a new tile. After drawing a new tile, place a monster on the new tile. Roll a d20 for your Hero and roll again for the Monster(s) side.</p>
@@ -59,20 +66,3 @@
     </div>
   </div>
 </template>
-
-<style lang="scss">
-.card {
-  margin-bottom: 16px;
-  padding: 16px;
-  background-color: #fff;
-  border-radius: 8px;
-
-  &:last-of-type {
-    margin-bottom: 0;
-  }
-
-  [rowspan] {
-    vertical-align: center;
-  }
-}
-</style>

@@ -2,15 +2,20 @@ $base-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubunt
 
 $white: #fff;
 $black: #222;
-$black-lighter: #333;
+$black-lighter: #2a2a2a;
 
 $gray-darker: #666;
 $gray: #aaa;
 
+$red: #de5974;
+
+// $app-bg: #1f1f1f;
+$app-bg: $black-lighter;
+$app-text-color: #dadada;
 
 // nav colors
 $nav-bg: $black-lighter;
-$nav-bg-active: $black;
+$nav-bg-active: #1f1f1f;
 $nav-color: $gray;
 $nav-color-active: $white;
 

@@ -1,6 +1,14 @@
 <template>
   <div class="container pickhero">
-    <div class="welcome">{{ heading }} <strong>{{ hero }}</strong>!</div>
+    <router-link :to="{ name: 'tools' }" class="button-back">
+      <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="svg-icon" viewBox="0 0 256 512">
+        <path fill="currentColor" d="M238 476l8-8c4-4 4-12 0-17L50 256 246 61c4-5 4-13 0-17l-8-8c-4-4-12-4-16 0L10 248c-4 4-4 12 0 16l212 212c4 4 12 4 16 0z"/>
+      </svg>
+    </router-link>
+
+    <div class="picked">
+      <div>{{ heading }} <strong>{{ hero }}</strong>!</div>
+    </div>
 
     <div class="powers">
       <table class="table is-narrow">
@@ -17,9 +25,6 @@
           <td><span v-for="power in heroUtilityPowers" :key="power.id">{{ power }}</span></td>
         </tr>
       </table>
-
-
-      
 
       <button type="button" class="button is-primary is-large is-fullwidth" @click="pickHero">Pick another one</button>
     </div>
@@ -117,13 +122,23 @@ export default {
 .pickhero {
   margin: 0 auto;
 
-  .welcome {
+  .picked {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     margin: 32px auto;
-    font-size: 10vw;
+    font-size: 46px;
+    line-height: 1.22;
     text-align: center;
+    height: 164px;
 
     strong {
       text-transform: capitalize;
+    }
+
+    @media (min-width: 1024px) {
+      font-size: 64px;
     }
   }
 
@@ -136,7 +151,6 @@ export default {
       background: transparent;
 
       tr, th, td {
-        line-height: 1.5;
         background: transparent;
         border: 0;
       }
