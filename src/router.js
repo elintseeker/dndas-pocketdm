@@ -89,6 +89,16 @@ export default new Router({
           }
         },
         {
+          path: 'monstergen',
+          name: 'monstergen',
+          meta: {
+            title: 'Monster Encounter Generator',
+          },
+          component: function () { 
+            return import('./views/tools/monstergen.vue');
+          }
+        },
+        {
           path: '',
           name: 'tools',
           meta: {
