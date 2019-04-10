@@ -2,13 +2,27 @@
   <div class="container pickhero">
     <div class="welcome">{{ heading }} <strong>{{ hero }}</strong>!</div>
 
-    <table class="table is-narrow powers">
-      <tr><th>Daily Powers:</th><td v-for="power in heroDailyPowers" :key="power.id">{{ power }}</td></tr>
-      <tr><th>At-Will Powers:</th><td v-for="power in heroAtWillPowers" :key="power.id">{{ power }}</td></tr>
-      <tr><th>Utility Powers:</th><td v-for="power in heroUtilityPowers" :key="power.id">{{ power }}</td></tr>
-    </table>
+    <div class="powers">
+      <table class="table is-narrow">
+        <tr>
+          <th>Daily Powers</th>
+          <td><span v-for="power in heroDailyPowers" :key="power.id">{{ power }}</span></td>
+        </tr>
+        <tr>
+          <th>At-Will Powers</th>
+          <td><span v-for="power in heroAtWillPowers" :key="power.id">{{ power }}</span></td>
+        </tr>
+        <tr>
+          <th>Utility Powers</th>
+          <td><span v-for="power in heroUtilityPowers" :key="power.id">{{ power }}</span></td>
+        </tr>
+      </table>
 
-    <button type="button" class="button is-primary is-large is-fullwidth" @click="pickHero">Pick another one</button>
+
+      
+
+      <button type="button" class="button is-primary is-large is-fullwidth" @click="pickHero">Pick another one</button>
+    </div>
   </div>
 </template>
 
@@ -102,11 +116,10 @@ export default {
 <style lang="scss" scoped>
 .pickhero {
   margin: 0 auto;
-  max-width: 480px;
 
   .welcome {
-    margin: 64px 32px 32px;
-    font-size: 4vw;
+    margin: 32px auto;
+    font-size: 10vw;
     text-align: center;
 
     strong {
@@ -116,19 +129,22 @@ export default {
 
   .powers {
     margin: 0 auto;
-  }
+    max-width: 480px;
 
-  .table {
-    margin-bottom: 32px;
-    border: 0;
-    background: transparent;
+    .table { 
+      margin: 0 auto 32px; 
+      background: transparent;
 
-    tr, th, td { 
-      font-weight: normal;
-      border: 0; 
+      tr, th, td {
+        line-height: 1.5;
+        background: transparent;
+        border: 0;
+      }
+
+      td span {
+        display: block;
+      }
     }
-
-    td { font-weight: bold; }
   }
 }
 </style>

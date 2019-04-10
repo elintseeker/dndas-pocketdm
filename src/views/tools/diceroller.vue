@@ -4,6 +4,8 @@
     <div class="result" v-else>d20</div>
 
     <button type="button" class="button is-primary is-large is-fullwidth" @click="roll()" :disabled="disabledButton">Roll d20</button>
+   
+    <p>&nbsp;</p>
 
     <div class="roller-history" v-if="rolledHistory.length">
       <strong class="subtitle is-6">Roll History <small>({{ rollHistoryLimit }} max)</small>:</strong>
@@ -51,13 +53,13 @@ export default {
 
 <style lang="scss" scoped>
   .result {
-    margin: 0 auto;
+    margin: 0 auto 32px;
     font-size: 8em;
   }
 
   .roller { 
     margin: 32px auto 16px;
-    max-width: 288px;
+    max-width: 480px;
 
     display: flex;
     align-items: center;
@@ -77,9 +79,9 @@ export default {
     ul {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
-      grid-gap: 4px;
+      grid-gap: 8px;
 
-      margin: 16px 0;
+      margin: 16px auto;
       padding: 0;
       list-style: none;
     }

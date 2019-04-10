@@ -64,6 +64,8 @@
 .card {
   margin-bottom: 16px;
   padding: 16px;
+  background-color: #fff;
+  border-radius: 8px;
 
   &:last-of-type {
     margin-bottom: 0;

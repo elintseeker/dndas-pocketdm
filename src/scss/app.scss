@@ -1,6 +1,11 @@
 @charset "utf-8";
 @import './variables';
-@import '../node_modules/bulma/bulma.sass';
+// @import '../node_modules/bulma/bulma.sass';
+
+@import "../node_modules/bulma/sass/utilities/_all.sass";
+@import "../node_modules/bulma/sass/elements/button.sass";
+@import "../node_modules/bulma/sass/elements/table.sass";
+// @import "../node_modules/bulma/sass/grid/columns.sass";
 
 html {
   -webkit-font-smoothing: antialiased;
@@ -13,7 +18,13 @@ html {
 body {
   margin: 0; padding: 16px 16px 96px;
   font-family: $base-font;
-	color: $black;
+  color: $black;
+  overscroll-behavior: none;
+}
+
+h1, h2, h3 {
+  margin: 0; 
+  font-size: 18px;
 }
 
 .logo {
