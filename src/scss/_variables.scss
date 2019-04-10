@@ -8,6 +8,7 @@ $gray-darker: #666;
 $gray: #aaa;
 
 $red: #de5974;
+$red-dark: darken($red, 15%);
 
 // $app-bg: #1f1f1f;
 $app-bg: $black-lighter;
@@ -19,11 +20,4 @@ $nav-bg-active: #1f1f1f;
 $nav-color: $gray;
 $nav-color-active: $white;
 
-
-// // milligram
-// $color-initial: #fff !default;
-// $color-primary: #9b4dca !default;
-// $color-secondary: #606c76 !default;
-// $color-tertiary: #f4f5f6 !default;
-// $color-quaternary: #d1d1d1 !default;
-// $color-quinary: #e1e1e1 !default;
+$border-separator-color: #3a3a3a;

@@ -10,7 +10,6 @@
 html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  // background-color: #e1e1e1;
   background-color: $app-bg;
   overscroll-behavior: none;
 }
@@ -20,8 +19,8 @@ body {
   margin: 0; padding: 16px 16px 96px;
   font-family: $base-font;
   line-height: 1.6;
-  // color: $black;
   color: $app-text-color;
+  background-color: $app-bg;
   overscroll-behavior: none;
 }
 
@@ -52,7 +51,6 @@ a:not([class]) {
 .red { color: $red; }
 
 
-
 #app {
   .title, .subtitle {
     margin-bottom: 1rem;
@@ -60,6 +58,17 @@ a:not([class]) {
 
   .is-centered {
     text-align: center;
+  }
+
+  .button.is-primary {
+    &,
+    &:focus,
+    &:active {
+      background-color: $red-dark;
+      border: 1px solid $red;
+      outline: none;
+      box-shadow: none;
+    }
   }
 
   p {
