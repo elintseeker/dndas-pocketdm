@@ -3,7 +3,7 @@
     <div>
       <img src="@/assets/logo.png" class="logo" alt="Pocket DM" />
       <h1 class="appname">{{ $route.meta.title  }}</h1>
-      <small>v0.01</small>
+      <small>v0.02</small>
     </div>
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
   </div>
