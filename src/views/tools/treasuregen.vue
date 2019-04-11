@@ -1,19 +1,15 @@
 <template>
   <div class="content generator">
-    <router-link :to="{ name: 'tools' }" class="button-back">
-      <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="svg-icon" viewBox="0 0 256 512">
-        <path fill="currentColor" d="M238 476l8-8c4-4 4-12 0-17L50 256 246 61c4-5 4-13 0-17l-8-8c-4-4-12-4-16 0L10 248c-4 4-4 12 0 16l212 212c4 4 12 4 16 0z"/>
-      </svg>
-    </router-link>
+    <p>Generate a treasure token for that monster, tile, or encounter</p>
 
     <div class="results">
-      <strong v-if="treasureCount === null"> -- </strong>
+      <strong v-if="treasureCount === null"> </strong>
       <strong v-else-if="treasureCount === 'card'" class="gold"><span v-if="showCount">Treasure Card</span></strong>
       <strong v-else><span v-if="showCount">{{ treasureCount }} GP</span></strong>
     </div>
 
     <div class="footer-buttons">
-      <button type="button" class="button is-primary is-large is-fullwidth" @click="pickTreasure" :disabled="disableButton">Treasure!</button>
+      <button type="button" class="button is-primary is-large is-fullwidth" @click="pickTreasure" :disabled="disableButton">What do I get?</button>
     </div>
   </div>
 </template>
@@ -54,31 +50,20 @@ export default {
 
         setTimeout(()=>{
           vm.disableButton = false;
-        }, 700);
+        }, 500);
       }, 100);
     }
+  },
+  mounted() {
+    this.$nextTick(() => {
+      this.pickTreasure();
+    });
   }
 };
 </script>
 
 <style lang="scss" scoped>
-.generator {
-  margin: 0 auto;
-  padding: 16px;
-  text-align: center;
-  max-width: 480px;
-}
-
 .results {
-  min-height: 128px;
-
-  strong {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 64px;
-  }
-
-  .gold { color: #ebb43e; }
+  .gold { color: #b99b5c; }
 }
 </style>

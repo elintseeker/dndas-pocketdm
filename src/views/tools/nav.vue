@@ -1,7 +1,7 @@
 <template>
   <div class="nav-tools">
     <div class="nav-item">
-      <router-link :to="{ name: 'whathero' }" class="icon">
+      <router-link :to="{ name: 'herogen' }" class="icon">
         <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="svg-icon" viewBox="0 0 576 512">
           <path fill="currentColor" d="M32 256c18 0 32-13 32-28V0L1 221c-5 18 10 35 31 35zm543-35L512 0v228c0 15 14 28 32 28 21 0 36-17 31-35zm-95-10C480 90 288 0 288 0S96 90 96 211c0 83-23 146-31 181-4 14 3 29 16 35l175 85V256l-96-32v-32h256v32l-96 32v256l175-85c13-6 20-21 16-35-8-35-31-98-31-181z"/>
         </svg>

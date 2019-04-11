@@ -56,6 +56,11 @@
     margin-bottom: 16px;
     font-size: 13px;
     text-align: center;
+
+    &:hover {
+      .icon { color: $white; }
+      span { color: $red; }
+    }
   }
 
   .icon { 

@@ -1,10 +1,6 @@
 <template>
-  <div class="content monstergen">
-    <router-link :to="{ name: 'tools' }" class="button-back">
-      <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="svg-icon" viewBox="0 0 256 512">
-        <path fill="currentColor" d="M238 476l8-8c4-4 4-12 0-17L50 256 246 61c4-5 4-13 0-17l-8-8c-4-4-12-4-16 0L10 248c-4 4-4 12 0 16l212 212c4 4 12 4 16 0z"/>
-      </svg>
-    </router-link>
+  <div class="content generator">
+    <p class="desc">Generate a monster token for that tile, event, or encounter</p>
 
     <div class="mode">
       <strong class="red" v-if="difficulty == 3">Hard mode</strong>
@@ -12,13 +8,13 @@
       <span v-else>&nbsp;</span>
     </div>
 
-    <div class="monstercount">
+    <div class="results">
       <strong v-if="monsterCount === null"> -- </strong>
       <strong v-else><span v-if="showCount">{{ monsterCount }} Monsters</span></strong>
     </div>
 
     <div class="footer-buttons">
-      <button type="button" class="button is-primary is-large is-fullwidth" @click="pickMonsters" :disabled="disableButton">Get me some monsters</button>
+      <button type="button" class="button is-primary is-large is-fullwidth" @click="pickMonsters" :disabled="disableButton">Give me something to slay!</button>
     </div>
 
     <input type="range" min="1" max="3" steps="1" list="tickmarks" v-model="difficulty">
@@ -69,32 +65,19 @@ export default {
         vm.disableButton = true;
         setTimeout(()=>{
           vm.disableButton = false;
-        }, 700);
+        }, 500);
       }, 100);
     }
+  },
+  mounted() {
+    this.$nextTick(() => {
+      this.pickMonsters();
+    });
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.monstergen {
-  margin: 0 auto;
-  padding: 16px;
-  text-align: center;
-  max-width: 480px;
-}
-
-.monstercount {
-  min-height: 128px;
-
-  strong {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 64px;
-  }
-}
-
 .mode {
   font-size: 18px;
   text-transform: uppercase;
