@@ -1,6 +1,8 @@
 <template>
   <div class="content generator adventure">
-		<p>{{ intro }}</p>
+		<p class="adv-intro" v-if="plot === 'retrieve'">{{ intro }} <strong>{{ questItem }}</strong></p>
+    <p class="adv-intro" v-else-if="plot === 'hunt'">{{ intro }} <strong>{{ questVillain }}</strong></p>
+    <p class="adv-intro" v-else>{{ intro }} <strong>{{ questVillain }}</strong></p>
   </div>
 </template>
 
@@ -9,12 +11,16 @@ export default {
   name: 'adventuregen',
   data: function(){
     return {
-      questIntro: null,
+      plots: ['retrieve', 'hunt', 'rescue'],
+      plot: null,
+      questIntrosList: null,
       intro: null,
-      questitems: null,
+      questItemList: null,
+      questItem: null,
       namedtiles: null,
-      villains: null
-    }
+      villains: null,
+      questVillain: null
+    };
   },
   methods: {
     getRandomNum: function(max){
@@ -26,36 +32,62 @@ export default {
           return response.json();
         })
         .then((data)=>{
-          this.questIntro = JSON.stringify(data);
-          JSON.parse(this.questIntro);
-          console.log(this.questIntro);
+          this.questIntrosList = data;
+          console.log(this.questIntrosList);
+
+          this.getIntro();
         });
-    },
-    loadItemData: function(){
+
       fetch('/data/questitems.json')
         .then((response) => {
           return response.json();
         })
         .then((data)=>{
-          this.questitems = JSON.stringify(data);
-          console.log(JSON.parse(this.questitems)['cr'][this.getRandomNum(3)]);
+          this.questItemList = data;
+          this.getQuestItem();
+        });
+
+      fetch('/data/villains.json')
+        .then((response) => {
+          return response.json();
+        })
+        .then((data)=>{
+          this.villains = data;
+          this.getQuestVillain();
         });
     },
     getIntro: function(){
-      console.log(this.jsonData.intro);
+      const vm = this;
+      let seed = vm.getRandomNum(vm.plots.length);
+      let plot = vm.plots[seed];
+      let sel  = vm.getRandomNum(vm.questIntrosList[plot].length);
+
+      vm.plot = plot;
+      console.log(plot);
+      console.log(vm.intro = vm.questIntrosList[plot][sel]);
+    },
+    getQuestItem: function(){
+      const vm = this;
+      let seed = vm.getRandomNum(vm.questItemList['cr'].length);
+      console.log(seed);
+      vm.questItem = vm.questItemList['cr'][seed];
+    },
+    getQuestVillain: function(){
+      const vm = this;
+      let seed = vm.getRandomNum(vm.villains['CR'].length);
+      console.log(seed);
+      vm.questVillain = vm.villains['CR'][seed];
     }
   },
   mounted() {
     this.$nextTick(() => {
       this.loadData();
-      this.loadItemData();
     });
   }
 }
 </script>
 
 <style lang="scss" scoped>
-
 </style>
 
 

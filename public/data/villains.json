@@ -1,11 +1,13 @@
 {
-	"villain": {
-		"CR": [
-			"Young Vampire",
-			"Zombie Dragon",
-			"Werewolf"
-		],
-		"WoA": [],
-		"LoD": []
-	}
+	"CR": [
+		"Young Vampire",
+		"Zombie Dragon",
+		"Werewolf",
+    "Count Strahd von Zarovich",
+    "Flesh Golem",
+    "Klack, Kobold Sorcerer",
+    "Gravestorm, Dracolich"
+	],
+	"WoA": [],
+	"LoD": []
 }

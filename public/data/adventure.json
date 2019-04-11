@@ -1,10 +1,17 @@
 {
-	"retrieve": [
-		"Of course, of course... You're adventurers! Where are my manners? You'll get the recognition you need. After, and only after you get ",
-		"This is the place, this is where we'll find the ",
-		"Glowing wards line the walls of the dungeon entrance. You'd think the tales of this abandoned dungeon couldn't be true. All this just for one trinket: ",
-		"The local guide scurries away back to the path. \"Well, it's all up to us now finding "
-	],
-	"hunt": [],
-	"rescue": []
+  "retrieve": [
+    "Of course, of course... You're adventurers! Where are my manners? You'll get the recognition you need. After, and only after you get the ",
+    "This is the place, this is where we will find the famous ",
+    "Glowing wards line the walls of the dungeon entrance. You'd think the tales of this abandoned dungeon couldn't be true. All this just for one trinket: ",
+    "The local guide scurries away up the path and back to town. Well, it's all up to us now finding the "
+  ],
+  "hunt": [
+    "Horrid beings disturbs the town at nightfall. The townsfolk asks you and your companions get rid of the ",
+    "A lot of adventurers came by and tried going in there... I admire your guts to take on the ",
+    "Last thing we know is that she went into the old crypts. I wouldn't go there if I were you... It's the home of the "
+  ],
+  "rescue": [
+    "Here take everything we have. Anything to help you find our lost ",
+    "He went into woods and never came back. Please find my "
+  ]
 }

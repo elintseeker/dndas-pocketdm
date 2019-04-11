@@ -17,7 +17,7 @@ html {
 // Default body styles
 body {
   margin: 0; padding: 16px 16px 96px;
-  font-family: $base-font;
+  font-family: $sans-stack;
   line-height: 1.6;
   color: $app-text-color;
   background-color: $app-bg;
@@ -110,4 +110,5 @@ a:not([class]) {
 
 @import 'ui/nav';
 @import 'ui/generator';
+@import 'ui/_adventure.scss';
 @import 'ui/dndcard';
