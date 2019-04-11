@@ -9,7 +9,7 @@
     <div class="result" v-if="rolled !== 0">{{ rolled }}</div>
     <div class="result" v-else>d20</div>
 
-    <button type="button" class="button is-primary is-large is-fullwidth" @click="roll()" :disabled="disabledButton">Roll d20</button>
+    <button type="button" class="button is-primary is-large is-fullwidth" @click="roll()" :disabled="disableButton">Roll d20</button>
 
     <p>&nbsp;</p>
 
@@ -22,7 +22,7 @@
     </div>
 
     <p class="is-centered" v-if="rolled !== 0">
-      <a href="#" class="reset red" @click="reset">Reset/Clear</a>
+      <a href="#" class="reset red" v-on:click.prevent="reset">Reset/Clear</a>
     </p>
   </div>
 </template>
@@ -32,11 +32,11 @@ export default {
   name: 'd20roller',
   data: function(){
     return {
-      disabledButton: false,
       rolled: 0,
       rolledHistory: [],
-      rollHistoryLimit: 25
-    }
+      rollHistoryLimit: 25,
+      disableButton: false
+    };
   },
   methods: {
     roll: function() {
@@ -44,19 +44,25 @@ export default {
       vm.rolled = Math.floor(Math.random() * 20 + 1);
       vm.rolledHistory.push(vm.rolled);
 
+      vm.disableButton = true;
+
+      setTimeout(()=>{
+        vm.disableButton = false;
+      }, 700);
+
       // last 25 rolls
       if (vm.rolledHistory.length >= vm.rollHistoryLimit) {
-        vm.disabledButton = true;
+        vm.disableButton = true;
       }
     },
     reset: function() {
       const vm = this;
       vm.rolled = 0;
       vm.rolledHistory = [];
-      vm.disabledButton = false;
+      vm.disableButton = false;
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
