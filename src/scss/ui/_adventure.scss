@@ -1,0 +1,25 @@
+.adventure {
+  text-align: left;
+
+  h2 {
+    margin-bottom: 16px;
+    text-align: center;
+  }
+
+  h3 {
+    color: $red;
+  }
+
+  .components {
+    margin: 16px auto;
+  }
+}
+
+.adv-intro {
+  margin-bottom: 16px;
+  font-family: $serif-stack;
+  font-style: italic;
+  font-size: 18px;
+
+  strong { display: inline; }
+}

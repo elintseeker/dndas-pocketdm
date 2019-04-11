@@ -1,5 +1,5 @@
 {
-	"cr": [
+	"CR": [
 		"Icon of Ravenloft",
 		"Sunsword",
 		"Silver Dagger",
@@ -7,6 +7,6 @@
 		"Torch",
 		"Dimensional Shackles"
 	],
-	"woa": [],
-	"lod": []
+	"WoA": [],
+	"LoD": []
 }
