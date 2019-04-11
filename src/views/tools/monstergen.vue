@@ -69,7 +69,7 @@ export default {
         vm.disableButton = true;
         setTimeout(()=>{
           vm.disableButton = false;
-        }, 750);
+        }, 700);
       }, 100);
     }
   }

@@ -54,7 +54,7 @@ export default {
 
         setTimeout(()=>{
           vm.disableButton = false;
-        }, 750);
+        }, 700);
       }, 100);
     }
   }
