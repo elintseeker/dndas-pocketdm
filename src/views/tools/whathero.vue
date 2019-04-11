@@ -26,18 +26,15 @@
         </tr>
       </table>
 
-      <button type="button" class="button is-primary is-large is-fullwidth" @click="pickHero">Pick another one</button>
+      <button type="button" class="button is-primary is-large is-fullwidth" @click="pickHero" :disabled="disableButton">Pick another one</button>
     </div>
   </div>
 </template>
 
 <script>
-import axios from 'axios';
-import { setTimeout } from 'timers';
-
 export default {
   name: "pickhero",
-  data () {
+  data() {
     return {
       heroList: null,
       hero: null,
@@ -45,7 +42,8 @@ export default {
       heroAtWillPowers: [],
       heroUtilityPowers: [],
       heading: null,
-    }
+      disableButton: false
+    };
   },
   methods: {
     reset: function(){
@@ -58,11 +56,19 @@ export default {
       console.log('clear');
     },
     loadHeroList: function() {
-      axios
-        .get('/data/hero.json')
-        .then(response => ( 
-          this.heroList = response.data 
-        ));
+      // axios
+      //   .get('/data/hero.json')
+      //   .then(response => (
+      //     this.heroList = response.data
+      //   ));
+
+      fetch('/data/hero.json')
+        .then(function(response) {
+          return response.json();
+        }).then((data)=>{
+          this.heroList = data;
+        });
+
 
       setTimeout(() => {
         this.pickHero();
@@ -76,9 +82,11 @@ export default {
     pickHero: function() {
       const vm = this;
 
+      vm.disableButton = true;
+
       vm.reset();
       vm.pickHeading();
-      
+
       // get hero
       let heroSeed = Math.floor(Math.random() * Object.keys(vm.heroList.herotype).length);
       vm.hero = Object.keys(vm.heroList.herotype)[heroSeed];
@@ -108,6 +116,10 @@ export default {
         vm.heroUtilityPowers.push(utils[r]);
         utils.splice(r, 1);
       }
+
+      setTimeout(()=>{
+        vm.disableButton = false;
+      }, 700);
     }
   },
   mounted () {
@@ -146,8 +158,8 @@ export default {
     margin: 0 auto;
     max-width: 480px;
 
-    .table { 
-      margin: 0 auto 32px; 
+    .table {
+      margin: 0 auto 32px;
       background: transparent;
 
       tr, th, td {
