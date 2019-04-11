@@ -10,7 +10,7 @@
     <div class="result" v-else>d20</div>
 
     <button type="button" class="button is-primary is-large is-fullwidth" @click="roll()" :disabled="disabledButton">Roll d20</button>
-   
+
     <p>&nbsp;</p>
 
     <div class="roller-history" v-if="rolledHistory.length">
@@ -22,7 +22,7 @@
     </div>
 
     <p class="is-centered" v-if="rolled !== 0">
-      <a href="#" @click="reset">Reset/Clear</a>
+      <a href="#" class="reset red" @click="reset">Reset/Clear</a>
     </p>
   </div>
 </template>
@@ -65,7 +65,7 @@ export default {
     font-size: 8em;
   }
 
-  .roller { 
+  .roller {
     margin: 32px auto 16px;
     max-width: 600px;
 
@@ -74,18 +74,20 @@ export default {
     justify-content: center;
     flex-direction: column;
 
-    text-align: center; 
+    text-align: center;
   }
 
   .button {
     max-width: 480px;
   }
 
-  .roller-history { 
-    margin: 16px auto 0; 
+  .reset { text-decoration: none; border-bottom: 0; }
 
-    .subtitle { 
-      margin-bottom: 16px; 
+  .roller-history {
+    margin: 16px auto 0;
+
+    .subtitle {
+      margin-bottom: 16px;
     }
 
     ul {
