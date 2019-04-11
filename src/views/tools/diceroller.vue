@@ -34,7 +34,7 @@ export default {
     return {
       rolled: 0,
       rolledHistory: [],
-      rollHistoryLimit: 25,
+      rollHistoryLimit: 20,
       disableButton: false
     };
   },
@@ -46,13 +46,13 @@ export default {
 
       vm.disableButton = true;
 
-      setTimeout(()=>{
-        vm.disableButton = false;
-      }, 700);
-
       // last 25 rolls
       if (vm.rolledHistory.length >= vm.rollHistoryLimit) {
         vm.disableButton = true;
+      } else {
+        setTimeout(()=>{
+          vm.disableButton = false;
+        }, 700);
       }
     },
     reset: function() {
