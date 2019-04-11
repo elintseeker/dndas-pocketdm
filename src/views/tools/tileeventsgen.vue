@@ -17,6 +17,8 @@
       </div>
       <div class="card-content">
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum quod minima rem libero eveniet unde temporibus, assumenda doloremque eius nemo iure nobis soluta vel! Magni cumque atque officia consequuntur illum!</p>
+
+        <p style="font-size: 22px;">Soon...</p>
       </div>
     </div>
   </div>

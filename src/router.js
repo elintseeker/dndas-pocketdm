@@ -23,7 +23,7 @@ export default new Router({
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: function () { 
+      component: function () {
         return import(/* webpackChunkName: "about" */ './views/About.vue');
       }
     },
@@ -36,7 +36,7 @@ export default new Router({
     //   // route level code-splitting
     //   // this generates a separate chunk (about.[hash].js) for this route
     //   // which is lazy-loaded when the route is visited.
-    //   component: function () { 
+    //   component: function () {
     //     return import(/* webpackChunkName: "about" */ './views/Encounters.vue');
     //   }
     // },
@@ -44,7 +44,7 @@ export default new Router({
       path: '/tools',
       // name: 'Tools',
       pageTitle: 'Tools',
-      component: function () { 
+      component: function () {
         return import('./views/Tools.vue');
       },
       children: [
@@ -54,7 +54,7 @@ export default new Router({
           meta: {
             title: 'Sequence of Play',
           },
-          component: function () { 
+          component: function () {
             return import('./views/tools/sequenceplay.vue');
           }
         },
@@ -64,7 +64,7 @@ export default new Router({
           meta: {
             title: 'd20 Dice Roller',
           },
-          component: function () { 
+          component: function () {
             return import('./views/tools/diceroller.vue');
           }
         },
@@ -74,7 +74,7 @@ export default new Router({
           meta: {
             title: 'House Rules',
           },
-          component: function () { 
+          component: function () {
             return import('./views/tools/houserules.vue');
           }
         },
@@ -84,7 +84,7 @@ export default new Router({
           meta: {
             title: 'What hero should I play today?',
           },
-          component: function () { 
+          component: function () {
             return import('./views/tools/whathero.vue');
           }
         },
@@ -94,8 +94,18 @@ export default new Router({
           meta: {
             title: 'Monster Encounter Generator',
           },
-          component: function () { 
+          component: function () {
             return import('./views/tools/monstergen.vue');
+          }
+        },
+        {
+          path: 'treasuregen',
+          name: 'treasuregen',
+          meta: {
+            title: 'Treasure Generator',
+          },
+          component: function () {
+            return import('./views/tools/treasuregen.vue');
           }
         },
         {
@@ -104,8 +114,8 @@ export default new Router({
           meta: {
             title: 'Named Tile Events',
           },
-          component: function () { 
-            return import('./views/tools/tileevents.vue');
+          component: function () {
+            return import('./views/tools/tileeventsgen.vue');
           }
         },
         {
@@ -114,7 +124,7 @@ export default new Router({
           meta: {
             title: 'Tools',
           },
-          component: function () { 
+          component: function () {
             return import('./views/tools/nav.vue');
           }
         }
