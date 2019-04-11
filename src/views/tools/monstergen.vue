@@ -6,8 +6,9 @@
       </svg>
     </router-link>
 
-    <div>
-      <strong class="red" v-if="difficulty == 3">Hard mode is on!</strong>
+    <div class="mode">
+      <strong class="red" v-if="difficulty == 3">Hard mode</strong>
+      <strong class="blue" v-else-if="difficulty == 1">Easy mode</strong>
       <span v-else>&nbsp;</span>
     </div>
 
@@ -36,9 +37,9 @@ export default {
     return {
       monsterCount: null,
       difficulty: null,
-      monsterTokens:     [0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 3],
-      monsterTokensHard: [1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4],
-      monsterTokensEasy: [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 2],
+      monsterTokens:     [0, 1, 1, 1, 1, 1, 2, 2, 2, 3],
+      monsterTokensHard: [1, 1, 2, 2, 2, 2, 3, 3, 3, 4],
+      monsterTokensEasy: [0, 0, 0, 0, 0, 1, 1, 1, 1, 2],
       showCount: false,
       disableButton: false
     }
@@ -92,6 +93,13 @@ export default {
     justify-content: center;
     font-size: 64px;
   }
+}
+
+.mode {
+  font-size: 18px;
+  text-transform: uppercase;
+
+  .blue { color: skyblue; }
 }
 
 input[type="range"] {
