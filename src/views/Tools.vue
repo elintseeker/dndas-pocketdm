@@ -1,6 +1,7 @@
 <template>
   <div>
     <img src="@/assets/logo.png" class="logo">
+    <p class="description">{{ $route.meta.description }}</p>
     <router-view />
   </div>
 </template>
@@ -24,6 +25,13 @@ export default {
   margin: 0 auto 8px;
   width: 44px;
   height: 44px;
+}
+
+.description {
+  margin: 0 auto;
+  max-width: 800px;
+  font-weight: bold;
+  text-align: center;
 }
 </style>
 

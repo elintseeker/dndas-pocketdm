@@ -1,6 +1,5 @@
 <template>
   <div class="content">
-    <p class="desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem rem et mollitia unde hic fugiat error.</p>
     <div class="dndcard">
       <div class="card-name">
         Strahd's Crypt

@@ -53,6 +53,7 @@ export default new Router({
           name: 'seqplayref',
           meta: {
             title: 'Sequence of Play',
+            description: 'The player turn reference'
           },
           component: function () {
             return import('./views/tools/sequenceplay.vue');
@@ -63,6 +64,7 @@ export default new Router({
           name: 'd20roller',
           meta: {
             title: 'd20 Dice Roller',
+            description: 'A d20 dice roller'
           },
           component: function () {
             return import('./views/tools/diceroller.vue');
@@ -73,6 +75,7 @@ export default new Router({
           name: 'houserules',
           meta: {
             title: 'House Rules',
+            description: 'Some house rules for the DnD Adventure System'
           },
           component: function () {
             return import('./views/tools/houserules.vue');
@@ -83,6 +86,7 @@ export default new Router({
           name: 'herogen',
           meta: {
             title: 'What hero should I play today?',
+            description: 'What will you be today?'
           },
           component: function () {
             return import('./views/tools/herogen.vue');
@@ -93,6 +97,7 @@ export default new Router({
           name: 'monstergen',
           meta: {
             title: 'Monster Encounter Generator',
+            description: 'Generate a monster token for that tile, event, or encounter'
           },
           component: function () {
             return import('./views/tools/monstergen.vue');
@@ -103,9 +108,21 @@ export default new Router({
           name: 'treasuregen',
           meta: {
             title: 'Treasure Generator',
+            description: 'Generate a treasure token for that monster, tile, or encounter'
           },
           component: function () {
             return import('./views/tools/treasuregen.vue');
+          }
+        },
+        {
+          path: 'adventuregen',
+          name: 'adventuregen',
+          meta: {
+            title: 'Adventure Generator',
+            description: 'Single adventure generator - play once or string a couple up as a campaign'
+          },
+          component: function () {
+            return import('./views/tools/adventuregen.vue');
           }
         },
         {
@@ -113,6 +130,7 @@ export default new Router({
           name: 'tileevents',
           meta: {
             title: 'Named Tile Events',
+            description: 'Custom events for named tiles'
           },
           component: function () {
             return import('./views/tools/tileeventsgen.vue');
