@@ -4,6 +4,10 @@
 		"Strahd's Crypt",
 		"Workshop"
 	],
-	"WoA": [],
-	"LoD": []
+	"WoA": [
+    "WTF chamber"
+  ],
+	"LoD": [
+    "WTH cavern"
+  ]
 }
