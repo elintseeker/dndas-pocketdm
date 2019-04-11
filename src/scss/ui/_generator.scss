@@ -1,0 +1,19 @@
+.generator {
+  margin: 0 auto;
+  // padding: 16px;
+  text-align: center;
+	max-width: 480px;
+	
+
+	.results {
+		margin-bottom: 16px;
+		min-height: 164px;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		font-size: 64px;
+		line-height: 1.2;
+	}
+}

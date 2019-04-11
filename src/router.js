@@ -79,13 +79,13 @@ export default new Router({
           }
         },
         {
-          path: 'whathero',
-          name: 'whathero',
+          path: 'herogen',
+          name: 'herogen',
           meta: {
             title: 'What hero should I play today?',
           },
           component: function () {
-            return import('./views/tools/whathero.vue');
+            return import('./views/tools/herogen.vue');
           }
         },
         {

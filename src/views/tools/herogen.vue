@@ -1,12 +1,7 @@
 <template>
-  <div class="container pickhero">
-    <router-link :to="{ name: 'tools' }" class="button-back">
-      <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="svg-icon" viewBox="0 0 256 512">
-        <path fill="currentColor" d="M238 476l8-8c4-4 4-12 0-17L50 256 246 61c4-5 4-13 0-17l-8-8c-4-4-12-4-16 0L10 248c-4 4-4 12 0 16l212 212c4 4 12 4 16 0z"/>
-      </svg>
-    </router-link>
-
-    <div class="picked">
+  <div class="container generator">
+    <p class="desc">What will you be today?</p>
+    <div class="results">
       <div>{{ heading }} <strong>{{ hero }}</strong>!</div>
     </div>
 
@@ -33,7 +28,7 @@
 
 <script>
 export default {
-  name: "pickhero",
+  name: "herogen",
   data() {
     return {
       heroList: null,
@@ -52,27 +47,21 @@ export default {
       this.heroDailyPowers= [];
       this.heroAtWillPowers= [];
       this.heroUtilityPowers= [];
-
-      console.log('clear');
     },
     loadHeroList: function() {
-      // axios
-      //   .get('/data/hero.json')
-      //   .then(response => (
-      //     this.heroList = response.data
-      //   ));
+      const vm = this;
 
       fetch('/data/hero.json')
         .then(function(response) {
           return response.json();
         }).then((data)=>{
-          this.heroList = data;
+          vm.heroList = data;
         });
 
 
       setTimeout(() => {
-        this.pickHero();
-      }, 100);
+        vm.pickHero();
+      }, 350);
     },
     pickHeading: function() {
       const vm = this;
@@ -119,10 +108,10 @@ export default {
 
       setTimeout(()=>{
         vm.disableButton = false;
-      }, 700);
+      }, 500);
     }
   },
-  mounted () {
+  mounted() {
     this.$nextTick(() => {
       this.loadHeroList();
     });
@@ -131,45 +120,32 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.pickhero {
-  margin: 0 auto;
-
-  .picked {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    margin: 32px auto;
-    font-size: 46px;
-    line-height: 1.22;
-    text-align: center;
-    height: 164px;
-
-    strong {
-      text-transform: capitalize;
-    }
-
-    @media (min-width: 1024px) {
-      font-size: 64px;
-    }
+.generator {
+  .results {
+    margin-bottom: 32px;
   }
 
-  .powers {
-    margin: 0 auto;
-    max-width: 480px;
+  strong {
+    color: #fff;
+  }
+}
 
-    .table {
-      margin: 0 auto 32px;
+.powers {
+  margin: 0 auto;
+  max-width: 480px;
+
+  .table {
+    margin: 0 auto 32px;
+    background: transparent;
+
+    tr, th, td {
+      text-align: left;
       background: transparent;
+      border: 0;
+    }
 
-      tr, th, td {
-        background: transparent;
-        border: 0;
-      }
-
-      td span {
-        display: block;
-      }
+    td span {
+      display: block;
     }
   }
 }

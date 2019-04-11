@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="title is-4 is-centered">{{ $route.meta.title }}</h1>
+    <img src="@/assets/logo.png" class="logo">
     <router-view />
   </div>
 </template>
@@ -18,6 +18,15 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.logo {  
+  margin: 0 auto 8px;
+  width: 44px;
+  height: 44px;
+}
+</style>
+
 
 
 
