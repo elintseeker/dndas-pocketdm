@@ -126,6 +126,12 @@ a:not([class]) {
     &:after {
       margin-left: 8px;
     }
+
+    &.is-serif {
+      font-family: $serif-stack;
+      font-style: italic;
+      font-weight: 600;
+    }
   }
 }
 
