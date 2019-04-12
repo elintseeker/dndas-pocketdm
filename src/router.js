@@ -130,6 +130,7 @@ export default new Router({
           name: 'tools',
           meta: {
             title: 'Tools',
+            description: 'Tools for your D&D Adventure System Board Game'
           },
           component: function () {
             return import('./views/tools/nav.vue');

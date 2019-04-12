@@ -42,15 +42,39 @@
         <li v-if="questType !== 'hunt'  && addVillains  === true">{{ questVillain }} monster card and figure</li>
       </ul>
 
-      <p>Place the <strong>Starting Tile</strong> on the table and place each hero on any square of the tile.</p>
+      <p>Place the <b>Starting Tile</b> on the table and place each hero on any square of the tile.</p>
 
-      <p>Shuffle the rest of the Dungeon tiles stack. Take 3 tiles from it, and shuffle the <strong>{{ questTiles }}</strong> tile
-        into those tiles. Then place the shuffled <strong>{{ questTiles }} stack</strong> after the <strong>8th</strong> tile of
-        the Dungeon tile stack. (The {{ questTiles }} tile should appear between the 9th and 12th tile in the adventure.)</p>
+      <div v-if="addExtraTile">
+        <p>Shuffle the rest of the Dungeon tiles stack. Take 3 tiles from it, and shuffle the <b>{{ questTiles }}</b> tile
+          into those tiles to form the <b>{{ questTiles }} stack</b>. Take the 3 more tiles from the Dungeon stack and shuffle with 
+          the <b>{{ questExtraTile }}</b> tile to form the <b>{{ questExtraTile }} stack</b>.</p>
+          
+        <p>Place the <b>{{ questExtraTile }} stack</b> after the <b>6th tile</b> of the Dungeon stack. Then place the <b>{{ questTiles }} stack</b> after the <b>10th</b> tile of the Dungeon tile stack.</p>
+      </div>
+      <div v-else>
+        <p>Shuffle the rest of the Dungeon tiles stack. Take 3 tiles from it, and shuffle the <b>{{ questTiles }}</b> tile
+          into those tiles. Then place the shuffled <b>{{ questTiles }} stack</b> after the <b>8th</b> tile of
+          the Dungeon tile stack. (The {{ questTiles }} tile should appear between the 9th and 12th tile in the adventure.)</p>
+      </div>
 
       <h3 class="xed-title">Special Rules</h3>
 
-      <p v-if="questType === 'rescue'"><strong>{{ questTiles }} tile:</strong> When this quest tile is drawn. Place the <b>[objective] token</b> at the center of this tile. Draw 2 Monsters and place it on this tile. Monsters activate after interacting with the [objective].</p>
+      <p v-if="addExtraTile && !addVillains"><b>{{ questExtraTile }} tile:</b> When {{ addExtraTile }} tile has been revealed, draw 2 Monsters for this tile.</p>
+
+      <p>
+        <b>{{ questTiles }} tile:</b> When this tile has been revealed. 
+        <span v-if="questType == 'fetch'">
+          Instead of placing a Monster, place <b>{{ questItem }}</b> on this tile instead. Then draw 2 Monsters from the Monster Deck.
+        </span>
+        <span v-if="questType == 'hunt'">
+          Instead of placing a Monster, place <b>{{ questVillain }}</b> on this tile instead and then draw an <b>Encounter Card.</b>
+        </span>
+        <span v-if="questType === 'rescue'">Place the <b>[objective] token</b> at the center of this tile. Draw 2 Monsters and place it on this tile.</span>
+      </p>
+
+      <p v-if="addExtraTile && addVillains">
+        <b>{{ questExtraTile }} tile:</b> When {{ addExtraTile }} tile has been revealed. Instead of placing a Monster, place <b>{{ questVillain }}</b> on this tile instead.
+      </p>
 
       <p>
         <strong>Victory: </strong> The heroes win the adventure when they
@@ -80,7 +104,7 @@ export default {
     return {
       disableButton: false,
       showOptions: false,
-      showAdv: true,
+      showAdv: false,
       game: "CR",
       type: ['hunt', 'fetch', 'rescue'],
       introList: null,
