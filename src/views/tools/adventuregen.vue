@@ -22,7 +22,7 @@
     <div v-show="showAdv">
       <div class="adv-intro">
         <div class="xed-title is-serif" style="text-transform: capitalize;">The {{ questType }}</div>
-        <div v-if="questType === 'fetch'">    {{ questIntro }} <strong>{{ questItem }}</strong>.</div>
+        <div v-if="questType === 'fetch'">{{ questIntro }} <strong>{{ questItem }}</strong>.</div>
         <div v-else-if="questType === 'hunt'">{{ questIntro }} <strong>{{ questVillain }}</strong>!</div>
         <div v-else>
           {{ questIntro }}
@@ -39,7 +39,7 @@
         <li v-if="addExtraTile">{{ questExtraTile }}</li>
         <li v-if="questType === 'hunt'">{{ questVillain }} monster card and figure</li>
         <li v-if="questType === 'fetch'">{{ questItem }} card and token</li>
-        <li v-if="questType === 'rescue'">[ objective ] token.</li>
+        <li v-if="questType === 'rescue'">1 Villager token.</li>
         <li v-if="questType !== 'fetch' && addTreasure === true">{{ questItem }} card and token</li>
         <li v-if="questType !== 'hunt'  && addVillains  === true">{{ questVillain }} monster card and figure</li>
       </ul>
@@ -71,7 +71,7 @@
         <span v-if="questType == 'hunt'">
           Instead of placing a Monster, place <b>{{ questVillain }}</b> on this tile instead and then draw an <b>Encounter Card.</b>
         </span>
-        <span v-if="questType === 'rescue'">Place the <b>[objective] token</b> at the center of this tile. Draw 2 Monsters and place it on this tile.</span>
+        <span v-if="questType === 'rescue'">Place the <b>villager token</b> at the center of this tile. Draw 2 Monsters and place it on this tile.</span>
       </p>
 
       <p v-if="addExtraTile && addVillains">
@@ -82,7 +82,7 @@
         <strong>Victory: </strong> The heroes win the adventure when they
         <span v-if="questType === 'fetch'">acquire the <strong>{{ questItem }}</strong>.</span>
         <span v-else-if="questType === 'hunt'">defeat <strong>{{ questVillain }}</strong>.</span>
-        <span v-else>rescued the <strong>[objective]</strong> and safely exited the dungeon.</span>
+        <span v-else>rescued the <strong>villager</strong> and safely exited the dungeon.</span>
       </p>
 
       <p><strong>Defeat:</strong> The heroes lose the adventure if any hero has 0 Hit Points remaining at the start of his or her
