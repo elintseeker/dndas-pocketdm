@@ -12,15 +12,16 @@
           </select>
         </div>
         
-        <label><input type="checkbox" v-model="addVillains">  Include Named Villain</label>
-        <label><input type="checkbox" v-model="addTreasure">  Include Treasure Cards</label>
-        <label><input type="checkbox" v-model="addExtraTile"> Include Extra Named Tile</label>
+        <label><input type="checkbox" v-model="addVillains">  Additional Named Villain</label>
+        <label><input type="checkbox" v-model="addTreasure">  Additional Treasure Card</label>
+        <label><input type="checkbox" v-model="addExtraTile"> Extra Named Tile</label>
         <button type="button" class="button is-primary is-fullwidth" @click="generateAdventure">Generate adventure</button>
       </div>
     </div>
 
     <div v-show="showAdv">
       <div class="adv-intro">
+        <div class="xed-title is-serif" style="text-transform: capitalize;">The {{ questType }}</div>
         <div v-if="questType === 'fetch'">    {{ questIntro }} <strong>{{ questItem }}</strong>.</div>
         <div v-else-if="questType === 'hunt'">{{ questIntro }} <strong>{{ questVillain }}</strong>!</div>
         <div v-else>
@@ -30,7 +31,7 @@
 
       <h2>Setup</h2>
 
-      <h3 class="xed-title">Components for this Adventure</h3>
+      <h3 class="xed-title is-serif">Components</h3>
 
       <ul class="components">
         <li>Starting Tile</li>
@@ -58,7 +59,7 @@
           the Dungeon tile stack. (The {{ questTile }} tile should appear between the 9th and 12th tile in the adventure.)</p>
       </div>
 
-      <h3 class="xed-title">Special Rules</h3>
+      <h3 class="xed-title is-serif">Special Rules</h3>
 
       <p v-if="addExtraTile && !addVillains"><b>{{ questExtraTile }} tile:</b> When this tile has been revealed, instead of placing a Monster, draw 2 Monsters for this tile instead.</p>
 
