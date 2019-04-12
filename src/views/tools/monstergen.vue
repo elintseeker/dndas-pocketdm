@@ -1,7 +1,5 @@
 <template>
   <div class="content generator">
-    <p class="desc">Generate a monster token for that tile, event, or encounter</p>
-
     <div class="mode">
       <strong class="red" v-if="difficulty == 3">Hard mode</strong>
       <strong class="blue" v-else-if="difficulty == 1">Easy mode</strong>

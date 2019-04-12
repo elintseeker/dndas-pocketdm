@@ -1,7 +1,5 @@
 <template>
   <div class="content generator">
-    <p class="desc">A d20 dice roller</p>
-
     <div class="results" v-if="rolled !== 0"><strong>{{ rolled }}</strong></div>
     <div class="results dice-icon" v-else>
       <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="svg-icon" viewBox="0 0 480 512">

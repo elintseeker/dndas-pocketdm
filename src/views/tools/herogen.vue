@@ -1,6 +1,5 @@
 <template>
   <div class="container generator">
-    <p class="desc">What will you be today?</p>
     <div class="results">
       <div>{{ heading }} <strong>{{ hero }}</strong>!</div>
     </div>
