@@ -5,9 +5,11 @@
 		"Workshop"
 	],
 	"WoA": [
-    "WTF chamber"
+		"WTF chamber",
+		"WTF chamber2"
   ],
 	"LoD": [
-    "WTH cavern"
+		"WTH cavern",
+		"WTH cavern2"
   ]
 }

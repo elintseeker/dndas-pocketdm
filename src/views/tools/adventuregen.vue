@@ -1,39 +1,45 @@
 <template>
   <div class="content generator adventure">
-    <div class="adv-options" v-if="adventureOptionsShow">
-      <div class="select" style="margin: 0 auto;">
-        <select v-model="game">
-          <option value="CR">Castle Ravenloft</option>
-          <option value="WoA">Wrath of Ashardalon</option>
-          <option value="LoD">Legend of Drizzt</option>
-        </select>
-      </div>
-      <div><label><input type="checkbox" v-model="incTreasure"> Include Treasure Cards</label></div>
-      <div><label><input type="checkbox" v-model="incVillains"> Include Villains</label></div>
+    <a href="#" class="adv-optiontoggle" v-bind:class="{ 'xed-title': showOptions }" v-on:click.prevent="toggleOptions"><span>Adventure Options</span></a>
 
-      <div class="footer-buttons">
+    <div class="adv-options" v-show="showOptions">
+      <div>
+        <div class="form-select">
+          <select v-model="game">
+            <option value="CR">Castle Ravenloft</option>
+            <option value="WoA">Wrath of Ashardalon</option>
+            <option value="LoD">Legend of Drizzt</option>
+          </select>
+        </div>
+        <label><input type="checkbox" v-model="addTreasure"> Include Treasure Cards</label>
+        <label><input type="checkbox" v-model="addVillains"> Include Villains</label>
+        <label><input type="checkbox" v-model="addExtraTile"> Include Extra Named Tile</label>
         <button type="button" class="button is-primary is-fullwidth" @click="generateAdventure">Generate adventure</button>
       </div>
     </div>
-    <div class="adv-info" v-if="!adventureOptionsShow">
+
+    <div v-show="showAdv">
       <div class="adv-intro">
         <div v-if="questType === 'fetch'">    {{ questIntro }} <strong>{{ questItem }}</strong>.</div>
         <div v-else-if="questType === 'hunt'">{{ questIntro }} <strong>{{ questVillain }}</strong>!</div>
         <div v-else>
-          {{ questIntro }}...
+          {{ questIntro }}
         </div>
       </div>
 
       <h2>Setup</h2>
 
-      <h3>Components for this Adventure</h3>
+      <h3 class="xed-title">Components for this Adventure</h3>
 
       <ul class="components">
         <li>Starting Tile</li>
         <li>{{ questTiles }}</li>
-        <li v-if="questType === 'hunt'  || incTreasure === true">{{ questVillain }} monster card and figure</li>
-        <li v-if="questType === 'fetch' || incVillains === true">{{ questItem }} card and token</li>
+        <li v-if="addExtraTile">{{ questExtraTile }}</li>
+        <li v-if="questType === 'hunt'">{{ questVillain }} monster card and figure</li>
+        <li v-if="questType === 'fetch'">{{ questItem }} card and token</li>
         <li v-if="questType === 'rescue'">[ objective ] token.</li>
+        <li v-if="questType !== 'fetch' && addTreasure === true">{{ questItem }} card and token</li>
+        <li v-if="questType !== 'hunt'  && addVillains  === true">{{ questVillain }} monster card and figure</li>
       </ul>
 
       <p>Place the <strong>Starting Tile</strong> on the table and place each hero on any square of the tile.</p>
@@ -42,7 +48,7 @@
         into those tiles. Then place the shuffled <strong>{{ questTiles }} stack</strong> after the <strong>8th</strong> tile of
         the Dungeon tile stack. (The {{ questTiles }} tile should appear between the 9th and 12th tile in the adventure.)</p>
 
-      <h3>Special Rules</h3>
+      <h3 class="xed-title">Special Rules</h3>
 
       <p v-if="questType === 'rescue'"><strong>{{ questTiles }} tile:</strong> When this quest tile is drawn. Place the <b>[objective] token</b> at the center of this tile. Draw 2 Monsters and place it on this tile. Monsters activate after interacting with the [objective].</p>
 
@@ -56,26 +62,25 @@
       <p><strong>Defeat:</strong> The heroes lose the adventure if any hero has 0 Hit Points remaining at the start of his or her
         turn and there are no Healing Surges remaining.</p>
 
-      <p><strong>Aftermath:</strong> Completing the adventure without using any Healing Surges, each hero receives 400 gold pieces.</p>
+      <p><strong>Aftermath:</strong> Completing the adventure without using any Healing Surges, each hero receives 300 gold pieces.</p>
 
       <p>Completing the adventure and used at least one Healing Surge, each hero receives 200 gold pieces.</p>
 
-      <p v-if="questType === 'hunt' && incTreasure === true">Aquiring the {{ questItem }} will grant the heroes 100 GP.</p>
-      <p v-if="questType === 'fetch' && incVillains === true">Defeating {{ questVillain }} will grant the heroes 100 GP.</p>
-
-      <p style="padding: 16px 0; text-align: center;"><a href="#" v-on:click.prevent="generateAdventure">Generate another adventure</a></p>
+      <p v-if="questType === 'hunt'  && addTreasure === true">Aquiring the {{ questItem }} will grant the heroes 100 GP.</p>
+      <p v-if="questType === 'fetch' && addVillains === true">Defeating {{ questVillain }} will grant the heroes 100 GP.</p>
     </div>
   </div>
 </template>
 
 <script>
+import { setTimeout } from 'timers';
 export default {
   name: 'adventuregen',
   data: function(){
     return {
-      adventureOptionsShow: true,
-      incTreasure: false,
-      incVillains: false,
+      disableButton: false,
+      showOptions: false,
+      showAdv: true,
       game: "CR",
       type: ['hunt', 'fetch', 'rescue'],
       introList: null,
@@ -86,21 +91,19 @@ export default {
       questIntro: null,
       questItem: null,
       questVillain: null,
-      questTiles: null
+      questTiles: null,
+      questExtraTile: null,
+      addTreasure: false,
+      addVillains: false,
+      addExtraTile: false
     };
   },
   methods: {
-    generateAdventure: function() {
-      const vm = this;
-      if (vm.adventureOptionsShow) {
-        vm.adventureOptionsShow = false;
-      } else {
-        vm.adventureOptionsShow = true;
-      }
-      vm.initData();
-    },
     getRandomNum: function(max){
       return Math.floor(Math.random() * max);
+    },
+    toggleOptions: function(){
+      this.showOptions = !this.showOptions;
     },
     initData: function(){
       // get fluff
@@ -110,7 +113,6 @@ export default {
         })
         .then((data)=>{
           this.introList = data.plots;
-          this.getIntro();
         });
 
       // get quest items
@@ -120,7 +122,6 @@ export default {
         })
         .then((data)=>{
           this.itemList = data;
-          this.getQuestItem(this.game);
         });
 
       // get villains
@@ -130,7 +131,6 @@ export default {
         })
         .then((data)=>{
           this.villainsList = data;
-          this.getQuestVillain(this.game);
         });
 
       // get tiles
@@ -140,8 +140,23 @@ export default {
         })
         .then((data)=>{
           this.tilesList = data;
-          this.getQuestTiles(this.game);
         });
+    },
+    generateAdventure: function() {
+      const vm = this;
+      vm.disableButton = true;
+      vm.showAdv = false;
+
+      setTimeout(()=>{
+        vm.getIntro();
+        vm.getQuestItem(vm.game);
+        vm.getQuestVillain(vm.game);
+        vm.getQuestTiles(vm.game);
+        vm.getExtraTile(vm.game);
+
+        vm.disableButton = false;
+        vm.showAdv = true;
+      },500);
     },
     getIntro: function(){
       const vm = this;
@@ -164,23 +179,39 @@ export default {
       let seed = vm.getRandomNum(vm.villainsList[set].length);
       vm.questVillain = vm.villainsList[set][seed];
     },
-    getQuestTiles: function(set, num = 1){
+    getQuestTiles: function(set, num){
       const vm = this;
       let seed = vm.getRandomNum(vm.tilesList[set].length);
-      vm.questTiles = vm.tilesList[set][seed];
+
+      if (num === undefined) {
+        vm.questTiles = vm.tilesList[set][seed];  
+      } else {
+        vm.questTiles.push(vm.tilesList[set][seed]);
+      }
+    },
+    getExtraTile: function(set) {
+      const vm = this;
+      let seedx = vm.getRandomNum(vm.tilesList[set].length);
+      vm.questExtraTile = vm.tilesList[set][seedx];  
+      console.log(vm.questExtraTile);
+
+      if (vm.questExtraTile !== vm.questTiles) {
+        vm.questExtraTile = vm.tilesList[set][seedx];  
+      } else {
+        vm.getExtraTile(set);
+      }
     }
   },
   mounted() {
     this.$nextTick(() => {
       this.initData();
+      setTimeout(()=>{
+        this.generateAdventure();
+      }, 700);
     });
   }
 }
 </script>
-
-<style lang="scss" scoped>
-</style>
-
 
 
 
