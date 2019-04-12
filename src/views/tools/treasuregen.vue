@@ -1,7 +1,5 @@
 <template>
   <div class="content generator">
-    <p>Generate a treasure token for that monster, tile, or encounter</p>
-
     <div class="results">
       <strong v-if="treasureCount === null"> </strong>
       <strong v-else-if="treasureCount === 'card'" class="gold"><span v-if="showCount">Treasure Card</span></strong>

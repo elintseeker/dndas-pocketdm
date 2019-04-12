@@ -25,6 +25,14 @@
       <span>Treasure Generator</span>
     </div>
     <div class="nav-item">
+      <router-link :to="{ name: 'adventuregen' }" class="icon">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="svg-icon" viewBox="0 0 576 512">
+          <path fill="currentColor" d="M0 117.66v346.32a16 16 0 0 0 21.94 14.86L160 416V32L20.12 87.95A32 32 0 0 0 0 117.66zM192 416l192 64V96L192 32v384zM554.06 33.16L416 96v384l139.88-55.95A32 32 0 0 0 576 394.34V48.02a16 16 0 0 0-21.94-14.86z"/>
+        </svg>
+      </router-link>
+      <span>Adventure Generator</span>
+    </div>
+    <div class="nav-item">
       <router-link :to="{ name: 'd20roller' }" class="icon">
         <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="svg-icon" viewBox="0 0 480 512">
           <path fill="currentColor" d="M106.8 215L1.2 371a8 8 0 0 0 6 12l208.2 22.2L106.7 215zM7.3 315.5l75.3-122.3-76.6-46a4 4 0 0 0-6.1 3.4v162.8c0 4 5.3 5.6 7.4 2.1zm10.8 108.2l194.5 87.7A8 8 0 0 0 224 504v-65.7L20.4 416c-4.4-.5-6.2 5.6-2.2 7.6zm81.3-257.8l79.9-143c4.3-7-3.6-15.2-10.8-11L17.8 110.2a4 4 0 0 0 .1 6.8l81.6 48.7zM240 176h109.2L253.6 7.6c-3.1-5-8.3-7.6-13.6-7.6s-10.5 2.5-13.6 7.6L130.8 176H240zm234-28.9l-76.7 46 75.3 122.3c2.1 3.5 7.4 2 7.4-2V150.4a4 4 0 0 0-6-3.4zm-93.5 18.7l81.6-48.7a4 4 0 0 0 0-6.8L311.5 11.7c-7.2-4-15.1 4.1-10.8 11.2l80 143zm79 250.2L256 438.3V504a8 8 0 0 0 11.3 7.3l194.5-87.7c4-2 2.2-8-2.3-7.6zm-86.3-201L264.6 405.3 473 383a8 8 0 0 0 6-12.2L373.2 215.1zM240 208H139.6L240 383.8 340.4 208H240z"/>

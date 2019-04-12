@@ -1,6 +1,5 @@
 @charset "utf-8";
 @import './variables';
-// @import '../node_modules/bulma/bulma.sass';
 
 @import "../node_modules/bulma/sass/utilities/_all.sass";
 @import "../node_modules/bulma/sass/elements/button.sass";
@@ -17,7 +16,7 @@ html {
 // Default body styles
 body {
   margin: 0; padding: 16px 16px 96px;
-  font-family: $base-font;
+  font-family: $sans-stack;
   line-height: 1.6;
   color: $app-text-color;
   background-color: $app-bg;
@@ -90,7 +89,7 @@ a:not([class]) {
     margin-bottom: 16px;
     padding: 16px;
     color: $app-text-color;
-    border: 1px solid #333;
+    border: 1px solid $black-lighter;
     border-radius: 8px;
     box-shadow: 0 0 8px rgba(0,0,0,0.3);
 
@@ -106,8 +105,31 @@ a:not([class]) {
   .footer-buttons {
     padding: 32px 0;
   }
+
+  .xed-title {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  
+    &:before,
+    &:after {
+      content: "";
+      flex: 1;
+      height: 0;
+      border-top: 1px solid $gray-darker;
+    }
+
+    &:before {
+      margin-right: 8px;
+    }
+
+    &:after {
+      margin-left: 8px;
+    }
+  }
 }
 
 @import 'ui/nav';
 @import 'ui/generator';
+@import 'ui/_adventure.scss';
 @import 'ui/dndcard';
