@@ -11,8 +11,9 @@
             <option value="LoD">Legend of Drizzt</option>
           </select>
         </div>
-        <label><input type="checkbox" v-model="addTreasure"> Include Treasure Cards</label>
-        <label><input type="checkbox" v-model="addVillains"> Include Villains</label>
+        
+        <label><input type="checkbox" v-model="addVillains">  Include Named Villain</label>
+        <label><input type="checkbox" v-model="addTreasure">  Include Treasure Cards</label>
         <label><input type="checkbox" v-model="addExtraTile"> Include Extra Named Tile</label>
         <button type="button" class="button is-primary is-fullwidth" @click="generateAdventure">Generate adventure</button>
       </div>
@@ -33,7 +34,7 @@
 
       <ul class="components">
         <li>Starting Tile</li>
-        <li>{{ questTiles }}</li>
+        <li>{{ questTile }}</li>
         <li v-if="addExtraTile">{{ questExtraTile }}</li>
         <li v-if="questType === 'hunt'">{{ questVillain }} monster card and figure</li>
         <li v-if="questType === 'fetch'">{{ questItem }} card and token</li>
@@ -45,24 +46,24 @@
       <p>Place the <b>Starting Tile</b> on the table and place each hero on any square of the tile.</p>
 
       <div v-if="addExtraTile">
-        <p>Shuffle the rest of the Dungeon tiles stack. Take 3 tiles from it, and shuffle the <b>{{ questTiles }}</b> tile
-          into those tiles to form the <b>{{ questTiles }} stack</b>. Take the 3 more tiles from the Dungeon stack and shuffle with 
+        <p>Shuffle the rest of the Dungeon tiles stack. Take 3 tiles from it, and shuffle the <b>{{ questTile }}</b> tile
+          into those tiles to form the <b>{{ questTile }} stack</b>. Take the 3 more tiles from the Dungeon stack and shuffle with 
           the <b>{{ questExtraTile }}</b> tile to form the <b>{{ questExtraTile }} stack</b>.</p>
           
-        <p>Place the <b>{{ questExtraTile }} stack</b> after the <b>6th tile</b> of the Dungeon stack. Then place the <b>{{ questTiles }} stack</b> after the <b>10th</b> tile of the Dungeon tile stack.</p>
+        <p>Place the <b>{{ questExtraTile }} stack</b> after the <b>6th tile</b> of the Dungeon stack. Then place the <b>{{ questTile }} stack</b> after the <b>10th</b> tile of the Dungeon tile stack.</p>
       </div>
       <div v-else>
-        <p>Shuffle the rest of the Dungeon tiles stack. Take 3 tiles from it, and shuffle the <b>{{ questTiles }}</b> tile
-          into those tiles. Then place the shuffled <b>{{ questTiles }} stack</b> after the <b>8th</b> tile of
-          the Dungeon tile stack. (The {{ questTiles }} tile should appear between the 9th and 12th tile in the adventure.)</p>
+        <p>Shuffle the rest of the Dungeon tiles stack. Take 3 tiles from it, and shuffle the <b>{{ questTile }}</b> tile
+          into those tiles. Then place the shuffled <b>{{ questTile }} stack</b> after the <b>8th</b> tile of
+          the Dungeon tile stack. (The {{ questTile }} tile should appear between the 9th and 12th tile in the adventure.)</p>
       </div>
 
       <h3 class="xed-title">Special Rules</h3>
 
-      <p v-if="addExtraTile && !addVillains"><b>{{ questExtraTile }} tile:</b> When {{ addExtraTile }} tile has been revealed, draw 2 Monsters for this tile.</p>
+      <p v-if="addExtraTile && !addVillains"><b>{{ questExtraTile }} tile:</b> When this tile has been revealed, instead of placing a Monster, draw 2 Monsters for this tile instead.</p>
 
       <p>
-        <b>{{ questTiles }} tile:</b> When this tile has been revealed. 
+        <b>{{ questTile }} tile:</b> When this tile has been revealed. 
         <span v-if="questType == 'fetch'">
           Instead of placing a Monster, place <b>{{ questItem }}</b> on this tile instead. Then draw 2 Monsters from the Monster Deck.
         </span>
@@ -115,7 +116,7 @@ export default {
       questIntro: null,
       questItem: null,
       questVillain: null,
-      questTiles: null,
+      questTile: null,
       questExtraTile: null,
       addTreasure: false,
       addVillains: false,
@@ -175,7 +176,7 @@ export default {
         vm.getIntro();
         vm.getQuestItem(vm.game);
         vm.getQuestVillain(vm.game);
-        vm.getQuestTiles(vm.game);
+        vm.getquestTile(vm.game);
         vm.getExtraTile(vm.game);
 
         vm.disableButton = false;
@@ -203,14 +204,14 @@ export default {
       let seed = vm.getRandomNum(vm.villainsList[set].length);
       vm.questVillain = vm.villainsList[set][seed];
     },
-    getQuestTiles: function(set, num){
+    getquestTile: function(set, num){
       const vm = this;
       let seed = vm.getRandomNum(vm.tilesList[set].length);
 
       if (num === undefined) {
-        vm.questTiles = vm.tilesList[set][seed];  
+        vm.questTile = vm.tilesList[set][seed];  
       } else {
-        vm.questTiles.push(vm.tilesList[set][seed]);
+        vm.questTile.push(vm.tilesList[set][seed]);
       }
     },
     getExtraTile: function(set) {
@@ -219,7 +220,7 @@ export default {
       vm.questExtraTile = vm.tilesList[set][seedx];  
       console.log(vm.questExtraTile);
 
-      if (vm.questExtraTile !== vm.questTiles) {
+      if (vm.questExtraTile !== vm.questTile) {
         vm.questExtraTile = vm.tilesList[set][seedx];  
       } else {
         vm.getExtraTile(set);
