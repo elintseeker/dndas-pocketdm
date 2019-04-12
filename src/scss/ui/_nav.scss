@@ -5,7 +5,7 @@
 
   position: fixed;
   left: 0; right: 0; bottom: 0;
-  height: 64px;
+  height: 54px;
 
   background-color: $black-lighter;
   box-shadow: 0 -4px 12px rgba($black, 0.3);
@@ -20,7 +20,7 @@
     flex-direction: column;
 
     padding: 8px;
-    font-size: 12px;
+    font-size: 11px;
     color: $nav-color;
     text-align: center;
     text-decoration: none;

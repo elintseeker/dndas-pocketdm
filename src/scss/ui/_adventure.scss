@@ -1,0 +1,82 @@
+.adventure {
+  text-align: left;
+
+  h2 {
+    margin-bottom: 16px;
+    font-size: 22px;
+    text-align: center;
+  }
+
+  h3 {
+    margin-bottom: 16px;
+  }
+
+  .components {
+    margin: 16px auto;
+  }
+
+  .adv-intro {
+    margin: 48px 0 24px;
+    font-family: $serif-stack;
+    font-style: italic;
+    font-size: 18px;
+  
+    strong { display: inline; }
+  }
+
+
+  .adv-options {
+    margin-top: -13px;
+    margin-bottom: 32px;
+    padding: 32px 32px 16px;
+    border: 1px solid $gray-darker;
+    border-top: 0;
+  
+    label {
+      display: block;
+      margin: 0 auto; 
+      padding: 4px;
+      max-width: 288px;
+    }
+  
+    button {
+      margin: 16px auto 8px;
+    }
+  }
+  
+  .adv-optiontoggle {
+    display: block;
+    margin: 0 auto;
+    color: $red;
+    text-align: center;
+  }
+}
+
+.form-select {
+  position: relative;
+  margin: 0 auto 16px;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 50%; right: 8px;
+    margin-top: -6px;
+    width: 10px;
+    height: 10px;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGFyaWEtaGlkZGVuPSJ0cnVlIiBjbGFzcz0ic3ZnLWljb24iIHZpZXdCb3g9IjAgMCAzMjAgNTEyIj4gIDxwYXRoIGZpbGw9ImN1cnJlbnRDb2xvciIgZD0iTTMxIDE5MmgyNThjMTcgMCAyNiAyMiAxNCAzNEwxNzQgMzU1Yy04IDgtMjAgOC0yOCAwTDE3IDIyNmMtMTItMTItMy0zNCAxNC0zNHoiLz48L3N2Zz4=);
+    background-size: 8px;
+  }
+
+  & > select {
+    appearance: none;
+
+    display: block;
+    margin: 0;
+    padding: 8px;
+    width: 100%;
+
+    font-size: 16px;
+    border-radius: 0;
+    border: 0;
+  }
+}

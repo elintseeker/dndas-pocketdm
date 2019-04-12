@@ -25,12 +25,12 @@
       <span>Treasure Generator</span>
     </div>
     <div class="nav-item">
-      <router-link :to="{ name: 'tileevents' }" class="icon">
+      <router-link :to="{ name: 'adventuregen' }" class="icon">
         <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="svg-icon" viewBox="0 0 576 512">
-          <path fill="currentColor" d="M519 289c-41 0-59 31-82 31-60 0-5-176-5-176s-196 80-196-3c0-36 36-47 36-86 0-36-28-55-61-55-35 0-67 19-67 56 0 42 32 60 32 82 0 70-176 29-176 29v333s179 41 179-29c0-22-40-40-40-81 0-38 29-56 63-56s62 19 62 54c0 40-36 50-36 86 0 61 129 26 181 26 0 0-35-120 26-120 36 0 46 36 86 36 36 0 55-28 55-62s-19-65-57-65z"/>
+          <path fill="currentColor" d="M0 117.66v346.32a16 16 0 0 0 21.94 14.86L160 416V32L20.12 87.95A32 32 0 0 0 0 117.66zM192 416l192 64V96L192 32v384zM554.06 33.16L416 96v384l139.88-55.95A32 32 0 0 0 576 394.34V48.02a16 16 0 0 0-21.94-14.86z"/>
         </svg>
       </router-link>
-      <span>Named Tile Events</span>
+      <span>Adventure Generator</span>
     </div>
     <div class="nav-item">
       <router-link :to="{ name: 'd20roller' }" class="icon">
