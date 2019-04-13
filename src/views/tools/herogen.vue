@@ -21,6 +21,12 @@
       </table>
 
       <button type="button" class="button is-primary is-large is-fullwidth" @click="pickHero" :disabled="disableButton">Pick another one</button>
+
+      <div class="hero-options">
+        <label><input type="checkbox" v-model="heroskills.CR">Castle Ravenloft</label>
+        <label><input type="checkbox" v-model="heroskills.WoA">Wrath of Ashardalon</label>
+        <label><input type="checkbox" v-model="heroskills.LoD">Legend of Drizzt</label>
+      </div>
     </div>
   </div>
 </template>
@@ -69,6 +75,7 @@ export default {
     },
     pickHero: function() {
       const vm = this;
+      let dailies = [], atwills = [], utils = [];
 
       vm.disableButton = true;
 
@@ -78,11 +85,46 @@ export default {
       // get hero
       let heroSeed = Math.floor(Math.random() * Object.keys(vm.heroList.herotype).length);
       vm.hero = Object.keys(vm.heroList.herotype)[heroSeed];
+      vm.hero = 'rogue';
 
       const herodata = vm.heroList.herotype[vm.hero];
-      let dailies = [...herodata.daily]; // copies data to new arrays
-      let atwills = [...herodata.atwill];
-      let utils = [...herodata.utility];
+      console.log(herodata.CR.daily,herodata.WoA.daily);
+      
+      if (vm.heroskills.CR) {
+        console.log('CR checked');
+        const crdailies = herodata.CR.daily; // copies data to new arrays
+        const cratwills = herodata.CR.atwill;
+        const crutils   = herodata.CR.utility;
+
+        dailies = dailies.concat(crdailies);
+        atwills = atwills.concat(cratwills);
+        utils   = utils.concat(crutils);
+      }
+
+      if (vm.heroskills.WoA) {
+        console.log('WoA checked');
+        const woadailies = herodata.WoA.daily; // copies data to new arrays
+        const woaatwills = herodata.WoA.atwill;
+        const woautils   = herodata.WoA.utility;
+        
+        dailies = dailies.concat(woadailies);
+        atwills = atwills.concat(woaatwills);
+        utils = utils.concat(woautils);
+      }
+
+      if (vm.heroskills.LoD) {
+        console.log('LoD checked');
+        const d = herodata.LoD.daily; // copies data to new arrays
+        const a = herodata.LoD.atwill;
+        const u = herodata.LoD.utility;
+        
+        dailies = dailies.concat(d);
+        atwills = atwills.concat(a);
+        utils = utils.concat(u);
+      }
+
+      console.log(dailies)
+
 
       // roll for daily powers
       for(let i = 0; i < herodata.dailyNum; i++) {
@@ -114,6 +156,11 @@ export default {
     this.$nextTick(() => {
       this.loadHeroList();
     });
+  },
+  computed: {
+    heroskills: function() {
+      return this.$store.state.heroskills;
+    }
   }
 }
 </script>
@@ -122,6 +169,8 @@ export default {
 .generator {
   .results {
     margin-bottom: 32px;
+    font-size: 52px;
+    min-height: 128px;
   }
 
   strong {
@@ -146,6 +195,17 @@ export default {
     td span {
       display: block;
     }
+  }
+}
+
+.hero-options {
+  padding: 16px;
+  text-align: center;
+
+  label {
+    display: inline-block;
+    margin-right: 1em;
+    margin-left: 1em;
   }
 }
 </style>

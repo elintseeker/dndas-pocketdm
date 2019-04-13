@@ -15,6 +15,11 @@ export default new Vuex.Store({
       villain: null,
       tile: null,
       extraTile: null
+    },
+    heroskills: {
+      CR: true,
+      WoA: false,
+      LoD: false
     }
   },
   mutations: {

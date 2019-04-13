@@ -9,107 +9,184 @@
   "herotype": {
     "fighter": {
       "dailyNum": 2,
-      "daily": [
-        "Come and Get it",
-        "Precise Strike",
-        "Brute Strike",
-        "Dragon's Breath"
-      ],
       "atwillNum": 2,
-      "atwill": [
-        "Cleave",
-        "Trapping Strike",
-        "Tide of Iron"
-      ],
       "utilityNum": 1,
-      "utility": [
-        "Get Over There",
-        "Bodyguard"
-      ]
+      "CR": {
+        "daily": [
+          "Come and Get it",
+          "Precise Strike",
+          "Brute Strike",
+          "Dragon's Breath"
+        ],
+        "atwill": [
+          "Cleave",
+          "Trapping Strike",
+          "Tide of Iron"
+        ],
+        "utility": [
+          "Get Over There",
+          "Bodyguard"
+        ]
+      },
+      "WoA": {
+        "daily": [
+          "Comeback Strike",
+          "Into the Fray",
+          "Taunting Advance"
+        ],
+        "atwill": [
+          "Charge",
+          "Reaping Strike",
+          "Sure Strike"
+        ],
+        "utility": [
+          "Inspiring Advice",
+          "One for the Team",
+          "To Arms!"
+        ]
+      },
+      "LoD": {
+        "daily": [],
+        "atwill": [
+          "Notched Axe"
+        ],
+        "utility": [
+          "Clan Battlehammer Shield",
+          "Legendary Knowledge",
+          "Lucky Hit",
+          "Power Strike"
+        ]
+      }
     },
     "rogue": {
       "dailyNum": 1,
-      "daily": [
-        "Deep Cut",
-        "Dagger Barrage",
-        "Riposte Strike"
-      ],
       "atwillNum": 2,
-      "atwill": [
-        "Snipe Shot",
-        "Backstab",
-        "Deft Strike"
-      ],
       "utilityNum": 2,
-      "utility": [
-        "Stealth",
-        "Great Leap",
-        "Sneak Attack",
-        "Spring Away"
-      ]
+      "CR": {
+        "daily": [
+          "Deep Cut",
+          "Dagger Barrage",
+          "Riposte Strike"
+        ],
+        "atwill": [
+          "Snipe Shot",
+          "Backstab",
+          "Deft Strike"
+        ],
+        "utility": [
+          "Stealth",
+          "Great Leap",
+          "Sneak Attack",
+          "Spring Away"
+        ]
+      },
+      "WoA": {
+        "daily": [
+          "Acrobatic Onslaught",
+          "King's Castle",
+          "Riposte Strike",
+          "Tornado Strike"
+        ],
+        "atwill": [
+          "Positioning Shot",
+          "Distracting Jab",
+          "Lucky Strike"
+        ],
+        "utility": [
+          "Distant Diversion",
+          "Practised Evasion",
+          "Tumbling Escape"
+        ]
+      },
+      "LoD": {
+        "daily": [
+          "Distracting Attack",
+          "Finish Off"
+        ],
+        "atwill": [
+          "Magic Mace",
+          "Ruby Pendant",
+          "Lucky Strike"
+        ],
+        "utility": [
+          "Disarm",
+          "Hide",
+          "Sudden Escape",
+          "Tumble"
+        ]
+      }
     },
     "cleric": {
       "dailyNum": 1,
-      "daily": [
-        "Hallowed Advance",
-        "Flame Strike",
-        "Beacon of Hope"
-      ],
       "atwillNum": 2,
-      "atwill": [
-        "Healing Strike",
-        "Divine Flaire",
-        "Lance of Faith"
-      ],
       "utilityNum": 2,
-      "utility": [
-        "Consecrated Ground",
-        "Bless",
-        "Healing Word",
-        "Shield of Faith"
-      ]
+      "CR": {
+        "daily": [
+          "Hallowed Advance",
+          "Flame Strike",
+          "Beacon of Hope"
+        ],
+  
+        "atwill": [
+          "Healing Strike",
+          "Divine Flaire",
+          "Lance of Faith"
+        ],
+        "utility": [
+          "Consecrated Ground",
+          "Bless",
+          "Healing Word",
+          "Shield of Faith"
+        ]
+      }
     },
     "ranger": {
       "dailyNum": 1,
-      "daily": [
-        "Split the Tree",
-        "Bounding Attack",
-        "Attacks on the Run"
-      ],
       "atwillNum": 2,
-      "atwill": [
-        "Hit and Run",
-        "Careful Attack",
-        "Twin Shot",
-        "Hunter's Shot"
-      ],
       "utilityNum": 1,
-      "utility": [
-        "Unbalancing Parry",
-        "Yield Ground",
-        "Crucial Aid"
-      ]
+      "CR": {
+        "daily": [
+          "Split the Tree",
+          "Bounding Attack",
+          "Attacks on the Run"
+        ],
+        
+        "atwill": [
+          "Hit and Run",
+          "Careful Attack",
+          "Twin Shot",
+          "Hunter's Shot"
+        ],
+        
+        "utility": [
+          "Unbalancing Parry",
+          "Yield Ground",
+          "Crucial Aid"
+        ]
+      }
     },
     "wizard": {
       "dailyNum": 1,
-      "daily": [
-        "Fireball",
-        "Lightning Bolt",
-        "Freezing Cloud"
-      ],
       "atwillNum": 2,
-      "atwill": [
-        "Magic Missle",
-        "Thunderwave",
-        "Scorching Burst"
-      ],
       "utilityNum": 2,
-      "utility": [
-        "Fey Step",
-        "Dispel Magic",
-        "Shield",
-        "Illusionary Crowd"
-      ]
+      "CR": {
+        "daily": [
+          "Fireball",
+          "Lightning Bolt",
+          "Freezing Cloud"
+        ],
+        "atwill": [
+          "Magic Missle",
+          "Thunderwave",
+          "Scorching Burst"
+        ],
+        "utility": [
+          "Fey Step",
+          "Dispel Magic",
+          "Shield",
+          "Illusionary Crowd"
+        ]
+      }
     }
   }
 }
