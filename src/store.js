@@ -6,7 +6,16 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     rolls: 0,
-    rollHistory: []
+    rollHistory: [],
+    quest: {
+      game: "CR",
+      type: null,
+      intro: null,
+      item: null,
+      villain: null,
+      tile: null,
+      extraTile: null
+    }
   },
   mutations: {
 
