@@ -2,14 +2,29 @@
 	"CR": [
 		"Chapel",
 		"Strahd's Crypt",
-		"Workshop"
+		"Workshop",
+		"King's Crypt",
+		"Fetid Den",
+		"Dark Fountain",
+		"Ireena Kolyana's Crypt",
+		"Arcane Circle",
+		"Laboratory"
 	],
 	"WoA": [
-		"WTF chamber",
-		"WTF chamber2"
+		"Horrid Chamber Entrance",
+		"Dire Chamber Entrance",
+		"Horrid Chamber",
+		"Dire Chamber",
+		"Long Hallway",
+		"Vault",
+		"Ancient Battlefield"
   ],
 	"LoD": [
-		"WTH cavern",
-		"WTH cavern2"
+		"Ancient Throne",
+		"Rocky Lair",
+		"Dwarven Statue",
+		"Broken Door",
+		"Crystal Shard",
+		"Drow Glyph"
   ]
 }

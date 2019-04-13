@@ -7,21 +7,21 @@
       </svg>
     </div>
 
-    <button type="button" class="button is-primary is-large is-fullwidth" @click="roll()" :disabled="disableButton">Roll em!</button>
+    <button type="button" class="button is-primary is-large is-fullwidth" @click="roll()" :disabled="rolls === maxRolls">Roll em!</button>
 
     <p>&nbsp;</p>
 
-    <div class="roller-history" v-if="rolledHistory.length">
-      <strong class="subtitle is-6">Roll History <small>({{ rollHistoryLimit }} max)</small>:</strong>
+    <div class="roller-history" v-if="rolls > 0">
+      <strong class="subtitle is-6">Roll History <small>({{ maxRolls }} max)</small>:</strong>
 
       <ul>
         <li v-for="item in rolledHistory" :key="item.id">{{ item }}</li>
       </ul>
-    </div>
 
-    <p class="is-centered" v-if="rolled !== 0">
-      <a href="#" class="reset red" v-on:click.prevent="reset">Reset/Clear</a>
-    </p>
+      <p class="is-centered">
+        <a href="#" class="reset red" v-on:click.prevent="reset">Reset/Clear</a>
+      </p>
+    </div>
   </div>
 </template>
 
@@ -31,69 +31,40 @@ export default {
   data: function(){
     return {
       rolled: 0,
-      rolledHistory: [],
-      rollHistoryLimit: 20,
+      maxRolls: 20,
       disableButton: false
     };
   },
   methods: {
     roll: function() {
       const vm = this;
-      vm.rolled = Math.floor(Math.random() * 20 + 1);
-      vm.rolledHistory.push(vm.rolled);
-
-      vm.disableButton = true;
-
-      // last 25 rolls
-      if (vm.rolledHistory.length >= vm.rollHistoryLimit) {
+      if (vm.rolls >= vm.maxRolls) {
         vm.disableButton = true;
       } else {
+        vm.rolled = Math.floor(Math.random() * vm.maxRolls + 1);
+        vm.disableButton = true;
+        vm.rolledHistory.push(vm.rolled);
+        vm.$store.state.rolls++;
         setTimeout(()=>{
           vm.disableButton = false;
-        }, 500);
+        }, 300);
       }
     },
     reset: function() {
       const vm = this;
       vm.rolled = 0;
-      vm.rolledHistory = [];
       vm.disableButton = false;
+      vm.$store.state.rolls = 0;
+      vm.$store.state.rollHistory = [];
+    }
+  },
+  computed: {
+    rolledHistory: function(){
+      return this.$store.state.rollHistory;
+    },
+    rolls: function(){
+      return this.$store.state.rolls;
     }
   }
 };
 </script>
-
-<style lang="scss" scoped>
-  .dice-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    .svg-icon {
-      width: 48px;
-      height: 48px;
-    }
-  }
-  .reset { text-decoration: none; border-bottom: 0; }
-
-  .roller-history {
-    margin: 16px auto 0;
-    max-width: 320px;
-
-    .subtitle {
-      margin-bottom: 16px;
-    }
-
-    ul {
-      display: grid;
-      grid-template-columns: repeat(10, 1fr);
-      grid-gap: 8px;
-
-      margin: 16px auto;
-      padding: 0;
-      list-style: none;
-    }
-  }
-</style>
-
-
