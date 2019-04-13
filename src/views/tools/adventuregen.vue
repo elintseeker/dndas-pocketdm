@@ -66,7 +66,7 @@
       <h2 class="xed-title is-serif">Special Rules</h2>
 
       <div v-if="quest.type === 'hunt'">
-        <p><b>{{ quest.tile }} tile:</b> When a Hero reveals the {{ quest.tile }}, instead of drawing Monster cards for the active tile, the active player takes the {{ quest.villain }} card and place {{ quest.villain }} figure on this tile. Then draw an Encounter Card.</p>
+        <p><b>{{ quest.tile }} tile:</b> When a Hero reveals the {{ quest.tile }}, instead of drawing Monster cards for the active tile, the active player takes the {{ quest.villain }} card and places the figure on this tile. Then draw an Encounter Card.</p>
         <p v-if="quest.addTreasure"><b>{{ quest.extraTile }} tile:</b> When a Hero reveals this tile, instead of drawing Monster cards, place {{ quest.item }} token on this tile instead then draw a Monster Card.</p>
         <p v-if="quest.addTile && !quest.addTreasure"><b>{{ quest.extraTile }} tile:</b> When a Hero reveals this tile, draw 2 Monsters from the Monster Deck or a Monster Token instead.</p>
         
@@ -75,7 +75,7 @@
 
       <div v-if="quest.type === 'fetch'">
         <p><b>{{ quest.tile }} tile:</b> When a Hero reveals the {{ quest.tile }}, instead of drawing Monster cards for the active tile, place the {{ quest.item }} token on this tile instead then draw 2 Monster Cards or a Monster Token.</p>
-        <p v-if="quest.addVillain"><b>{{ quest.extraTile }} tile:</b> When a Hero reveals this tile, instead of drawing Monster cards, the active player takes the {{ quest.villain }} card and places {{ quest.villain }} figure on this tile.</p>
+        <p v-if="quest.addVillain"><b>{{ quest.extraTile }} tile:</b> When a Hero reveals this tile, instead of drawing Monster cards, the active player takes the {{ quest.villain }} card and places the figure on this tile.</p>
         <p v-if="quest.addTile && !quest.addVillain"><b>{{ quest.extraTile }} tile:</b> When a Hero reveals this tile, raw 2 Monsters from the Monster Deck or a Monster token instead and an Encounter Card.</p>
         
         <p><b>Victory: </b> The heroes win the adventure when they acquire the <b>{{ quest.item }}</b>.</p>
@@ -87,7 +87,7 @@
         <!-- states -->
         <p v-if="quest.addVillain && !quest.addTreasure"> <b>{{ quest.extraTile }} tile:</b> When a Hero reveals this tile, instead of drawing a Monster Card, the active player takes the <b>{{ quest.villain }}</b> card and places <b>{{ quest.villain }}</b> figure on this tile.</p>
         <p v-else-if="quest.addTreasure && !quest.addVillain"> <b>{{ quest.extraTile }} tile:</b> When a Hero reveals this tile, instead of drawing a Monster Card, place the <b>{{ quest.item }}</b> on this tile and draw 1 Monster Card or a Monster Token.</p>
-        <p v-else-if="quest.addTreasure && quest.addVillain"><b>{{ quest.extraTile }} tile:</b> When a Hero reveals this tile, instead of drawing a Monster Card, place the <b>{{ quest.item }}</b> on this tile and takes the <b>{{ quest.villain }}</b> card and places <b>{{ quest.villain }}</b> figure on any square of this tile.</p> 
+        <p v-else-if="quest.addTreasure && quest.addVillain"><b>{{ quest.extraTile }} tile:</b> When a Hero reveals this tile, instead of drawing a Monster Card, place the <b>{{ quest.item }}</b> on this tile and takes the <b>{{ quest.villain }}</b> card and places the figure on any square of this tile.</p> 
         <p v-else-if="quest.addTile && !quest.addVillain && !quest.addTreasure"><b>{{ quest.extraTile }} tile:</b> When a Hero reveals this tile, draw 2 Monsters from the Monster Deck or a Monster Token.</p>
 
         <p><b>Victory: </b> The heroes win the adventure when the Heroes and the Villagers safely exits the dungeon.</p>
