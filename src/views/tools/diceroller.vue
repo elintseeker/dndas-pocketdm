@@ -7,7 +7,8 @@
       </svg>
     </div>
 
-    <button type="button" class="button is-primary is-large is-fullwidth" @click="roll()" :disabled="rolls === maxRolls">Roll em!</button>
+    <button type="button" class="button is-primary is-large is-fullwidth" v-if="rolls === maxRolls" disabled>Roll d20</button>
+    <button type="button" class="button is-primary is-large is-fullwidth" @click="roll()" :disabled="disableButton" v-else >Roll d20</button>
 
     <p>&nbsp;</p>
 
@@ -38,16 +39,17 @@ export default {
   methods: {
     roll: function() {
       const vm = this;
-      if (vm.rolls >= vm.maxRolls) {
+      if (vm.rolls === vm.maxRolls) {
         vm.disableButton = true;
       } else {
         vm.rolled = Math.floor(Math.random() * vm.maxRolls + 1);
         vm.disableButton = true;
         vm.rolledHistory.push(vm.rolled);
         vm.$store.state.rolls++;
+
         setTimeout(()=>{
           vm.disableButton = false;
-        }, 300);
+        }, 500);
       }
     },
     reset: function() {
