@@ -13,7 +13,7 @@
         
         <label><input type="checkbox" v-model="quest.addVillain">  Additional Named Villain</label>
         <label><input type="checkbox" v-model="quest.addTreasure">  Additional Treasure Card</label>
-        <label><input type="checkbox" v-model="quest.addExtraTile"> Extra Named Tile</label>
+        <label><input type="checkbox" v-model="quest.addTile"> Additional Named Tile</label>
         <button type="button" class="button is-primary is-large is-fullwidth" @click="generateAdventure" :disabled="disableButton">Generate adventure</button>
       </div>
     </div>
@@ -33,17 +33,24 @@
       <ul class="components">
         <li>Starting Tile</li>
         <li>{{ quest.tile }}</li>
-        <li v-if="quest.addExtraTile">{{ quest.extraTile }}</li>
+        <li v-if="quest.addTile || quest.addVillain || quest.addTreasure">{{ quest.extraTile }}</li>
         <li v-if="quest.type === 'hunt'">{{ quest.villain }} monster card and figure</li>
+        <li v-if="quest.type !== 'hunt' && quest.addVillain">{{ quest.villain }} monster card and figure</li>
         <li v-if="quest.type === 'fetch'">{{ quest.item }} card and token</li>
-        <li v-if="quest.type === 'rescue'">A Villager token</li>
         <li v-if="quest.type !== 'fetch' && quest.addTreasure">{{ quest.item }} card and token</li>
-        <li v-if="quest.type !== 'hunt'  && quest.addVillain">{{ quest.villain }} monster card and figure</li>
+        <li v-if="quest.type === 'rescue'">A Villager token</li>
+        <!-- <li>
+          Optional: Monster tokens<br>
+            (1) 0 Monster token<br>
+            (2) 1 Monster tokens<br>
+            (1) 2 Monster token<br>
+            (1) 3 Monster token
+        </li>     -->
       </ul>
 
       <p>Place the <b>Starting Tile</b> on the table and place each hero on any square of the tile.</p>
 
-      <div v-if="quest.addExtraTile">
+      <div v-if="quest.addTile">
         <p>Shuffle the rest of the Dungeon tiles stack. Take 3 tiles from it, and shuffle the <b>{{ quest.tile }}</b> tile
           into those tiles to form the <b>{{ quest.tile }} stack</b>. Take the 3 more tiles from the Dungeon stack and shuffle with 
           the <b>{{ quest.extraTile }}</b> tile to form the <b>{{ quest.extraTile }} stack</b>.</p>
@@ -56,31 +63,35 @@
           the Dungeon tile stack. (The {{ quest.tile }} tile should appear between the 9th and 12th tile in the adventure.)</p>
       </div>
 
+
       <h2 class="xed-title is-serif">Special Rules</h2>
+      <div v-if="quest.type === 'hunt'">
+        <p><b>{{ quest.tile }} tile:</b> When this tile has been revealed. Instead of placing a Monster, place <b>{{ quest.villain }}</b> on this tile instead and then draw an <b>Encounter Card.</b></p>
+        <p v-if="quest.addTreasure"><b>{{ quest.extraTile }} tile:</b> When this tile has been revealed. Instead of placing a Monster, place <b>{{ quest.item }}</b> on this tile instead.</p>
+        <p v-if="quest.addTile && !quest.addTreasure"><b>{{ quest.extraTile }} tile:</b> When this tile has been revealed, instead of placing a Monster, draw 2 Monsters from the Monster Deck and place it on this tile.</p>
+        
+        <p><b>Victory: </b> The heroes win the adventure when they defeat <b>{{ quest.villain }}</b>.</p>
+      </div>
 
-      <p v-if="quest.addTile && !quest.addVillain"><b>{{ quest.extraTile }} tile:</b> When this tile has been revealed, instead of placing a Monster, draw 2 Monsters for this tile instead.</p>
+      <div v-if="quest.type === 'fetch'">
+        <p><b>{{ quest.tile }} tile:</b> When this tile has been revealed. Instead of placing a Monster, place <b>{{ quest.item }}</b> on this tile instead and then draw 2 Monsters/1 Monster Token.</p>
+        <p v-if="quest.addVillain"><b>{{ quest.extraTile }} tile:</b> When this tile has been revealed. Instead of placing a Monster, place <b>{{ quest.villain }}</b> on this tile instead.</p>
+        <p v-if="quest.addTile && !quest.addVillain"><b>{{ quest.extraTile }} tile:</b> When this tile has been revealed, instead of placing a Monster,  draw 2 Monsters from the Monster Deck and place it on this tile.</p>
+        
+        <p><b>Victory: </b> The heroes win the adventure when they acquire the <b>{{ quest.item }}</b>.</p>
+      </div>
 
-      <p>
-        <b>{{ quest.tile }} tile:</b> When this tile has been revealed. 
-        <span v-if="quest.type == 'fetch'">
-          Instead of placing a Monster, place <b>{{ quest.item }}</b> on this tile instead. Then draw 2 Monsters from the Monster Deck.
-        </span>
-        <span v-if="quest.type == 'hunt'">
-          Instead of placing a Monster, place <b>{{ quest.villain }}</b> on this tile instead and then draw an <b>Encounter Card.</b>
-        </span>
-        <span v-if="quest.type === 'rescue'">Place the <b>Villager token</b> at the center of this tile. Draw 2 Monsters and place it on this tile.</span>
-      </p>
+      <div v-if="quest.type === 'rescue'">
+        <p><b>{{ quest.tile }} tile:</b> When this tile has been revealed. Place the <b>Villager token</b> at the center of this tile and then Draw 2 Monsters/1 Monster Token.</p>
 
-      <p v-if="quest.addExtraTile && quest.addVillain">
-        <b>{{ quest.extraTile }} tile:</b> When this tile has been revealed. Instead of placing a Monster, place <b>{{ quest.villain }}</b> on this tile instead.
-      </p>
+        <!-- states -->
+        <p v-if="quest.addVillain && !quest.addTreasure"> <b>{{ quest.extraTile }} tile:</b> When this tile has been revealed. Instead of placing a Monster, place <b>{{ quest.villain }}</b> on this tile instead.</p>
+        <p v-else-if="quest.addTreasure && !quest.addVillain"> <b>{{ quest.extraTile }} tile:</b> When this tile has been revealed. Instead of placing a Monster, place <b>{{ quest.item }}</b> on this tile instead. Then draw 1 Monster/Token for this tile.</p>
+        <p v-else-if="quest.addTreasure && quest.addVillain"><b>{{ quest.extraTile }} tile:</b> When this tile has been revealed. Instead of placing a Monster, place the <b>{{ quest.item }}</b> on this tile instead. Place <b>{{ quest.villain }}</b> on any square of the <b>{{ quest.extraTile }} tile</b>.</p> 
+        <p v-else-if="quest.addTile && !quest.addVillain && !quest.addTreasure"><b>{{ quest.extraTile }} tile:</b> When this tile has been revealed. Instead of placing a Monster, draw 2 Monsters from the Monster Deck. Place a Monster on this tile and another within 1 tile.</p>
 
-      <p>
-        <strong>Victory: </strong> The heroes win the adventure when they
-        <span v-if="quest.type === 'fetch'">acquire the <strong>{{ quest.item }}</strong>.</span>
-        <span v-if="quest.type === 'hunt'">defeat <strong>{{ quest.villain }}</strong>.</span>
-        <span v-if="quest.type === 'rescue'">rescued the <strong>Villager</strong> and safely exited the dungeon.</span>
-      </p>
+        <p><b>Victory: </b> The heroes win the adventure when they rescued the <b>Villager</b> and safely exited the dungeon.</p>
+      </div>
 
       <p><strong>Defeat:</strong> The heroes lose the adventure if any hero has 0 Hit Points remaining at the start of his or her
         turn and there are no Healing Surges remaining.</p>
@@ -89,8 +100,9 @@
 
       <p>Completing the adventure and used at least one Healing Surge, each hero instead receives 200 gold pieces.</p>
 
-      <p v-if="quest.type === 'hunt'  && quest.addTreasure">Aquiring the <b>{{ quest.item }}</b> will grant the heroes 100 GP.</p>
-      <p v-if="quest.type === 'fetch' && quest.addVillain">Defeating <b>{{ quest.villain }}</b> will grant the heroes 100 GP.</p>
+      <!-- additional loot -->
+      <p v-if="!quest.type !== 'fetch' && quest.addTreasure">Aquiring the <b>{{ quest.item }}</b> will grant each hero 100 GP.</p>
+      <p v-if="!quest.type !== 'hunt' && quest.addVillain">Defeating <b>{{ quest.villain }}</b> will grant each hero 100 GP.</p>
     </div>
   </div>
 </template>
