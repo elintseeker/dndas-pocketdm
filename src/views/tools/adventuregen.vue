@@ -28,7 +28,7 @@
         </div>
       </div>
 
-      <h2 class="xed-title is-serif">Components</h2>
+      <div class="xed-title is-serif">Components</div>
 
       <ul class="components">
         <li>Starting Tile</li>
@@ -39,12 +39,7 @@
         <li v-if="quest.type === 'fetch'">{{ quest.item }} card and token</li>
         <li v-if="quest.type !== 'fetch' && quest.addTreasure">{{ quest.item }} card and token</li>
         <li v-if="quest.type === 'rescue'">A Villager token</li>
-        <li>Optional: <br>
-          (1) 0 Monster token<br>
-          (2) 1 Monster tokens<br>
-          (1) 2 Monster token<br>
-          (1) 3 Monster token
-        </li>    
+        <li>Optional: 5 Monster tokens</li>    
       </ul>
 
       <p>Place the <b>Starting Tile</b> on the table and place each hero on any square of the tile.</p>
@@ -63,7 +58,7 @@
       </div>
 
 
-      <h2 class="xed-title is-serif">Special Rules</h2>
+      <div class="xed-title is-serif">Special Rules</div>
 
       <div v-if="quest.type === 'hunt'">
         <p><b>{{ quest.tile }} tile:</b> When a Hero reveals the {{ quest.tile }}, instead of drawing Monster cards for the active tile, the active player takes the {{ quest.villain }} card and places the figure on this tile. Then draw an Encounter Card.</p>

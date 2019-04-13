@@ -138,6 +138,16 @@
           "Healing Word",
           "Shield of Faith"
         ]
+      },
+      "WoA": {
+        "daily": [ "Blade Barrier", "Cause Fear", "Wrathful Thunder" ],
+        "atwill": [ "Cleric's Shield", "Righteous Advance", "Sacred Flame" ],
+        "utility": [ "Astral Refuge", "Command", "Perseverance" ]
+      },
+      "LoD": {
+        "daily": [],
+        "atwill": [],
+        "utility": []
       }
     },
     "ranger": {
@@ -150,19 +160,27 @@
           "Bounding Attack",
           "Attacks on the Run"
         ],
-        
         "atwill": [
           "Hit and Run",
           "Careful Attack",
           "Twin Shot",
           "Hunter's Shot"
         ],
-        
         "utility": [
           "Unbalancing Parry",
           "Yield Ground",
           "Crucial Aid"
         ]
+      },
+      "WoA": {
+        "daily": [],
+        "atwill": [],
+        "utility": []
+      },
+      "LoD": {
+        "daily": [ "Inspiratonal Strike", "Lone Drow", "Twin Strike"],
+        "atwill": [ "Icingdeath", "Twinkle"],
+        "utility": [ "Dancing Serpent", "Figurine of Guenhwyvar", "Last Blood" ]
       }
     },
     "wizard": {
@@ -186,6 +204,36 @@
           "Shield",
           "Illusionary Crowd"
         ]
+      },
+      "WoA": {
+        "daily": [ "Flaming Sphere", "Shock Sphere", "Spectral Ram" ],
+        "atwill": [ "Arc Lightning", "Hypnotism", "Ray of Frost" ],
+        "utility": [ "Invisibility", "Mirror Image", "Wizard Eye" ]
+      },
+      "LoD": {
+        "daily": [],
+        "atwill": [],
+        "utility": []
+      }
+    },
+    "paladin": {
+      "dailyNum": 1,
+      "atwillNum": 2,
+      "utilityNum": 2,
+      "CR": {
+        "daily": ["N/A", "N/A"],
+        "atwill": ["N/A", "N/A"],
+        "utility": ["N/A", "N/A"]
+      },
+      "WoA": {
+        "daily": [ "Arching Strike", "Benign Transposition", "Righteous Smite" ],
+        "atwill": [ "Divine Challenge", "Holy Strike", "Valiant Strike" ],
+        "utility": [ "Lay on Hands", "Bravery", "Noble Shield", "Virtue's Touch" ]
+      },
+      "LoD": {
+        "daily": ["N/A", "N/A"],
+        "atwill": ["N/A", "N/A"],
+        "utility": ["N/A", "N/A"]
       }
     }
   }

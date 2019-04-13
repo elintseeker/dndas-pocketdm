@@ -1,33 +1,44 @@
 <template>
-  <div class="container generator">
-    <div class="results">
-      <div>{{ heading }} <strong>{{ hero }}</strong>!</div>
-    </div>
+  <div>
+    <div class="container generator">
+      <div class="results">
+        <div>{{ heading }} <strong>{{ hero }}</strong>!</div>
+      </div>
 
-    <div class="powers">
-      <table class="table is-narrow">
-        <tr>
-          <th>Daily Powers</th>
-          <td><span v-for="power in heroDailyPowers" :key="power.id">{{ power }}</span></td>
-        </tr>
-        <tr>
-          <th>At-Will Powers</th>
-          <td><span v-for="power in heroAtWillPowers" :key="power.id">{{ power }}</span></td>
-        </tr>
-        <tr>
-          <th>Utility Powers</th>
-          <td><span v-for="power in heroUtilityPowers" :key="power.id">{{ power }}</span></td>
-        </tr>
-      </table>
+      <div class="powers">
+        <h2 class="xed-title is-serif">Powers</h2>
+        <table class="table is-narrow">
+          <tr>
+            <th>Daily:</th>
+            <td v-for="power in heroDailyPowers" :key="power.id">{{ power }}</td>
+          </tr>
+          <tr>
+            <th>At-Will:</th>
+            <td v-for="power in heroAtWillPowers" :key="power.id">{{ power }}</td>
+          </tr>
+          <tr>
+            <th>Utility:</th>
+            <td v-for="power in heroUtilityPowers" :key="power.id">{{ power }}</td>
+          </tr>
+        </table>
 
-      <button type="button" class="button is-primary is-large is-fullwidth" @click="pickHero" :disabled="disableButton">Pick another one</button>
+        <button type="button" class="button is-primary is-large is-fullwidth" @click="pickHero" :disabled="disableButton">Pick another one</button>
 
-      <div class="hero-options">
-        <label><input type="checkbox" v-model="heroskills.CR">Castle Ravenloft</label>
-        <label><input type="checkbox" v-model="heroskills.WoA">Wrath of Ashardalon</label>
-        <label><input type="checkbox" v-model="heroskills.LoD">Legend of Drizzt</label>
+        <p>&nbsp;</p>
+
+        <div class="xed-title is-serif">Options</div>
+
+        <div class="hero-options">
+          <label><input type="checkbox" v-model="heroskills.CR">Castle Ravenloft</label>
+          <label><input type="checkbox" v-model="heroskills.WoA">Wrath of Ashardalon</label>
+          <label><input type="checkbox" v-model="heroskills.LoD">Legend of Drizzt</label>
+          <label><input type="checkbox">Temple of Elemental Evil</label>
+          <label><input type="checkbox">Tomb of Annihilation</label>
+          <label><input type="checkbox">Dungeon of the Mad Mage</label>
+        </div>
       </div>
     </div>
+    <div class="note"><small>*If you're seeing "N/A" on some character classes, try enabling/disabling other sets.<br> **ToEE, ToA, DMM are not available at the moment.</small></div>
   </div>
 </template>
 
@@ -85,11 +96,12 @@ export default {
       // get hero
       let heroSeed = Math.floor(Math.random() * Object.keys(vm.heroList.herotype).length);
       vm.hero = Object.keys(vm.heroList.herotype)[heroSeed];
-      vm.hero = 'rogue';
+      // vm.hero = 'rogue';
 
       const herodata = vm.heroList.herotype[vm.hero];
       console.log(herodata.CR.daily,herodata.WoA.daily);
       
+      // dirty! there is a better way of doing this
       if (vm.heroskills.CR) {
         console.log('CR checked');
         const crdailies = herodata.CR.daily; // copies data to new arrays
@@ -198,15 +210,22 @@ export default {
   }
 }
 
-.hero-options {
-  padding: 16px;
-  text-align: center;
-
-  label {
-    display: inline-block;
-    margin-right: 1em;
-    margin-left: 1em;
-  }
+.xed-title {
+  margin-top: 32px;
 }
+
+.hero-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+  max-width: 400px;
+
+  margin: 0 auto;
+  padding: 16px 0;
+  font-size: 14px;
+  text-align: left;
+}
+
+.note { text-align: center; }
 </style>
 
