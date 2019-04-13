@@ -234,9 +234,6 @@ export default {
   mounted() {
     this.$nextTick(() => {
       this.initData();
-      // setTimeout(()=>{
-      //   this.generateAdventure();
-      // }, 500);
     });
   },
   computed: {
