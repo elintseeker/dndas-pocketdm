@@ -126,10 +126,17 @@ a:not([class]) {
     &:after {
       margin-left: 8px;
     }
+
+    &.is-serif {
+      font-family: $serif-stack;
+      font-style: italic;
+      font-weight: 600;
+    }
   }
 }
 
 @import 'ui/nav';
 @import 'ui/generator';
+@import 'ui/roller';
 @import 'ui/_adventure.scss';
 @import 'ui/dndcard';

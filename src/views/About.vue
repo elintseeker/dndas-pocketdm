@@ -13,8 +13,11 @@
 
     <p>As usual, you can send feedback on Twitter at <a href="https://twitter.com/@kevinn">@kevinn</a> or contribute directly at the <a href="https://github.com/elintseeker/dndas-pocketdm">github repository</a>.</p>
 
+    <h3>Changelog</h3>
+    <p>Soon...</p>
+
     <h3>Credits</h3>
-    <p>Will update soon...</p>
+    <p>Soon...</p>
 
     <footer>
       <small>

@@ -1,20 +1,20 @@
 {
   "plots": {
     "fetch": [
-      "Of course, of course... You're adventurers! Where are my manners? You'll get all the recognition you need. After, and only after, you get the ",
-      "You break away from the marsh and saw the decrepit entrance to the depths below. This is it! This is the place! This is where we will find the famous ",
+      "'Of course, of course... You're adventurers! Where are my manners? You'll get all the recognition you need.' After, and only after, you get my ",
+      "You break away from the marsh and saw the decrepit entrance to the depths below. 'This is it! This is the place! This is where we will find the famous ",
       "Glowing wards line the walls of the dungeon entrance. You'd think the tales of this abandoned dungeon couldn't be true. All this just for one trinket: The ",
-      "The local guide scurries away up the path and back to town. Well, it's all up to us now finding the "
+      "'You folks are on your own!' The local guide scurries away up the path and back to town. 'Well, it's all up to us now to find and slay this "
     ],
     "hunt": [
-      "Horrid beings disturbs the town at nightfall. The townsfolk asks for you and your companions to get rid of the ",
-      "A lot of adventurers came by and tried going in there... I admire your guts to take on the ",
-      "Last thing we know is that she went into the old crypts. I wouldn't go there if I were you... It's the home of the "
+      "Horrid creatures and foul beings disturbs the town at nightfall. The townsfolk asks for you and your companions to rid them of the ",
+      "'A lot of adventurers came by and tried going in there. I admire your guts, I really do...'  The innkeeper is sweating upon mentioning the name: ",
+      "'Last thing we know is that she went into the old crypts. I wouldn't go there if I were you... It's been said that it is the home of the "
     ],
     "rescue": [
-      "Hush! The Mayor's daughter is missing for a few days now. He slides you a piece of paper to where she can be found... ",
-      "Here, we pooled everything that we have. Anything just to help you find our lost child. ",
-      "Please sirs!? He went into woods and never came back! I'm worried that something might've happened to him. I don't know where else to go"
+      "'Hush! The mayor's daughter is missing for a few days now. She'd likely be dead... or something worse.' He slides you a piece of paper to where she can be found... ",
+      "'The militia won't do anything for us or anything for this town! So, we turn to you.' A worn bag of coins placed in front of you. 'Anything just to help you find our lost child!' ",
+      "'Please sirs!? He went into woods and never came back! I'm worried that something might've happened to him.' The maid profusely pleads. 'You're the only one I can turn to...' "
     ]
   },
   "enders": [
