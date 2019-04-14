@@ -39,7 +39,6 @@
         <li v-if="quest.type === 'fetch'">{{ quest.item }} card and token</li>
         <li v-if="quest.type !== 'fetch' && quest.addTreasure">{{ quest.item }} card and token</li>
         <li v-if="quest.type === 'rescue'">A Villager token</li>
-        <li>Optional: 5 Monster tokens</li>    
       </ul>
 
       <p>Place the <b>Starting Tile</b> on the table and place each hero on any square of the tile.</p>
