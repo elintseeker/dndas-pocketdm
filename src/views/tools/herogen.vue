@@ -1,27 +1,44 @@
 <template>
-  <div class="container generator">
-    <div class="results">
-      <div>{{ heading }} <strong>{{ hero }}</strong>!</div>
-    </div>
+  <div>
+    <div class="container generator">
+      <div class="results">
+        <div>{{ heading }} <strong>{{ hero }}</strong>!</div>
+      </div>
 
-    <div class="powers">
-      <table class="table is-narrow">
-        <tr>
-          <th>Daily Powers</th>
-          <td><span v-for="power in heroDailyPowers" :key="power.id">{{ power }}</span></td>
-        </tr>
-        <tr>
-          <th>At-Will Powers</th>
-          <td><span v-for="power in heroAtWillPowers" :key="power.id">{{ power }}</span></td>
-        </tr>
-        <tr>
-          <th>Utility Powers</th>
-          <td><span v-for="power in heroUtilityPowers" :key="power.id">{{ power }}</span></td>
-        </tr>
-      </table>
+      <div class="powers">
+        <h2 class="xed-title is-serif">Powers</h2>
+        <table class="table is-narrow">
+          <tr>
+            <th>Daily:</th>
+            <td v-for="power in heroDailyPowers" :key="power.id">{{ power }}</td>
+          </tr>
+          <tr>
+            <th>At-Will:</th>
+            <td v-for="power in heroAtWillPowers" :key="power.id">{{ power }}</td>
+          </tr>
+          <tr>
+            <th>Utility:</th>
+            <td v-for="power in heroUtilityPowers" :key="power.id">{{ power }}</td>
+          </tr>
+        </table>
 
-      <button type="button" class="button is-primary is-large is-fullwidth" @click="pickHero" :disabled="disableButton">Pick another one</button>
+        <button type="button" class="button is-primary is-large is-fullwidth" @click="pickHero" :disabled="disableButton">Pick another one</button>
+
+        <p>&nbsp;</p>
+
+        <div class="xed-title is-serif">Options</div>
+
+        <div class="hero-options">
+          <label><input type="checkbox" v-model="heroskills.CR">Castle Ravenloft</label>
+          <label><input type="checkbox" v-model="heroskills.WoA">Wrath of Ashardalon</label>
+          <label><input type="checkbox" v-model="heroskills.LoD">Legend of Drizzt</label>
+          <label><input type="checkbox">Temple of Elemental Evil</label>
+          <label><input type="checkbox">Tomb of Annihilation</label>
+          <label><input type="checkbox">Dungeon of the Mad Mage</label>
+        </div>
+      </div>
     </div>
+    <div class="note"><small>*ToEE, ToA, DMM are not available at the moment.<br> **If you're seeing "N/A" on some character classes, try enabling/disabling other sets.</small></div>
   </div>
 </template>
 
@@ -69,6 +86,7 @@ export default {
     },
     pickHero: function() {
       const vm = this;
+      let dailies = [], atwills = [], utils = [];
 
       vm.disableButton = true;
 
@@ -77,12 +95,53 @@ export default {
 
       // get hero
       let heroSeed = Math.floor(Math.random() * Object.keys(vm.heroList.herotype).length);
+      // set hero
       vm.hero = Object.keys(vm.heroList.herotype)[heroSeed];
+      // vm.hero = 'rogue';
+
+      if (vm.hero === 'paladin' && !vm.heroskills.WoA) {
+        // set to closest hero class
+        vm.hero = 'fighter';
+        console.log('paladin?!?');
+      }
 
       const herodata = vm.heroList.herotype[vm.hero];
-      let dailies = [...herodata.daily]; // copies data to new arrays
-      let atwills = [...herodata.atwill];
-      let utils = [...herodata.utility];
+      
+      // dirty! there is a better way of doing this
+      if (vm.heroskills.CR) {
+        // console.log('CR checked');
+        const crdailies = herodata.CR.daily; // copies data to new arrays
+        const cratwills = herodata.CR.atwill;
+        const crutils   = herodata.CR.utility;
+
+        dailies = dailies.concat(crdailies);
+        atwills = atwills.concat(cratwills);
+        utils   = utils.concat(crutils);
+      }
+
+      if (vm.heroskills.WoA) {
+        // console.log('WoA checked');
+        const woadailies = herodata.WoA.daily; // copies data to new arrays
+        const woaatwills = herodata.WoA.atwill;
+        const woautils   = herodata.WoA.utility;
+        
+        dailies = dailies.concat(woadailies);
+        atwills = atwills.concat(woaatwills);
+        utils = utils.concat(woautils);
+      }
+
+      if (vm.heroskills.LoD) {
+        // console.log('LoD checked');
+        const d = herodata.LoD.daily; // copies data to new arrays
+        const a = herodata.LoD.atwill;
+        const u = herodata.LoD.utility;
+        
+        dailies = dailies.concat(d);
+        atwills = atwills.concat(a);
+        utils = utils.concat(u);
+      }
+
+      // console.log(dailies);
 
       // roll for daily powers
       for(let i = 0; i < herodata.dailyNum; i++) {
@@ -114,6 +173,11 @@ export default {
     this.$nextTick(() => {
       this.loadHeroList();
     });
+  },
+  computed: {
+    heroskills: function() {
+      return this.$store.state.heroskills;
+    }
   }
 }
 </script>
@@ -122,6 +186,8 @@ export default {
 .generator {
   .results {
     margin-bottom: 32px;
+    font-size: 52px;
+    min-height: 128px;
   }
 
   strong {
@@ -148,5 +214,23 @@ export default {
     }
   }
 }
+
+.xed-title {
+  margin-top: 32px;
+}
+
+.hero-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+  max-width: 400px;
+
+  margin: 0 auto;
+  padding: 16px 0;
+  font-size: 14px;
+  text-align: left;
+}
+
+.note { text-align: center; }
 </style>
 

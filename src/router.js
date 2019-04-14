@@ -1,10 +1,12 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Home from './views/Home.vue';
+import err404 from '@/views/404.vue';
 
 Vue.use(Router);
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
@@ -13,6 +15,11 @@ export default new Router({
         title: 'DnD Adventure System - Pocket DM'
       },
       component: Home
+    },
+    {
+      path: '*',
+      name: '404',
+      component: err404
     },
     {
       path: '/about',
@@ -27,19 +34,6 @@ export default new Router({
         return import(/* webpackChunkName: "about" */ './views/About.vue');
       }
     },
-    // {
-    //   path: '/encounters',
-    //   name: 'encounters',
-    //   meta: {
-    //     title: 'Encounters'
-    //   },
-    //   // route level code-splitting
-    //   // this generates a separate chunk (about.[hash].js) for this route
-    //   // which is lazy-loaded when the route is visited.
-    //   component: function () {
-    //     return import(/* webpackChunkName: "about" */ './views/Encounters.vue');
-    //   }
-    // },
     {
       path: '/tools',
       // name: 'Tools',
