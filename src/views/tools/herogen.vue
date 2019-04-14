@@ -38,7 +38,7 @@
         </div>
       </div>
     </div>
-    <div class="note"><small>*If you're seeing "N/A" on some character classes, try enabling/disabling other sets.<br> **ToEE, ToA, DMM are not available at the moment.</small></div>
+    <div class="note"><small>*ToEE, ToA, DMM are not available at the moment.<br> **If you're seeing "N/A" on some character classes, try enabling/disabling other sets.</small></div>
   </div>
 </template>
 
@@ -95,15 +95,21 @@ export default {
 
       // get hero
       let heroSeed = Math.floor(Math.random() * Object.keys(vm.heroList.herotype).length);
+      // set hero
       vm.hero = Object.keys(vm.heroList.herotype)[heroSeed];
       // vm.hero = 'rogue';
 
+      if (vm.hero === 'paladin' && !vm.heroskills.WoA) {
+        // set to closest hero class
+        vm.hero = 'fighter';
+        console.log('paladin?!?');
+      }
+
       const herodata = vm.heroList.herotype[vm.hero];
-      console.log(herodata.CR.daily,herodata.WoA.daily);
       
       // dirty! there is a better way of doing this
       if (vm.heroskills.CR) {
-        console.log('CR checked');
+        // console.log('CR checked');
         const crdailies = herodata.CR.daily; // copies data to new arrays
         const cratwills = herodata.CR.atwill;
         const crutils   = herodata.CR.utility;
@@ -114,7 +120,7 @@ export default {
       }
 
       if (vm.heroskills.WoA) {
-        console.log('WoA checked');
+        // console.log('WoA checked');
         const woadailies = herodata.WoA.daily; // copies data to new arrays
         const woaatwills = herodata.WoA.atwill;
         const woautils   = herodata.WoA.utility;
@@ -125,7 +131,7 @@ export default {
       }
 
       if (vm.heroskills.LoD) {
-        console.log('LoD checked');
+        // console.log('LoD checked');
         const d = herodata.LoD.daily; // copies data to new arrays
         const a = herodata.LoD.atwill;
         const u = herodata.LoD.utility;
@@ -135,8 +141,7 @@ export default {
         utils = utils.concat(u);
       }
 
-      console.log(dailies)
-
+      // console.log(dailies);
 
       // roll for daily powers
       for(let i = 0; i < herodata.dailyNum; i++) {

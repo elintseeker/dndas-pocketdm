@@ -221,9 +221,9 @@
       "atwillNum": 2,
       "utilityNum": 2,
       "CR": {
-        "daily": ["N/A", "N/A"],
-        "atwill": ["N/A", "N/A"],
-        "utility": ["N/A", "N/A"]
+        "daily": [],
+        "atwill": [],
+        "utility": []
       },
       "WoA": {
         "daily": [ "Arching Strike", "Benign Transposition", "Righteous Smite" ],
@@ -231,9 +231,9 @@
         "utility": [ "Lay on Hands", "Bravery", "Noble Shield", "Virtue's Touch" ]
       },
       "LoD": {
-        "daily": ["N/A", "N/A"],
-        "atwill": ["N/A", "N/A"],
-        "utility": ["N/A", "N/A"]
+        "daily": [],
+        "atwill": [],
+        "utility": []
       }
     }
   }
