@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <div class="card">
+    <div class="card" id="initiative">
       <h2 class="xed-title is-serif">Simple Initiative System I</h2>
       <p><strong>Hero Phase:</strong> Moving to an unexplored edge triggers placement of a new tile. After drawing a new tile, place a monster on the new tile. Roll a d20 for your Hero and roll again for the Monster(s) side.</p>
       <ul>
@@ -11,7 +11,7 @@
       <p class="notes"><b>Notes:</b> Active Hero can only explore one tile per turn.</p>
     </div>
 
-    <div class="card">
+    <div class="card" id="initiative2">
       <h2 class="xed-title is-serif">Simple Initiative System II</h2>
       <p><strong>Hero Phase:</strong> Moving to an unexplored edge triggers placement of a new tile. After drawing a new tile, check the arrow marker of the new tile.</p>
       <ul>
@@ -22,7 +22,7 @@
       <p class="notes"><b>Notes:</b> Active Hero can only explore one tile per turn.</p>
     </div>
 
-    <div class="card">
+    <div class="card" id="basiclevelup">
       <h2 class="xed-title is-serif">Level Up/Progression System <small>(beyond Level 2)</small></h2>
       <table class="table is-narrow is-bordered">
         <tr>
@@ -55,6 +55,32 @@
       </table>
 
       <p class="notes"><b>Notes:</b> Take note and record of XP between adventures. You can only level up your Hero if all other heroes in the adventure are at equal levels. This is to avoid having a 5th level hero with 2nd level heroes in an adventure.</p>
+    </div>
+    <div class="card" id="monstertokens">
+      <h2 class="xed-title is-serif">Monster tokens</h2>
+      <p>When revealing a tile, use the Monster Tokens (from Castle Ravenloft) instead of drawing a Monster Card to add a random number of Monsters.</p> 
+      <p>Shuffle the Monster Tokens (in a container or bag), draw and flip over the token then draw that many Monster Cards for that tile.</p>
+      
+      <table class="table is-narrow is-bordered isfloat">
+        <tr><th colspan="2">Normal (5 tokens)</th></tr>
+        <tr><td>1 token</td><td>Zero Monster</td></tr>
+        <tr><td>3 tokens</td><td>One Monster</td></tr>
+        <tr><td>1 tokens</td><td>Two Monster</td></tr>
+      </table>
+
+      <table class="table is-narrow is-bordered isfloat">
+        <tr><th colspan="2">Normal/Hard (5 tokens)</th></tr>
+        <tr><td>2 tokens</td><td>One Monster</td></tr>
+        <tr><td>2 tokens</td><td>Two Monsters</td></tr>
+        <tr><td>1 token</td><td>Three Monsters</td></tr>
+      </table>
+
+      <table class="table is-narrow is-bordered isfloat">
+        <tr><th colspan="2">Hard (5 tokens)</th></tr>
+        <tr><td>1 tokens</td><td>One Monster</td></tr>
+        <tr><td>2 tokens</td><td>Two Monsters</td></tr>
+        <tr><td>2 token</td><td>Three Monsters</td></tr>
+      </table>
     </div>
   </div>
 </template>

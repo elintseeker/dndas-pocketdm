@@ -87,6 +87,7 @@ a:not([class]) {
 
   .card {
     margin-bottom: 32px;
+    overflow: hidden;
     // padding: 16px;
     // color: $app-text-color;
     // border: 1px solid $gray-darker;
@@ -106,6 +107,10 @@ a:not([class]) {
     }
 
     .notes { font-size: 14px; }
+    .isfloat {
+      float: left; 
+      margin-right: 8px;
+    }
   }
 
   .footer-buttons {
