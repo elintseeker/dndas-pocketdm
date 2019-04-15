@@ -43,7 +43,7 @@
     <div class="nav-item">
       <router-link :to="{ name: 'seqplayref' }" class="icon">
         <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="svg-icon">
-          <use href="#icon-hourglass" />
+          <use href="#icon-play" />
         </svg>
       </router-link>
       <span>Sequence of Play</span>
@@ -51,7 +51,7 @@
     <div class="nav-item">
       <router-link :to="{ name: 'houserules' }" class="icon">
         <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="svg-icon">
-          <use href="#icon-map" />
+          <use href="#icon-houserules" />
         </svg>
       </router-link>
       <span>House Rules</span>
