@@ -59,6 +59,14 @@ a:not([class]) {
     text-align: center;
   }
 
+  .is-serif {
+    font-family: $serif-stack;
+  }
+
+  .is-italic {
+    font-style: italic;
+  }
+
   .button.is-primary {
     &,
     &:focus,
