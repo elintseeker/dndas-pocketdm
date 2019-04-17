@@ -31,7 +31,7 @@
 
     <h2 class="subtitle is-6">Villain Phase</h2>
     <ol>
-      <li>If you didn'tplace a tile during your Exploration Phase, or if you placed a tile with a black triangle, draw an Encounter Card.</li>
+      <li>If you didn't place a tile during your Exploration Phase, or if you placed a tile with a black triangle, draw an Encounter Card.</li>
       <li>If a Villain in play, activate it.</li>
       <li>Activate each Monster and Trap you control, in turn, in the order you drew them.</li>
     </ol>
