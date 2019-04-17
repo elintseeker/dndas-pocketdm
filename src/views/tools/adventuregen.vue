@@ -34,11 +34,12 @@
         <li>Starting Tile</li>
         <li>{{ quest.tile }}</li>
         <li v-if="quest.addTile || quest.addVillain || quest.addTreasure">{{ quest.extraTile }}</li>
-        <li v-if="quest.type === 'hunt'">{{ quest.villain }} monster card and figure</li>
-        <li v-if="quest.type !== 'hunt' && quest.addVillain">{{ quest.villain }} monster card and figure</li>
+        <li v-if="quest.type === 'rescue' && quest.game === 'CR'">Secret Stairway</li>
+        <li v-if="quest.type === 'hunt' || quest.type === 'rescue'">{{ quest.villain }} monster card and figure</li>
+        <li v-if="quest.type !== 'hunt' && quest.type !== 'rescue' && quest.addVillain">{{ quest.villain }} monster card and figure</li>
         <li v-if="quest.type === 'fetch'">{{ quest.item }} card and token</li>
         <li v-if="quest.type !== 'fetch' && quest.addTreasure">{{ quest.item }} card and token</li>
-        <li v-if="quest.type === 'rescue'">A Villager token</li>
+        <li v-if="quest.type === 'rescue'">A Villager token/figure</li>
       </ul>
 
       <p>Place the <b>Starting Tile</b> on the table and place each hero on any square of the tile.</p>
@@ -48,12 +49,14 @@
           into those tiles to form the <b>{{ quest.tile }} stack</b>. Take the 3 more tiles from the Dungeon stack and shuffle with 
           the <b>{{ quest.extraTile }}</b> tile to form the <b>{{ quest.extraTile }} stack</b>.</p>
           
-        <p>place the <b>{{ quest.tile }} stack</b> after the <b>11th</b> tile of the Dungeon tile stack. Then take the <b>{{ quest.extraTile }} stack</b> and place it after the <b>7th tile</b> of the Dungeon stack.</p>
+        <p>Place the <b>{{ quest.tile }} stack</b> after the <b>11th</b> tile of the Dungeon tile stack. Then take the <b>{{ quest.extraTile }} stack</b> and place it after the <b>7th tile</b> of the Dungeon stack.</p>
       </div>
       <div v-else>
         <p>Shuffle the rest of the Dungeon tiles stack. Take 3 tiles from it, and shuffle the <b>{{ quest.tile }}</b> tile
           into those tiles. Then place the shuffled <b>{{ quest.tile }} stack</b> after the <b>8th</b> tile of
           the Dungeon tile stack. (The {{ quest.tile }} tile should appear between the 9th and 12th tile in the adventure.)</p>
+
+        <p v-if="quest.type === 'rescue' && quest.game === 'CR'">Take the <b>Secret Stairway</b> Tile and three tiles from the <b>bottom</b> of the dungeon tile stack. Shuffle and place it after the 13th tile of the dungeon stack.</p>
       </div>
 
 
@@ -76,26 +79,52 @@
       </div>
 
       <div v-if="quest.type === 'rescue'">
-        <p><b>{{ quest.tile }} tile:</b> When a Hero reveals the {{ quest.tile }}, place the <b>Villager token</b> at the center of this tile and then draw 2 Monsters from the Monster Deck or 1 Monster Token.</p>
+        <p>
+          <b>{{ quest.tile }} tile:</b> When a Hero reveals the {{ quest.tile }}, place the <b>Villager token/figure</b> at the center of this tile, then read: 
+        </p>
+
+        <blockquote class="is-serif is-italic">
+          As you free the villager from the rusted shackles... "Get me out of here! Please! That... thing will be back soon!"
+        </blockquote>
+
+        <p><b>Villager</b>:
+
+        <table class="table is-bordered is-narrow">
+          <tr><th>AC</th><th>HP</th><th>Speed</th</tr>
+          <tr><td>12</td><td>6</td><td>4</td></tr>
+        </table>
+
+        <p>Draw a Monster Card for each Hero (minimum of 2 Monsters) and place them on an unexplored space of the tile.</p>
+
+        <p v-if="quest.type === 'rescue'">Place <b>{{ quest.villain }}</b> on the dungeon start tile. <b>{{ quest.villain }}</b> activates every Hero's Villain phase.</p>
 
         <!-- states -->
-        <p v-if="quest.addVillain && !quest.addTreasure"> <b>{{ quest.extraTile }} tile:</b> When a Hero reveals this tile, instead of drawing a Monster Card, the active player takes the <b>{{ quest.villain }}</b> card and places <b>{{ quest.villain }}</b> figure on this tile.</p>
-        <p v-else-if="quest.addTreasure && !quest.addVillain"> <b>{{ quest.extraTile }} tile:</b> When a Hero reveals this tile, instead of drawing a Monster Card, place the <b>{{ quest.item }}</b> on this tile and draw 1 Monster Card or a Monster Token.</p>
-        <p v-else-if="quest.addTreasure && quest.addVillain"><b>{{ quest.extraTile }} tile:</b> When a Hero reveals this tile, instead of drawing a Monster Card, place the <b>{{ quest.item }}</b> on this tile and takes the <b>{{ quest.villain }}</b> card and places the figure on any square of this tile.</p> 
-        <p v-else-if="quest.addTile && !quest.addVillain && !quest.addTreasure"><b>{{ quest.extraTile }} tile:</b> When a Hero reveals this tile, draw 2 Monsters from the Monster Deck or a Monster Token.</p>
+        <p v-if="quest.addTreasure"> <b>{{ quest.extraTile }} tile:</b> When a Hero reveals this tile, instead of drawing a Monster Card, place the <b>{{ quest.item }}</b> on this tile and draw 1 Monster Card or a Monster Token.</p>
+        
+        <div v-if="quest.game === 'CR'">
+          <!-- exit tile -->
+          <p><b>Secret Stairway tile:</b> When a Hero reveals and placed the Secret Stairway tile, read: 
+          <blockquote class="is-serif is-italic">"Turning around the corner, you almost tripped on a raised floor. The wall crumbles and moves revealing a stairway out of this decrepit and foul dungeon.</blockquote></p>
+        </div>
 
-        <p><b>Victory: </b> The heroes win the adventure when the Heroes and the Villagers safely exits the dungeon.</p>
+        <p><b>Victory: </b> The heroes win the adventure when the Heroes and the Villager safely exits the dungeon from the start tile <span v-if="quest.game === 'CR'">and/or via the Secret Stairway tile</span>.</p>
       </div>
 
       <p><strong>Defeat:</strong> The Heroes lose the adventure if any Hero has 0 Hit Points at the start of his or her turn and there are no Healing Surge tokens remaining.</p>
 
-      <p><strong>Aftermath:</strong> If the Heroes complete the adventure without using any Healing Surges, each hero receives 300 gold pieces.</p>
+      <div class="xed-title is-serif">Aftermath</div>
+
+      <p>If the Heroes complete the adventure without using any Healing Surges, each hero receives 300 gold pieces.</p>
 
       <p>If the Heroes complete the adventure, but used at least one Healing Surge, they each receives 200 gold pieces.</p>
+      
+      <p><span v-if="quest.type === 'rescue'">If the Villager did not survive the adventure, each the hero <b>pays the town</b> 100 GP.</span></p>
 
       <!-- additional loot -->
+
       <p v-if="quest.type !== 'fetch' && quest.addTreasure">Aquiring the <b>{{ quest.item }}</b> will grant each hero 100 GP.</p>
-      <p v-if="quest.type !== 'hunt' && quest.addVillain">Defeating <b>{{ quest.villain }}</b> will grant each hero 100 GP.</p>
+      <p v-if="quest.type !== 'hunt' && quest.addVillain || quest.type === 'rescue'">Defeating <b>{{ quest.villain }}</b> will grant each hero 100 GP.</p>
+      
     </div>
   </div>
 </template>
