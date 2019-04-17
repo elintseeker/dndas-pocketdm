@@ -27,34 +27,34 @@
       <table class="table is-narrow is-bordered">
         <tr>
           <th>Level</th>
-          <th>Cost</th>
+          <th>XP/GP Cost</th>
           <th>Powers</th>
           <th>Stats changes <small>(per level)</small></th>
         </tr>
         <tr>
           <td>2</td>
-          <td>10&nbsp;XP</td>
+          <td>10&nbsp;XP or 2000 GP</td>
           <td>+1 Daily Power</td>
           <td rowspan="4">+2 HP <br> +1 AC<br> +1 Surge Value</td>
         </tr> 
         <tr>
           <td>3</td>
-          <td>20&nbsp;XP</td>
+          <td>20&nbsp;XP or 3000 GP</td>
           <td>+1 Utility Power</td>
         </tr> 
         <tr>
           <td>4</td>
-          <td>30&nbsp;XP</td>
+          <td>30&nbsp;XP or 4000 GP</td>
           <td>+1 At-Will Power</td>
         </tr> 
         <tr>
           <td>5</td>
-          <td>40&nbsp;XP</td>
+          <td>40&nbsp;XP or 5000 GP</td>
           <td>+1 Daily Power</td>
         </tr> 
       </table>
 
-      <p class="notes"><b>Notes:</b> Take note and record of XP between adventures. You can only level up your Hero if all other heroes in the adventure are at equal levels. This is to avoid having a 5th level hero with 2nd level heroes in an adventure.</p>
+      <p class="notes"><b>Notes:</b> Take note and record of XP between adventures. You can only level up your Hero if all other heroes in the adventure are at equal levels. This is to avoid having a 5th level hero with 2nd level heroes in an adventure. Either use XP cost or GP cost when leveling up your heroes.</p>
     </div>
     <div class="card" id="monstertokens">
       <h2 class="xed-title is-serif">Monster tokens</h2>
@@ -81,6 +81,11 @@
         <tr><td>2 tokens</td><td>Two Monsters</td></tr>
         <tr><td>2 token</td><td>Three Monsters</td></tr>
       </table>
+    </div>
+
+    <div class="card" id="encounters">
+      <h2 class="xed-title is-serif">Encounter cards</h2>
+      <p>Draw an Encounter Card only when the Active player drew and placed a Black Arrowed Tile in his/her Exploration phase.</p>
     </div>
   </div>
 </template>

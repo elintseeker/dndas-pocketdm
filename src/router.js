@@ -62,7 +62,7 @@ export default new Router({
           name: 'houserules',
           meta: {
             title: 'House Rules',
-            description: 'Some house rules for the D&D Adventure System'
+            description: 'Some house rules for the D&D Adventure System, pick one or apply them all on your next adventure.'
           },
           component: function () {
             return import('./views/tools/houserules.vue');
