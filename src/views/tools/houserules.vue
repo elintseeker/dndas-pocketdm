@@ -1,5 +1,11 @@
 <template>
   <div class="content">
+
+    <div class="card" id="dierolls">
+      <h2 class="xed-title is-serif">d20 rolls</h2>
+      <p>Rolling a 20 on d20 is always Critical Hit (+1 damage) and a success. Rolling a 1 is a Critical Miss and always a failure, this includes the Monsters "Miss: X" damage.</p>
+    </div>
+    
     <div class="card" id="initiative">
       <h2 class="xed-title is-serif">Simple Initiative System I</h2>
       <p><strong>Hero Phase:</strong> Moving to an unexplored edge triggers placement of a new tile. After drawing a new tile, place a monster on the new tile. Roll a d20 for your Hero and roll again for the Monster(s) side.</p>
@@ -58,7 +64,7 @@
     </div>
     <div class="card" id="monstertokens">
       <h2 class="xed-title is-serif">Monster tokens</h2>
-      <p>When revealing a tile, use the Monster Tokens (from Castle Ravenloft) instead of drawing a Monster Card to add a random number of Monsters.</p> 
+      <p>When revealing a tile, use the Monster Tokens (from Castle Ravenloft) instead of drawing a Monster Card. This is to add a random number of Monsters for each revealed tile.</p> 
       <p>Shuffle the Monster Tokens (in a container or bag), draw and flip over the token then draw that many Monster Cards for that tile.</p>
       
       <table class="table is-narrow is-bordered isfloat">
@@ -86,6 +92,12 @@
     <div class="card" id="encounters">
       <h2 class="xed-title is-serif">Encounter cards</h2>
       <p>Draw an Encounter Card only when the Active player drew and placed a Black Arrowed Tile in his/her Exploration phase.</p>
+    </div>
+
+    <div class="card" id="tiles">
+      <h2 class="xed-title is-serif">Tile distribution</h2>
+      <p>When setting up an adventure: Draw the number of dungeon tiles equal to the number of heroes plus the Named Tile.</p>
+      <p>For example; If there are 5 heroes playing, draw five dungeon tiles and the Named tile indicated in the adventure book and shuffle.</p>
     </div>
   </div>
 </template>
