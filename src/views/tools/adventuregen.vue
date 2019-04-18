@@ -151,7 +151,7 @@
         <p><b>Victory: </b> The heroes win the adventure when the Heroes and the Villager safely exits the dungeon from the start tile and/or escaping via the 
           <span v-if="quest.game === 'CR'">Secret Stairway tile</span>
           <span v-if="quest.game === 'WoA'">Tunnel Exit tile</span>
-          <span v-if="quest.game === 'LoD'">Surface Hollow tile</span></span>.</p>
+          <span v-if="quest.game === 'LoD'">Surface Hollow tile</span>.</p>
       </div>
 
       <p><strong>Defeat:</strong> The Heroes lose the adventure if any Hero has 0 Hit Points at the start of his or her turn and there are no Healing Surge tokens remaining.</p>
@@ -194,9 +194,6 @@ export default {
     };
   },
   methods: {
-    getRandomNum: function(max){
-      return Math.floor(Math.random() * max);
-    },
     toggleOptions: function(){
       this.showOptions = !this.showOptions;
     },
@@ -256,10 +253,10 @@ export default {
     getIntro: function(){
       const vm = this;
       let l = vm.type.length;
-      let q = vm.getRandomNum(l);
+      let q = vm.$getRandomNum(l);
       let plot = vm.type[q];
       let pl = Object.keys(vm.introList).length;
-      let pq = vm.getRandomNum(pl);
+      let pq = vm.$getRandomNum(pl);
 
       // vm.questType = plot;
       // vm.questIntro = vm.introList[plot][pq];
@@ -268,25 +265,25 @@ export default {
     },
     getQuestItem: function(set){
       const vm = this;
-      let seed = vm.getRandomNum(vm.itemList[set].length);
+      let seed = vm.$getRandomNum(vm.itemList[set].length);
       // vm.questItem = vm.itemList[set][seed];
       vm.$store.state.quest.item = vm.itemList[set][seed];
     },
     getQuestVillain: function(set){
       const vm = this;
-      let seed = vm.getRandomNum(vm.villainsList[set].length);
+      let seed = vm.$getRandomNum(vm.villainsList[set].length);
       // vm.questVillain = vm.villainsList[set][seed];
       vm.$store.state.quest.villain = vm.villainsList[set][seed];
     },
     getquestTile: function(set){
       const vm = this;
-      let seed = vm.getRandomNum(vm.tilesList[set].length);
+      let seed = vm.$getRandomNum(vm.tilesList[set].length);
       // vm.questTile = vm.tilesList[set][seed];
       vm.$store.state.quest.tile = vm.tilesList[set][seed];
     },
     getExtraTile: function(set) {
       const vm = this;
-      let seed = vm.getRandomNum(vm.tilesList[set].length);
+      let seed = vm.$getRandomNum(vm.tilesList[set].length);
       vm.$store.state.quest.extraTile = vm.tilesList[set][seed];  
 
       // return;
