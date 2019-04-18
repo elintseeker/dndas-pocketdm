@@ -21,22 +21,35 @@
     <p>The adventure ends when any Hero has 0 Hit Points at the start of his/her turn and there are no Healing Surge tokens remaining.</p>
     <p>At the end of the adventure, count the number of dungeon tiles placed (not including the Start tile) as this is the groups adventure score.</p>
 
-    <p>Optional: After placing the 5th tile, instead of placing a monster, roll a d20:</p>
+    <p><b>Victory: </b> The heroes win the adventure if the group's score reaches 15 or above.</p>
+    <p><b>Defeat: </b> The heroes lose the adventure if the group's score is 14 or below.</p>
 
+    <div class="xed-title is-serif">Optional Rules</div>
+
+    <p><b>Dungeon Lord:</b> After placing the 5th tile, instead of placing a Monster, roll a d20:</p>
     <table class="table is-narrow is-bordered">
-      <tr><th>Result</th><th>Effect</th></tr>
+      <tr><th style="min-width: 70px;">Result</th><th>Effect</th></tr>
       <tr>
-        <td>1 - 8</td>
-        <td>The Active Player takes a Named Villain Card and figure and place it on this tile.</td>
+        <td>1 &mdash; 5</td>
+        <td><b>He's here!</b> The Active Player takes a Named Villain Card and figure and place it on this tile. This Villain activates every Hero's Villain Phase.</td>
       </tr>
       <tr>
-        <td>9 - 20</td>
-        <td>Nothing Happens.</td>
+        <td>5 &mdash; 10</td>
+        <td>Nothing Happens...</td>
+      </tr>
+      <tr>
+        <td>11 &mdash; 15</td>
+        <td>Draw 2 Monster cards for this tile.</td>
+      </tr>
+      <tr>
+        <td>16 &mdash; 20</td>
+        <td>Nothing Happens...</td>
       </tr>
     </table>
 
-    <p><b>Victory: </b> The heroes win the adventure if the group's score reaches 15 or above.</p>
-    <p><b>Defeat: </b> The heroes lose the adventure if the group's score is 14 or below.</p>
+    <p><b>Monster Placement I:</b> Instead of placing a Monster on a revealed tile, use Monster Tokens (available with Castle Ravenloft).</p>
+    <p><b>Monster Placement II:</b> Instead of placing a Monster on a revealed tile, draw a Monster card for each Hero in the adventure.</p>
+
   </div>
 </template>
 
