@@ -50,7 +50,11 @@
         <li>Starting tile</li>
         <li>{{ quest.tile }} tile</li>
         <li v-if="quest.addTreasure || quest.addTile">{{ quest.extraTile }} tile</li>
-        <li>Secret Stairway tile</li>
+        <li>
+          <span v-if="quest.game === 'CR'">Secret Stairway tile</span>
+          <span v-if="quest.game === 'WoA'">Tunnel Exit tile</span>
+          <span v-if="quest.game === 'LoD'">Surface Hollow tile</span>
+        </li>
         <li>A Villager token/figure</li>
         <li>{{ quest.villain }} monster card and figure</li>
         <li v-if="quest.addTreasure">{{ quest.item }} card and token</li>
@@ -88,7 +92,7 @@
           into those tiles. Then place the shuffled <b>{{ quest.tile }} stack</b> after the <b>8th</b> tile of
           the Dungeon tile stack. (The {{ quest.tile }} tile should appear between the 9th and 12th tile in the adventure.)</p>
 
-        <p>Take the <b>Secret Stairway</b> tile and three tiles from the <b>bottom</b> of the dungeon tile stack. Shuffle and place it after the 13th tile of the dungeon stack.</p>
+        <p>Take the <b>Surface Hollow</b> tile and three tiles from the <b>bottom</b> of the dungeon tile stack. Shuffle and place it after the 13th tile of the dungeon stack.</p>
       </div>
 
 
@@ -136,17 +140,24 @@
         <p v-if="quest.addTreasure"> <b>{{ quest.extraTile }} tile:</b> When a Hero reveals this tile, instead of drawing a Monster Card, place the <b>{{ quest.item }}</b> on this tile and draw 1 Monster Card or a Monster Token.</p>
         <p v-else-if="quest.addTile"><b>{{ quest.extraTile }} tile:</b> When a Hero reveals this tile, the active player draws 2 Monsters Cards for this tile instead.</p>
 
-        <div v-if="quest.game === 'CR'">
-          <!-- exit tile -->
-          <p><b>Secret Stairway tile:</b> When a Hero reveals and placed the Secret Stairway tile, read: </p>
-          <blockquote class="is-serif is-italic">"Turning around the corner, you almost tripped on a raised floor. The wall crumbles and moves revealing a stairway out of this decrepit and foul dungeon.</blockquote>
-        </div>
+        <!-- exit tile -->
+        <p>
+          <b v-if="quest.game === 'CR'">Secret Stairway tile:</b>
+          <b v-if="quest.game === 'WoA'">Tunnel Exit tile:</b>
+          <b v-if="quest.game === 'LoD'">Surface Hollow tile:</b> 
+          When a Hero reveals and placed this tile, read: </p>
+        <blockquote class="is-serif is-italic">"Turning around the corner, you stumbled and tripped on a raised floor. Bracing for a trap, you realized a dungeon wall reveals what seems to be an exit from this foul dungeon."</blockquote>
 
-        <p><b>Victory: </b> The heroes win the adventure when the Heroes and the Villager safely exits the dungeon from the start tile <span v-if="quest.game === 'CR'">and/or escaping via the Secret Stairway tile</span>.</p>
+        <p><b>Victory: </b> The heroes win the adventure when the Heroes and the Villager safely exits the dungeon from the start tile and/or escaping via the 
+          <span v-if="quest.game === 'CR'">Secret Stairway tile</span>
+          <span v-if="quest.game === 'WoA'">Tunnel Exit tile</span>
+          <span v-if="quest.game === 'LoD'">Surface Hollow tile</span></span>.</p>
       </div>
 
       <p><strong>Defeat:</strong> The Heroes lose the adventure if any Hero has 0 Hit Points at the start of his or her turn and there are no Healing Surge tokens remaining.</p>
 
+
+      <!-- aftermath -->
       <div class="xed-title is-serif">Aftermath</div>
 
       <p>If the Heroes complete the adventure without using any Healing Surges, each hero receives 300 gold pieces.</p>
@@ -156,7 +167,6 @@
       <p><span v-if="quest.type === 'rescue'">If the Villager did not survive the adventure, each the hero <b>pays the town</b> 100 GP.</span></p>
 
       <!-- additional loot -->
-
       <p v-if="quest.type !== 'fetch' && quest.addTreasure">Aquiring the <b>{{ quest.item }}</b> will grant each hero 100 GP.</p>
       <p v-if="quest.type !== 'hunt' && quest.addVillain || quest.type === 'rescue'">Defeating <b>{{ quest.villain }}</b> will grant each hero 100 GP.</p>
       
