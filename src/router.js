@@ -113,6 +113,17 @@ export default new Router({
           }
         },
         {
+          path: 'endless',
+          name: 'endless',
+          meta: {
+            title: 'Endless Dungeon Rules',
+            description: 'Endless Dungeon Rules - Get in, how long will you last?'
+          },
+          component: function () {
+            return import('./views/tools/adventureendless.vue');
+          }
+        },
+        {
           path: '',
           name: 'tools',
           meta: {

@@ -33,6 +33,14 @@
       <span>Adventure Generator</span>
     </div>
     <div class="nav-item">
+      <router-link :to="{ name: 'endless' }" class="icon">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="svg-icon">
+          <use href="#icon-map" />
+        </svg>
+      </router-link>
+      <span>Endless Dungeon</span>
+    </div>
+    <div class="nav-item">
       <router-link :to="{ name: 'd20roller' }" class="icon">
         <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="svg-icon">
           <use href="#icon-dice" />

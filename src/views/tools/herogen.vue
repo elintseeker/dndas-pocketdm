@@ -74,14 +74,13 @@ export default {
           vm.heroList = data;
         });
 
-
       setTimeout(() => {
         vm.pickHero();
       }, 350);
     },
     pickHeading: function() {
       const vm = this;
-      let headingSeed = Math.floor(Math.random() * vm.heroList.heading.length);
+      let headingSeed = vm.$getRandomNum(vm.heroList.heading.length);
       vm.heading = vm.heroList.heading[headingSeed];
     },
     pickHero: function() {
@@ -94,7 +93,7 @@ export default {
       vm.pickHeading();
 
       // get hero
-      let heroSeed = Math.floor(Math.random() * Object.keys(vm.heroList.herotype).length);
+      let heroSeed = vm.$getRandomNum(Object.keys(vm.heroList.herotype).length);
       // set hero
       vm.hero = Object.keys(vm.heroList.herotype)[heroSeed];
       // vm.hero = 'rogue';
@@ -145,21 +144,21 @@ export default {
 
       // roll for daily powers
       for(let i = 0; i < herodata.dailyNum; i++) {
-        let r = Math.floor(Math.random() * dailies.length);
+        let r = vm.$getRandomNum(dailies.length);
         vm.heroDailyPowers.push(dailies[r]);
         dailies.splice(r, 1);
       }
 
       // roll for at-will powers
       for(let i = 0; i < herodata.atwillNum; i++) {
-        let r = Math.floor(Math.random() * atwills.length);
+        let r = vm.$getRandomNum(atwills.length);
         vm.heroAtWillPowers.push(atwills[r]);
         atwills.splice(r, 1);
       }
 
       // roll for utility powers
       for(let i = 0; i < herodata.utilityNum; i++) {
-        let r = Math.floor(Math.random() * utils.length);
+        let r = vm.$getRandomNum(utils.length);
         vm.heroUtilityPowers.push(utils[r]);
         utils.splice(r, 1);
       }
