@@ -46,15 +46,15 @@ export default {
       vm.showCount = false;
 
       if (vm.difficulty === '3') {
-        index = Math.floor(Math.random() * vm.monsterTokensHard.length);
+        index = vm.$getRandomNum(vm.monsterTokensHard.length);
         console.error('hard mode');
         vm.monsterCount = vm.monsterTokensHard[index];
       } else if (vm.difficulty === '1') {
-        index = Math.floor(Math.random() * vm.monsterTokensEasy.length);
+        index = vm.$getRandomNum(vm.monsterTokensEasy.length);
         vm.monsterCount = vm.monsterTokensEasy[index];
         console.error('chicken!');
       } else {
-        index = Math.floor(Math.random() * vm.monsterTokens.length);
+        index = vm.$getRandomNum(vm.monsterTokens.length);
         vm.monsterCount = vm.monsterTokens[index];
       }
 

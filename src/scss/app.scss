@@ -87,11 +87,13 @@ a:not([class]) {
     background-color: $gray;
   }
 
-  table, .table,
-  .table th {
+  table, .table, .table th, .table td {
     color: $app-text-color !important;
     background-color: transparent;
+    border-color: $gray-darker;
   }
+
+  .table { font-size: 14px; }
 
   .card {
     margin-bottom: 32px;
@@ -129,6 +131,7 @@ a:not([class]) {
     display: flex;
     align-items: center;
     width: 100%;
+    margin-bottom: 16px;
   
     &:before,
     &:after {
