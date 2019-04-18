@@ -151,7 +151,7 @@
         <p><b>Victory: </b> The heroes win the adventure when the Heroes and the Villager safely exits the dungeon from the start tile and/or escaping via the 
           <span v-if="quest.game === 'CR'">Secret Stairway tile</span>
           <span v-if="quest.game === 'WoA'">Tunnel Exit tile</span>
-          <span v-if="quest.game === 'LoD'">Surface Hollow tile</span></span>.</p>
+          <span v-if="quest.game === 'LoD'">Surface Hollow tile</span>.</p>
       </div>
 
       <p><strong>Defeat:</strong> The Heroes lose the adventure if any Hero has 0 Hit Points at the start of his or her turn and there are no Healing Surge tokens remaining.</p>
