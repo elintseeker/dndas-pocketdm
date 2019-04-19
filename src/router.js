@@ -124,6 +124,17 @@ export default new Router({
           }
         },
         {
+          path: 'keeper',
+          name: 'keeper',
+          meta: {
+            title: 'Keeper',
+            description: 'Keeper - Competitive variant, one controls the monsters, the rest are heroes.'
+          },
+          component: function () {
+            return import('./views/tools/keeper.vue');
+          }
+        },
+        {
           path: '',
           name: 'tools',
           meta: {
