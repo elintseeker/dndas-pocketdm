@@ -2,7 +2,9 @@
   <div class="content home">
     <div class="abscenter">
       <div>
-        <img src="@/assets/logo.png" class="logo" alt="Pocket DM" />
+        <router-link :to="{ name: 'tools' }">
+          <img src="@/assets/logo.png" class="logo" alt="Pocket DM" />
+        </router-link>
         <h1 class="appname">{{ $route.meta.title  }}</h1>
         <small>v0.1.2</small>
       </div>

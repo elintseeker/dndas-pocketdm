@@ -14,13 +14,13 @@ html {
 
 // Default body styles
 body {
-  margin: 0; padding: 16px 16px 72px;
+  margin: 0; padding: 16px 16px 80px;
   font-family: $sans-stack;
   line-height: 1.6;
   color: $app-text-color;
   background-color: transparent;
   overscroll-behavior: none;
-  min-height: calc(100vh - 88px);
+  min-height: calc(100vh - 96px);
   background: url(/img/bg.svg) 0 0 no-repeat #13121b;
   background-size: 100% 100%;
 }
