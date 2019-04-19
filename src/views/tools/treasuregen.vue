@@ -1,7 +1,7 @@
 <template>
   <div class="content generator">
     <div class="results">
-      <strong v-if="treasureCount === null"> </strong>
+      <strong v-if="treasureCount === null">&mdash;</strong>
       <strong v-else-if="treasureCount === 'card'" class="gold"><span v-if="showCount">Treasure Card</span></strong>
       <strong v-else><span v-if="showCount">{{ treasureCount }} GP</span></strong>
     </div>
@@ -54,7 +54,7 @@ export default {
   },
   mounted() {
     this.$nextTick(() => {
-      this.pickTreasure();
+      // this.pickTreasure();
     });
   }
 };
