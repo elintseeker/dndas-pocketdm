@@ -32,8 +32,7 @@
   .adv-options {
     margin-top: -28px;
     margin-bottom: 16px;
-    padding: 32px 32px 16px;
-    border: 1px solid $gray-darker;
+    padding: 32px 8px 8px;
     border-top: 0;
   
     label {
@@ -53,34 +52,5 @@
     margin: 0 auto;
     color: $red;
     text-align: center;
-  }
-}
-
-.form-select {
-  position: relative;
-  margin: 0 auto 16px;
-
-  &:after {
-    content: "";
-    position: absolute;
-    top: 50%; right: 8px;
-    margin-top: -6px;
-    width: 10px;
-    height: 10px;
-    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGFyaWEtaGlkZGVuPSJ0cnVlIiBjbGFzcz0ic3ZnLWljb24iIHZpZXdCb3g9IjAgMCAzMjAgNTEyIj4gIDxwYXRoIGZpbGw9ImN1cnJlbnRDb2xvciIgZD0iTTMxIDE5MmgyNThjMTcgMCAyNiAyMiAxNCAzNEwxNzQgMzU1Yy04IDgtMjAgOC0yOCAwTDE3IDIyNmMtMTItMTItMy0zNCAxNC0zNHoiLz48L3N2Zz4=);
-    background-size: 8px;
-  }
-
-  & > select {
-    appearance: none;
-
-    display: block;
-    margin: 0;
-    padding: 8px;
-    width: 100%;
-
-    font-size: 16px;
-    border-radius: 0;
-    border: 0;
   }
 }

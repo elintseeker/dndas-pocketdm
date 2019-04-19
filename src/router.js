@@ -5,6 +5,9 @@ import Home from './views/Home.vue';
 Vue.use(Router);
 
 export default new Router({
+  scrollBehavior() {
+    return { x: 0, y: 0 };
+  },
   routes: [
     {
       path: '/',
@@ -40,7 +43,7 @@ export default new Router({
           name: 'seqplayref',
           meta: {
             title: 'Sequence of Play',
-            description: 'The player turn reference'
+            description: 'Player turn reference'
           },
           component: function () {
             return import('./views/tools/sequenceplay.vue');

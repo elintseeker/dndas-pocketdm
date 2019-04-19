@@ -6,7 +6,7 @@
           <use href="#icon-helm" />
         </svg>
       </router-link>
-      <span>Pick a Hero</span>
+      <span>Hero Generator</span>
     </div>
     <div class="nav-item">
       <router-link :to="{ name: 'monstergen' }" class="icon">

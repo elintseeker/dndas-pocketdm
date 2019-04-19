@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <div class="content about">
     <h1 class="title is-3 is-centered">{{ $route.meta.title }}</h1>
 
     <img src="../assets/logo.png" class="logo sm about" alt="Pocket DM" />

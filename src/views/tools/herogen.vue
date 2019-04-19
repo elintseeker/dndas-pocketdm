@@ -2,7 +2,8 @@
   <div>
     <div class="container generator">
       <div class="results">
-        <div>{{ heading }} <strong>{{ hero }}</strong>!</div>
+        <div v-if="!showHero">&mdash;</div>
+        <div v-else>{{ heading }} <strong>{{ hero }}</strong>!</div>
       </div>
 
       <div class="powers">
@@ -10,19 +11,22 @@
         <table class="table is-narrow">
           <tr>
             <th>Daily:</th>
-            <td v-for="power in heroDailyPowers" :key="power.id">{{ power }}</td>
+            <td v-if="!showHero">&mdash;</td>
+            <td v-else v-for="power in heroDailyPowers" :key="power.id">{{ power }}</td>
           </tr>
           <tr>
             <th>At-Will:</th>
-            <td v-for="power in heroAtWillPowers" :key="power.id">{{ power }}</td>
+            <td v-if="!showHero">&mdash;</td>
+            <td v-else v-for="power in heroAtWillPowers" :key="power.id">{{ power }}</td>
           </tr>
           <tr>
             <th>Utility:</th>
-            <td v-for="power in heroUtilityPowers" :key="power.id">{{ power }}</td>
+            <td v-if="!showHero">&mdash;</td>
+            <td v-else v-for="power in heroUtilityPowers" :key="power.id">{{ power }}</td>
           </tr>
         </table>
 
-        <button type="button" class="button is-primary is-large is-fullwidth" @click="pickHero" :disabled="disableButton">Pick another one</button>
+        <button type="button" class="button is-primary is-large is-fullwidth" @click="pickHero" :disabled="disableButton">I need a hero!</button>
 
         <p>&nbsp;</p>
 
@@ -53,6 +57,7 @@ export default {
       heroAtWillPowers: [],
       heroUtilityPowers: [],
       heading: null,
+      showHero: false,
       disableButton: false
     };
   },
@@ -73,10 +78,6 @@ export default {
         }).then((data)=>{
           vm.heroList = data;
         });
-
-      setTimeout(() => {
-        vm.pickHero();
-      }, 350);
     },
     pickHeading: function() {
       const vm = this;
@@ -87,6 +88,7 @@ export default {
       const vm = this;
       let dailies = [], atwills = [], utils = [];
 
+      vm.showHero = false;
       vm.disableButton = true;
 
       vm.reset();
@@ -164,6 +166,7 @@ export default {
       }
 
       setTimeout(()=>{
+        vm.showHero = true;
         vm.disableButton = false;
       }, 500);
     }
@@ -184,7 +187,6 @@ export default {
 <style lang="scss" scoped>
 .generator {
   .results {
-    margin-bottom: 32px;
     font-size: 52px;
     min-height: 128px;
   }
@@ -225,11 +227,11 @@ export default {
   max-width: 400px;
 
   margin: 0 auto;
-  padding: 16px 0;
+  padding: 8px 0;
   font-size: 14px;
   text-align: left;
 }
 
-.note { text-align: center; }
+.note { margin-top: 16px; text-align: center; }
 </style>
 
