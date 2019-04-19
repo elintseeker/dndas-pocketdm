@@ -26,7 +26,7 @@
 
     <div class="xed-title is-serif">Optional Rules</div>
 
-    <p><b>Dungeon Lord:</b> After placing the 5th tile, instead of placing a Monster, roll a d20:</p>
+    <p><b>Dungeon Lord:</b> When every 5th tile is placed, instead of placing a Monster, roll a d20:</p>
     <table class="table is-narrow is-bordered">
       <tr><th style="min-width: 70px;">Result</th><th>Effect</th></tr>
       <tr>
@@ -35,7 +35,7 @@
       </tr>
       <tr>
         <td>5 &mdash; 10</td>
-        <td>Nothing Happens...</td>
+        <td>Nothing Happens... Draw an Encounter Card.</td>
       </tr>
       <tr>
         <td>11 &mdash; 15</td>
@@ -46,6 +46,8 @@
         <td>Nothing Happens...</td>
       </tr>
     </table>
+
+    <p>When the 15th tile is placed and the Dungeon Lord hasn't appeared yet. The Active Hero takes the Villain Card and figure and places it on this tile for the final battle.</p>
 
     <p><b>Monster Placement I:</b> Instead of placing a Monster on a revealed tile, use Monster Tokens (available with Castle Ravenloft).</p>
     <p><b>Monster Placement II:</b> Instead of placing a Monster on a revealed tile, draw a Monster card for each Hero in the adventure.</p>

@@ -8,7 +8,7 @@
   height: 54px;
 
   background-color: $black-lighter;
-  box-shadow: 0 -4px 12px rgba($black, 0.3);
+  box-shadow: 0 -12px 24px rgba($black, 0.8);
   border-top: 1px solid $border-separator-color;
 
   .icon {
@@ -48,13 +48,22 @@
 .nav-tools {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 16px;
+  grid-gap: 8px;
 
   .nav-item {
     margin-bottom: 16px;
-    font-size: 13px;
+    font-size: 12px;
     text-align: center;
     cursor: pointer;
+
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      margin: 0 auto;
+      width: 80%;
+    }
 
     &:hover {
       .icon { color: $white; }
@@ -68,7 +77,6 @@
     justify-content: center;
 
     margin: 0 auto;
-    padding: 8px;
     color: $nav-color;
 
     border-radius: 8px;
@@ -80,38 +88,19 @@
 
     .svg-icon {
       display: block;
-      width: 48px;
-      height: 48px;
+      width: 50px;
+      height: 50px;
 
-      -webkit-filter: drop-shadow(0 0 8px rgba(0,0,0,0.8));
-      filter: drop-shadow(0 0 8px rgba(0,0,0,0.8));
+      -webkit-filter: drop-shadow(0 0 12px rgba(0,0,0,1));
+      filter: drop-shadow(0 0 12px rgba(0,0,0,1));
     }
   }
 
-  @media screen and (min-width: 801px) and (max-width: 1280px) {
+  @media screen and (min-width: 1025px) {
     grid-template-columns: repeat(4, 1fr);
 
     .nav-item {
       font-size: 14px;
-    }
-
-    .icon {
-      width: 72px;
-      height: 72px;
-
-      .svg-icon {
-        width: 50px;
-        height: 50px;
-      }
-    }
-  }
-
-
-  @media screen and (min-width: 1281px) {
-    grid-template-columns: repeat(4, 1fr);
-
-    .nav-item {
-      font-size: 16px;
     }
 
     .icon {

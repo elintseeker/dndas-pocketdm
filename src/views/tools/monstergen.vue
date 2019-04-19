@@ -7,7 +7,7 @@
     </div>
 
     <div class="results">
-      <strong v-if="monsterCount === null"> -- </strong>
+      <strong v-if="monsterCount === null">&mdash;</strong>
       <strong v-else><span v-if="showCount">{{ monsterCount }} Monsters</span></strong>
     </div>
 
@@ -69,7 +69,7 @@ export default {
   },
   mounted() {
     this.$nextTick(() => {
-      this.pickMonsters();
+      // this.pickMonsters();
     });
   }
 }
