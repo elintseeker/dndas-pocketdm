@@ -1,8 +1,8 @@
 <template>
-  <div class="content">
+  <div class="content houserules">
 
     <div class="card" id="dierolls">
-      <h2 class="xed-title is-serif">d20 rolls</h2>
+      <h2 class="xed-title is-serif">d20 Rolls</h2>
       <p>Rolling a 20 on d20 is always Critical Hit (+1 damage) and a success. Rolling a 1 is a Critical Miss and always a failure, this includes the Monsters "Miss: X" damage.</p>
     </div>
     
@@ -90,14 +90,14 @@
     </div>
 
     <div class="card" id="encounters">
-      <h2 class="xed-title is-serif">Encounter cards</h2>
-      <p>Draw an Encounter Card only when the Active player drew and placed a Black Arrowed Tile in his/her Exploration phase.</p>
+      <h2 class="xed-title is-serif">Encounter Cards</h2>
+      <p>Draw an Encounter Card only when the Active Hero's player drew and placed a Black Arrowed tile in his or her Exploration Phase.</p>
     </div>
 
     <div class="card" id="tiles">
-      <h2 class="xed-title is-serif">Tile distribution</h2>
-      <p>When setting up an adventure: Draw the number of dungeon tiles equal to the number of heroes plus the Named Tile.</p>
-      <p>For example; If there are 5 heroes playing, draw five dungeon tiles and the Named tile indicated in the adventure book and shuffle.</p>
+      <h2 class="xed-title is-serif">Extended Game/Tile Distribution</h2>
+      <p>When setting up an adventure: Draw the number of dungeon tiles equal to the number of heroes plus the Named tile.</p>
+      <p>For example; If there are 5 heroes playing, draw five dungeon tiles and the Named tile indicated in the adventure book and shuffle the tile stack. The place the tile stack according to the Adventure Book.</p>
     </div>
   </div>
 </template>

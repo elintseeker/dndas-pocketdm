@@ -52,9 +52,17 @@
 
   .nav-item {
     margin-bottom: 16px;
-    font-size: 13px;
+    font-size: 12px;
     text-align: center;
     cursor: pointer;
+
+    span {
+      display: block;
+      width: 95%;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
 
     &:hover {
       .icon { color: $white; }
@@ -68,7 +76,6 @@
     justify-content: center;
 
     margin: 0 auto;
-    padding: 8px;
     color: $nav-color;
 
     border-radius: 8px;

@@ -96,7 +96,9 @@ a:not([class]) {
   .table { font-size: 14px; }
 
   .card {
-    margin-bottom: 32px;
+    margin: 0 auto 32px;
+    width: 85%;
+    max-width: 980px;
     overflow: hidden;
     // padding: 16px;
     // color: $app-text-color;
