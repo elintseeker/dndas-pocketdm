@@ -46,6 +46,8 @@
 
 // tools nav grid
 .nav-tools {
+  padding-top: 16px;
+
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 8px;

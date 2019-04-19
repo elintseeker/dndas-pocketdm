@@ -43,7 +43,7 @@ export default new Router({
           name: 'seqplayref',
           meta: {
             title: 'Sequence of Play',
-            description: 'The player turn reference'
+            description: 'Player turn reference'
           },
           component: function () {
             return import('./views/tools/sequenceplay.vue');
