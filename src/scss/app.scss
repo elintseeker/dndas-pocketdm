@@ -5,7 +5,6 @@
 @import "../node_modules/bulma/sass/elements/button.sass";
 @import "../node_modules/bulma/sass/elements/table.sass";
 
-
 html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -19,12 +18,11 @@ body {
   font-family: $sans-stack;
   line-height: 1.6;
   color: $app-text-color;
-  // // background-color: $app-bg;
-  // background-color: transparent;
+  background-color: transparent;
+  overscroll-behavior: none;
   min-height: calc(100vh - 88px);
   background: url(/img/bg.svg) 0 0 no-repeat #13121b;
   background-size: 100% 100%;
-  overscroll-behavior: none;
 }
 
 h1, h2, h3 {
