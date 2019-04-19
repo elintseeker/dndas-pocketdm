@@ -1,0 +1,41 @@
+.form-select {
+  position: relative;
+  margin: 0 auto 16px;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 50%; right: 8px;
+    margin-top: -7px;
+    width: 9px;
+    height: 10px;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyBhcmlhLWhpZGRlbj0idHJ1ZSIgZm9jdXNhYmxlPSJmYWxzZSIgZGF0YS1wcmVmaXg9ImZhcyIgZGF0YS1pY29uPSJjYXJldC1kb3duIiByb2xlPSJpbWciIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDMyMCA1MTIiPjxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik0zMS4zIDE5MmgyNTcuM2MxNy44IDAgMjYuNyAyMS41IDE0LjEgMzQuMUwxNzQuMSAzNTQuOGMtNy44IDcuOC0yMC41IDcuOC0yOC4zIDBMMTcuMiAyMjYuMUM0LjYgMjEzLjUgMTMuNSAxOTIgMzEuMyAxOTJ6IiBjbGFzcz0iIj48L3BhdGg+PC9zdmc+);
+    background-repeat: none;
+    background-size: 9px;
+  }
+
+  & > select {
+    appearance: none;
+    outline: none;
+
+    display: block;
+    margin: 0;
+    padding: 8px;
+    width: 100%;
+    color: $app-text-color;
+    background-color: transparent;
+
+    font-size: 16px;
+    border-radius: 0;
+    border: 1px solid $gray-darker;
+  }
+}
+
+#tickmarks,
+input[type="text"],
+input[type="range"],
+.form-select,
+.button {
+  margin: 0 auto 8px;
+  max-width: 480px;
+}

@@ -184,7 +184,6 @@ export default {
 <style lang="scss" scoped>
 .generator {
   .results {
-    margin-bottom: 32px;
     font-size: 52px;
     min-height: 128px;
   }
@@ -225,11 +224,11 @@ export default {
   max-width: 400px;
 
   margin: 0 auto;
-  padding: 16px 0;
+  padding: 8px 0;
   font-size: 14px;
   text-align: left;
 }
 
-.note { text-align: center; }
+.note { margin-top: 16px; text-align: center; }
 </style>
 
