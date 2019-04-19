@@ -96,8 +96,7 @@
 
     <div class="card" id="tiles">
       <h2 class="xed-title is-serif">Extended Game/Tile Distribution</h2>
-      <p>When setting up an adventure: Draw the number of dungeon tiles equal to the number of heroes plus the Named tile.</p>
-      <p>For example; If there are 5 heroes playing, draw five dungeon tiles and the Named tile indicated in the adventure book and shuffle the tile stack. The place the tile stack according to the Adventure Book.</p>
+      <p>When setting up an adventure: Draw the number of dungeon tiles (minimum of 3) equal to the number of heroes and the Named tile. i.e. If there are 5 heroes playing, draw five dungeon tiles and the Named tile. Shuffle the tiles then place the tile stack according to the Adventure Book.</p>
     </div>
   </div>
 </template>

@@ -4,22 +4,26 @@
 @import "../node_modules/bulma/sass/utilities/_all.sass";
 @import "../node_modules/bulma/sass/elements/button.sass";
 @import "../node_modules/bulma/sass/elements/table.sass";
-// @import "../node_modules/bulma/sass/grid/columns.sass";
+
 
 html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: $app-bg;
+  background-color: transparent;
   overscroll-behavior: none;
 }
 
 // Default body styles
 body {
-  margin: 0; padding: 16px 16px 96px;
+  margin: 0; padding: 16px 16px 72px;
   font-family: $sans-stack;
   line-height: 1.6;
   color: $app-text-color;
-  background-color: $app-bg;
+  // // background-color: $app-bg;
+  // background-color: transparent;
+  min-height: calc(100vh - 88px);
+  background: url(/img/bg.svg) 0 0 no-repeat #13121b;
+  background-size: 100% 100%;
   overscroll-behavior: none;
 }
 
@@ -49,10 +53,20 @@ a:not([class]) {
 
 .red { color: $red; }
 
+p {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
 
 #app {
   .title, .subtitle {
-    margin-bottom: 1rem;
+    margin-bottom: 16px;
+  }
+
+  .description {
+    margin-bottom: 16px;
+    max-width: 80%;
   }
 
   .is-centered {
@@ -78,11 +92,6 @@ a:not([class]) {
     }
   }
 
-  p {
-    margin-top: 0;
-    margin-bottom: 1rem;
-  }
-
   hr {
     background-color: $gray;
   }
@@ -100,12 +109,8 @@ a:not([class]) {
     width: 85%;
     max-width: 980px;
     overflow: hidden;
-    // padding: 16px;
-    // color: $app-text-color;
-    // border: 1px solid $gray-darker;
-    // border-radius: 8px;
-    // box-shadow: 0 0 8px rgba(0,0,0,0.3);
 
+    p:last-child,
     &:last-of-type {
       margin-bottom: 0;
     }
@@ -159,6 +164,7 @@ a:not([class]) {
   }
 }
 
+@import 'forms';
 @import 'ui/nav';
 @import 'ui/generator';
 @import 'ui/roller';
