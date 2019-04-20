@@ -20,6 +20,27 @@ export default new Vuex.Store({
       CR: true,
       WoA: false,
       LoD: false
+    },
+    hp: {
+      hitpoints: 0,
+      hero: {
+        cleric: {
+          name: "Cleric",
+          hp: 8
+        },
+        fighter: {
+          name: "Fighter/Paladin",
+          hp: 10
+        },
+        mage: {
+          name: "Sorcerer/Wizard",
+          hp: 6
+        },
+        rogue: {
+          name: "Ranger/Rogue",
+          hp: 8
+        }
+      }
     }
   },
   mutations: {

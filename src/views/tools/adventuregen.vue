@@ -1,7 +1,7 @@
 <template>
   <div class="content generator adventure">
     <p class="description">{{ $route.meta.description }}</p>
-    <a href="#" class="adv-optiontoggle" v-on:click.prevent="toggleOptions"><span>Adventure Options</span></a>
+    <a href="#" class="link red adv-optiontoggle" v-on:click.prevent="toggleOptions">Adventure Options</a>
     <div class="adv-options" v-show="showOptions || quest.type === null">
       <div>
         <div class="form-select">
@@ -11,7 +11,7 @@
             <option value="LoD">Legend of Drizzt</option>
           </select>
         </div>
-        
+
         <label><input type="checkbox" v-model="quest.addVillain">  Additional Named Villain</label>
         <label><input type="checkbox" v-model="quest.addTreasure">  Additional Treasure Card</label>
         <label><input type="checkbox" v-model="quest.addTile"> Additional Named Tile</label>
@@ -67,7 +67,7 @@
 
       <div v-if="quest.type === 'hunt'">
         <p v-if="quest.addTreasure || quest.addTile">Shuffle the rest of the Dungeon tiles stack. Take 3 tiles from it, and shuffle the <b>{{ quest.tile }}</b> tile
-          into those tiles to form the <b>{{ quest.tile }} stack</b>. Take the 3 more tiles from the Dungeon stack and shuffle with 
+          into those tiles to form the <b>{{ quest.tile }} stack</b>. Take the 3 more tiles from the Dungeon stack and shuffle with
           the <b>{{ quest.extraTile }}</b> tile to form the <b>{{ quest.extraTile }} stack</b>.
         </p>
         <p v-else>Shuffle the rest of the Dungeon tiles stack. Take 3 tiles from it, and shuffle the <b>{{ quest.tile }}</b> tile
@@ -77,7 +77,7 @@
 
       <div v-if="quest.type === 'fetch'">
         <p v-if="quest.addVillain || quest.addTile">Shuffle the rest of the Dungeon tiles stack. Take 3 tiles from it, and shuffle the <b>{{ quest.tile }}</b> tile
-          into those tiles to form the <b>{{ quest.tile }} stack</b>. Take the 3 more tiles from the Dungeon stack and shuffle with 
+          into those tiles to form the <b>{{ quest.tile }} stack</b>. Take the 3 more tiles from the Dungeon stack and shuffle with
           the <b>{{ quest.extraTile }}</b> tile to form the <b>{{ quest.extraTile }} stack</b>.
         </p>
         <p v-else>Shuffle the rest of the Dungeon tiles stack. Take 3 tiles from it, and shuffle the <b>{{ quest.tile }}</b> tile
@@ -87,7 +87,7 @@
 
       <div v-if="quest.type === 'rescue'">
         <p v-if="quest.addTreasure || quest.addTile">Shuffle the rest of the Dungeon tiles stack. Take 3 tiles from it, and shuffle the <b>{{ quest.tile }}</b> tile
-          into those tiles to form the <b>{{ quest.tile }} stack</b>. Take the 3 more tiles from the Dungeon stack and shuffle with 
+          into those tiles to form the <b>{{ quest.tile }} stack</b>. Take the 3 more tiles from the Dungeon stack and shuffle with
           the <b>{{ quest.extraTile }}</b> tile to form the <b>{{ quest.extraTile }} stack</b>.
         </p>
         <p v-else>Shuffle the rest of the Dungeon tiles stack. Take 3 tiles from it, and shuffle the <b>{{ quest.tile }}</b> tile
@@ -105,7 +105,7 @@
         <p><b>{{ quest.tile }} tile:</b> When a Hero reveals the {{ quest.tile }}, instead of drawing Monster cards for the active tile, the active player takes the {{ quest.villain }} card and places the figure on this tile. Then draw an Encounter Card.</p>
         <p v-if="quest.addTreasure"><b>{{ quest.extraTile }} tile:</b> When a Hero reveals this tile, instead of drawing Monster cards, place <b>{{ quest.item }}</b> token on this tile instead then draw a Monster Card.</p>
         <p v-else-if="quest.addTile"><b>{{ quest.extraTile }} tile:</b> When a Hero reveals this tile, the active player draws 2 Monsters Cards for this tile instead.</p>
-        
+
         <p><b>Victory: </b> The heroes win the adventure when they defeat <b>{{ quest.villain }}</b>.</p>
       </div>
 
@@ -114,7 +114,7 @@
         <p><b>{{ quest.tile }} tile:</b> When a Hero reveals the {{ quest.tile }}, instead of drawing Monster cards for the active tile, place the {{ quest.item }} token on this tile instead then draw 2 Monster Cards.</p>
         <p v-if="quest.addVillain"><b>{{ quest.extraTile }} tile:</b> When a Hero reveals this tile, instead of drawing Monster cards, the active player takes the <b>{{ quest.villain }}</b> card and places the figure on this tile.</p>
         <p v-else-if="quest.addTile"><b>{{ quest.extraTile }} tile:</b> When a Hero reveals this tile, the active player draws 2 Monsters Cards for this tile instead.</p>
-        
+
         <p><b>Victory: </b> The heroes win the adventure when they acquire the <b>{{ quest.item }}</b>.</p>
       </div>
 
@@ -143,12 +143,12 @@
         <p>
           <b v-if="quest.game === 'CR'">Secret Stairway tile:</b>
           <b v-if="quest.game === 'WoA'">Tunnel Exit tile:</b>
-          <b v-if="quest.game === 'LoD'">Surface Hollow tile:</b> 
+          <b v-if="quest.game === 'LoD'">Surface Hollow tile:</b>
           When a Hero reveals and placed this tile, read: </p>
 
         <blockquote class="is-serif is-italic">"Turning around the corner, you stumbled and tripped on a raised floor. Bracing for a trap, you realized a dungeon wall reveals what seems to be an exit from this foul dungeon."</blockquote>
 
-        <p><b>Victory: </b> The heroes win the adventure when the Heroes and the Villager safely exits the dungeon from the start tile and/or escaping via the 
+        <p><b>Victory: </b> The heroes win the adventure when the Heroes and the Villager safely exits the dungeon from the start tile and/or escaping via the
           <span v-if="quest.game === 'CR'">Secret Stairway tile</span>
           <span v-if="quest.game === 'WoA'">Tunnel Exit tile</span>
           <span v-if="quest.game === 'LoD'">Surface Hollow tile</span>.</p>
@@ -163,13 +163,13 @@
       <p>If the Heroes complete the adventure without using any Healing Surges, each hero receives 300 gold pieces.</p>
 
       <p>If the Heroes complete the adventure, but used at least one Healing Surge, they each receives 200 gold pieces.</p>
-      
+
       <p><span v-if="quest.type === 'rescue'">If the Villager did not survive the adventure, each the hero <b>pays the town</b> 100 GP.</span></p>
 
       <!-- additional loot -->
       <p v-if="quest.type !== 'fetch' && quest.addTreasure">Aquiring the <b>{{ quest.item }}</b> will grant each hero 100 GP.</p>
       <p v-if="quest.type !== 'hunt' && quest.addVillain || quest.type === 'rescue'">Defeating <b>{{ quest.villain }}</b> will grant each hero 100 GP.</p>
-      
+
     </div>
   </div>
 </template>
@@ -284,16 +284,16 @@ export default {
     getExtraTile: function(set) {
       const vm = this;
       let seed = vm.$getRandomNum(vm.tilesList[set].length);
-      vm.$store.state.quest.extraTile = vm.tilesList[set][seed];  
+      vm.$store.state.quest.extraTile = vm.tilesList[set][seed];
 
       // return;
       if (vm.quest.extraTile === vm.quest.tile) {
         console.log('rerolling');
         vm.getExtraTile(set);
         return;
-      } 
+      }
 
-      vm.$store.state.quest.extraTile = vm.tilesList[set][seed];  
+      vm.$store.state.quest.extraTile = vm.tilesList[set][seed];
     }
   },
   mounted() {
