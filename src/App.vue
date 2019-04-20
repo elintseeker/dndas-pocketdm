@@ -1,9 +1,13 @@
 <template>
   <div id="app">
+    <div class="top-bar">
+      <router-link :to="{ name: 'tools' }"><img src="@/assets/logo.png" class="logo"></router-link>
+    </div>
+
     <router-view />
 
     <div class="app-nav">
-      <router-link :to="{ name: 'tools' }" class="icon">
+      <router-link :to="{ name: 'home' }" class="icon">
         <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="svg-icon">
           <use href="#icon-axe"></use>
         </svg>
@@ -17,7 +21,7 @@
       </router-link> -->
       <router-link :to="{ name: 'about' }" class="icon">
         <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="svg-icon">
-          <use href="#icon-info"></use>          
+          <use href="#icon-info"></use>
         </svg>
         <span>About</span>
       </router-link>
@@ -56,7 +60,7 @@
           <path d="M145 81l8 16c37-3 68-18 93-45l-9-18c-23 27-54 42-92 47z"/>
           <ellipse cx="125" cy="40" rx="52" ry="11" transform="rotate(-36 125 40)"/>
         </g>
-      </symbol> 
+      </symbol>
       <symbol viewBox="0 0 512 512" id="icon-map">
         <path fill="currentColor" fill-rule="evenodd" d="M375 457l-239-41V55l239 41 119-47v361l-119 47zM172 139c8 3 18 12 28 27l20-14a94 94 0 0 0-39-35l-9 22zm44 55c1 12-1 20-9 37l22 11 9-22c2-10 3-19 2-29l-24 3zm-22 87c0 11 3 23 9 37l3 4 8 8 18-16-9-10c-5-11-5-16-5-24l-24 1zm50 85c12 12 26 20 45 25l6-23c-14-4-25-10-34-19l-17 17zm103 9c8-12 16-27 22-44l-23-8c-5 15-12 28-19 38l20 14zm44-245l-17 23-22 13-5 25-7 3-9-9-26-6 15 38 25 18-2 18 17 10 7 23 24-17 24 17 7-23 17-10-2-18 25-18 16-38-26 6-9 9-8-3-4-25-23-13-17-23zm-11 76l6 6-3 8-19-6-12-13 28 5zm23 0l28-5-13 13-18 6-4-8 7-6zM126 416L19 463V102l107-47v361zm-41-74l-2-46-24 1 2 46 24-1zm0-80l1-45-24-1-1 46h24zm11-79c7-16 14-29 20-37l-18-15c-9 10-17 25-24 43l22 9z"/>
       </symbol>
@@ -87,10 +91,38 @@
         <path fill="currentColor" d="M207 67v174L81 180C20 147 1 89 1 75c0-10 9-8 15-8h191z"/>
       </symbol>
     </svg>
-
-
+    <transition name="fade">
+      <div class="abscenter splash" v-if="splash">
+        <div>
+          <router-link :to="{ name: 'tools' }">
+            <img src="@/assets/logo.png" class="logo" alt="Pocket DM" />
+          </router-link>
+          <h1 class="appname">{{ $route.meta.title  }}</h1>
+          <small>v0.1.2</small>
+        </div>
+      </div>
+    </transition>
   </div>
 </template>
+
+<script>
+import { setTimeout } from 'timers';
+export default {
+  data(){
+    return {
+      splash: true
+    }
+  },
+  mounted(){
+    this.$nextTick(() => {
+      setTimeout(()=>{
+        this.splash = false;
+      }, 3000);
+    });
+  }
+}
+</script>
+
 
 <style lang="scss">
 @import './scss/app.scss';

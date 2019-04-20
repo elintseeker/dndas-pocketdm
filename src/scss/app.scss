@@ -66,7 +66,7 @@ blockquote {
   font-style: italic;
   text-align: center;
 
-  strong { display: inline; }    
+  strong { display: inline; }
 }
 
 
@@ -116,7 +116,7 @@ blockquote {
 
     .notes { font-size: 14px; }
     .isfloat {
-      float: left; 
+      float: left;
       margin-right: 8px;
     }
   }
@@ -124,7 +124,33 @@ blockquote {
   .footer-buttons {
     padding: 32px 0;
   }
+
+  .splash {
+    position: fixed;
+    top: 0; right: 0; bottom: 0; left: 0;
+    z-index: 500;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    background: url(/img/bg.svg) 0 0 no-repeat;
+    background-size: 100% 100%;
+
+    > div {
+      margin-top: -64px;
+    }
+  }
 }
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 1s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
 
 @import 'titles';
 @import 'buttons';
