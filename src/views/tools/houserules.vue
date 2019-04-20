@@ -2,12 +2,12 @@
   <div class="content houserules">
 
     <div class="card" id="dierolls">
-      <h2 class="xed-title is-serif">d20 Rolls</h2>
+      <h2 class="xed-title">d20 Rolls</h2>
       <p>Rolling a 20 on d20 is always Critical Hit (+1 damage) and a success. Rolling a 1 is a Critical Miss and always a failure, this includes the Monsters "Miss: X" damage.</p>
     </div>
     
     <div class="card" id="initiative">
-      <h2 class="xed-title is-serif">Simple Initiative System I</h2>
+      <h2 class="xed-title">Simple Initiative System I</h2>
       <p><strong>Hero Phase:</strong> Moving to an unexplored edge triggers placement of a new tile. After drawing a new tile, place a monster on the new tile. Roll a d20 for your Hero and roll again for the Monster(s) side.</p>
       <ul>
         <li><strong>Active Hero rolled higher than the Monster(s)</strong> - Use the remaining movement points and/or attack actions, if applicable.</li>
@@ -18,7 +18,7 @@
     </div>
 
     <div class="card" id="initiative2">
-      <h2 class="xed-title is-serif">Simple Initiative System II</h2>
+      <h2 class="xed-title">Simple Initiative System II</h2>
       <p><strong>Hero Phase:</strong> Moving to an unexplored edge triggers placement of a new tile. After drawing a new tile, check the arrow marker of the new tile.</p>
       <ul>
         <li><strong>White arrowed tile</strong> - Active Hero has initiative. Use the remaining movement points and/or attack actions, if applicable.</li>
@@ -29,7 +29,7 @@
     </div>
 
     <div class="card" id="basiclevelup">
-      <h2 class="xed-title is-serif">Level Up/Progression System <small>(beyond Level 2)</small></h2>
+      <h2 class="xed-title">Level Up/Progression System <small>(beyond Level 2)</small></h2>
       <table class="table is-narrow is-bordered">
         <tr>
           <th>Level</th>
@@ -63,7 +63,7 @@
       <p class="notes"><b>Notes:</b> Take note and record of XP between adventures. You can only level up your Hero if all other heroes in the adventure are at equal levels. This is to avoid having a 5th level hero with 2nd level heroes in an adventure. Either use XP cost or GP cost when leveling up your heroes.</p>
     </div>
     <div class="card" id="monstertokens">
-      <h2 class="xed-title is-serif">Monster tokens</h2>
+      <h2 class="xed-title">Monster tokens</h2>
       <p>When revealing a tile, use the Monster Tokens (from Castle Ravenloft) instead of drawing a Monster Card. This is to add a random number of Monsters for each revealed tile.</p> 
       <p>Shuffle the Monster Tokens (in a container or bag), draw and flip over the token then draw that many Monster Cards for that tile.</p>
       
@@ -90,12 +90,12 @@
     </div>
 
     <div class="card" id="encounters">
-      <h2 class="xed-title is-serif">Encounter Cards</h2>
+      <h2 class="xed-title">Encounter Cards</h2>
       <p>Draw an Encounter Card only when the Active Hero's player drew and placed a Black Arrowed tile in his or her Exploration Phase.</p>
     </div>
 
     <div class="card" id="tiles">
-      <h2 class="xed-title is-serif">Extended Game/Tile Distribution</h2>
+      <h2 class="xed-title">Extended Game/Tile Distribution</h2>
       <p>When setting up an adventure: Draw the number of dungeon tiles (minimum of 3) equal to the number of heroes and the Named tile. i.e. If there are 5 heroes playing, draw five dungeon tiles and the Named tile. Shuffle the tiles then place the tile stack according to the Adventure Book.</p>
     </div>
   </div>
