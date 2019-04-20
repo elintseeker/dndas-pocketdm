@@ -1,5 +1,6 @@
 <template>
   <div class="content houserules">
+    <p class="description">{{ $route.meta.description }}</p>
 
     <div class="card" id="dierolls">
       <h2 class="xed-title">d20 Rolls</h2>

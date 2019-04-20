@@ -1,5 +1,6 @@
 <template>
   <div class="content generator adventure">
+    <p class="description">{{ $route.meta.description }}</p>
 
     <blockquote>A booming voice echoes throughout the dungeon... "You think you are safe here?! You think you can find what you seek? You're in my domain now!"</blockquote>
 

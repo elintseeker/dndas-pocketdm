@@ -1,6 +1,8 @@
 <template>
   <div>
     <div class="container generator">
+      <p class="description">{{ $route.meta.description }}</p>
+
       <div class="results">
         <div v-if="!showHero">&mdash;</div>
         <div v-else>{{ heading }} <strong>{{ hero }}</strong>!</div>
@@ -26,9 +28,10 @@
           </tr>
         </table>
 
-        <button type="button" class="button is-primary is-large is-fullwidth" @click="pickHero" :disabled="disableButton">I need a hero!</button>
-
-        <p>&nbsp;</p>
+        <div class="button-group">
+          <button type="button" class="button is-primary is-large" @click="pickHero" :disabled="disableButton">I need a hero!</button>
+          <!-- <button type="button" class="button is-large" @click="saveHero">Save</button> -->
+        </div>
 
         <div class="xed-title is-serif">Options</div>
 
@@ -107,7 +110,7 @@ export default {
       }
 
       const herodata = vm.heroList.herotype[vm.hero];
-      
+
       // dirty! there is a better way of doing this
       if (vm.heroskills.CR) {
         // console.log('CR checked');
@@ -125,7 +128,7 @@ export default {
         const woadailies = herodata.WoA.daily; // copies data to new arrays
         const woaatwills = herodata.WoA.atwill;
         const woautils   = herodata.WoA.utility;
-        
+
         dailies = dailies.concat(woadailies);
         atwills = atwills.concat(woaatwills);
         utils = utils.concat(woautils);
@@ -136,7 +139,7 @@ export default {
         const d = herodata.LoD.daily; // copies data to new arrays
         const a = herodata.LoD.atwill;
         const u = herodata.LoD.utility;
-        
+
         dailies = dailies.concat(d);
         atwills = atwills.concat(a);
         utils = utils.concat(u);
@@ -169,6 +172,9 @@ export default {
         vm.showHero = true;
         vm.disableButton = false;
       }, 500);
+    },
+    saveHero: function(){
+
     }
   },
   mounted() {
@@ -201,7 +207,7 @@ export default {
   max-width: 480px;
 
   .table {
-    margin: 0 auto 32px;
+    margin: 0 auto 24px;
     background: transparent;
 
     tr, th, td {
@@ -214,10 +220,6 @@ export default {
       display: block;
     }
   }
-}
-
-.xed-title {
-  margin-top: 32px;
 }
 
 .hero-options {

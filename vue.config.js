@@ -2,7 +2,8 @@ module.exports = {
   pwa: {
     workboxOptions: {
         skipWaiting: true
-    }
+    },
+    themeColor: '#222'
   },
   // css: {
   //   loaderOptions: {
