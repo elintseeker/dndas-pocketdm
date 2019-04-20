@@ -3,19 +3,21 @@
 
     <blockquote>A booming voice echoes throughout the dungeon... "You think you are safe here?! You think you can find what you seek? You're in my domain now!"</blockquote>
 
-    <p>One player will play as the <b>Keeper</b>, who controls all the Monsters and Encounters throughout the adventure.</p>
-
     <div class="xed-title is-serif">Setup</div>
 
-    <p>Pick an adventure from the Adventure Book. Each player (other than the Keeper) chooses one of the 1st-level Heroes and selects Power Cards for their chosen Hero. Each player also draws a Treasure Card with an item on it and one Healing Surge.</p>
+    <p>Pick an adventure from the Adventure Book. 
 
-    <p>The Keeper Shuffles the Monster Cards into their own deck. Do the same for the Encounter Cards and Treasure Cards, and set it aside for use on this adventure.*</p>
+    <p>One player will play as <b>The Keeper</b>, who controls the Monsters and Encounters to thwart the Heroes in the adventure. The Keeper shuffles the Monster Cards into their own deck. Do the same for the Encounter Cards and Treasure Cards, and set it aside for use on this adventure.*</p>
+      
+    <p>Each player (other than the Keeper) chooses one of the 1st-level Heroes and selects Power Cards for their chosen Hero. Each player also draws a Treasure Card with an item on it and one Healing Surge.</p>
 
     <p>Place the Start tile on the table then place each Hero on any square of the tile.</p>
 
+    <footer><small>* Remove all Encounter Cards that are beneficial to the Heroes and place it back to the box.</small></footer>
+
     <div class="xed-title is-serif">Hero Phase</div>
 
-    <p>Each player rolls a d20 for initiative. Play progresses around the table, starting with the player with the highest initiative.</p>
+    <p>Each player rolls the dice for initiative. Play progresses around the table, starting with the player who rolled with the highest initiative.</p>
     
     <p>When a Hero lands on a tile's unexplored edge, it doesn't end the Hero's turn. The Active Player draws the top tile from the Dungeon Tile stack then he or she can use his or her remaining movement if available.</p>
 
@@ -84,6 +86,7 @@
     
     <p><strong>Victory:</strong> The Heroes complete the adventure if they complete objective from the Adventure Book.</p>
     <p><strong>Defeat:</strong> The Heroes lose the adventure if any Hero has 0 Hit Points at the start of his or her turn and there are no Healing Surge tokens remaining.</p>
+
   </div>
 </template>
 
