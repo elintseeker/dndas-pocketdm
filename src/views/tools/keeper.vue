@@ -1,7 +1,7 @@
 <template>
   <div class="content generator adventure">
 
-    <div class="adv-intro">A booming voice echoes throughout the dungeon... "You think you are safe here?! You think you can find what you seek? You're in my domain now!"</div>
+    <blockquote>A booming voice echoes throughout the dungeon... "You think you are safe here?! You think you can find what you seek? You're in my domain now!"</blockquote>
 
     <p>One player will play as the <b>Keeper</b>, who controls all the Monsters and Encounters throughout the adventure.</p>
 
