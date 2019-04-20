@@ -1,0 +1,33 @@
+.title, .subtitle {
+  margin-bottom: 16px;
+}
+
+.xed-title {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  font-family: $serif-stack;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 20px;
+
+  margin-top: 32px;
+  margin-bottom: 32px;
+
+  &:before,
+  &:after {
+    content: "";
+    flex: 1;
+    height: 0;
+    border-top: 1px solid $gray-darker;
+  }
+
+  &:before {
+    margin-right: 8px;
+  }
+
+  &:after {
+    margin-left: 8px;
+  }
+}

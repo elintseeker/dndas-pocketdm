@@ -8,9 +8,7 @@
       <li>Villain Phase</li>
     </ol>
 
-    <hr>
-
-    <h2 class="subtitle is-6">Hero Phase</h2>
+    <h2 class="xed-title">Hero Phase</h2>
     <ol>
       <li>If you have 0 Hit Points, use a Healing Surge token if one is available.</li>
       <li>Perform one of the following actions:
@@ -22,14 +20,14 @@
       </li>
     </ol>
 
-    <h2 class="subtitle is-6">Exploration Phase</h2>
+    <h2 class="xed-title">Exploration Phase</h2>
     <ol>
       <li>If your Hero occupies a square adjacent to an unexplored edge, go to Step 2. Otherwise, go to Villain Phase.</li>
       <li>Draw a Dungeon Tile and place it with its triangle adjacent to the unexplored edge.</li>
       <li>Draw a Monster Card and place that Monster on the new tile.</li>
     </ol>
 
-    <h2 class="subtitle is-6">Villain Phase</h2>
+    <h2 class="xed-title">Villain Phase</h2>
     <ol>
       <li>If you didn't place a tile during your Exploration Phase, or if you placed a tile with a black triangle, draw an Encounter Card.</li>
       <li>If a Villain in play, activate it.</li>
