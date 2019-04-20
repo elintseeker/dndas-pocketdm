@@ -14,20 +14,21 @@ html {
 
 // Default body styles
 body {
-  margin: 0; padding: 16px 16px 80px;
+  margin: 0; padding: 64px 16px 80px;
   font-family: $sans-stack;
+  font-size: 14px;
   line-height: 1.6;
   color: $app-text-color;
   background-color: transparent;
   overscroll-behavior: none;
-  min-height: calc(100vh - 96px);
+  min-height: calc(100vh - 144px);
   background: url(/img/bg.svg) 0 0 no-repeat #13121b;
   background-size: 100% 100%;
 }
 
 h1, h2, h3 {
   margin: 0;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .logo {
@@ -56,11 +57,24 @@ p {
   margin-bottom: 16px;
 }
 
+blockquote {
+  margin: 24px auto;
+  max-width: 90%;
+
+  font-family: $serif-stack;
+  font-size: 1rem;
+  font-style: italic;
+  text-align: center;
+
+  strong { display: inline; }    
+}
+
 
 #app {
   .description {
-    margin-bottom: 32px;
-    max-width: 75%;
+    margin: 0 auto 16px;
+    font-weight: 300;
+    text-align: center;
   }
 
   .is-centered {
@@ -73,17 +87,6 @@ p {
 
   .is-italic {
     font-style: italic;
-  }
-
-  .button.is-primary {
-    &,
-    &:focus,
-    &:active {
-      background-color: $red-dark;
-      border: 1px solid $red;
-      outline: none;
-      box-shadow: none;
-    }
   }
 
   hr {
@@ -99,9 +102,7 @@ p {
   .table { font-size: 14px; }
 
   .card {
-    margin: 0 auto 32px;
-    width: 85%;
-    max-width: 980px;
+    margin: 0 auto 16px;
     overflow: hidden;
 
     p:last-child,
@@ -126,9 +127,10 @@ p {
 }
 
 @import 'titles';
+@import 'buttons';
 @import 'forms';
 @import 'ui/nav';
 @import 'ui/generator';
 @import 'ui/roller';
-@import 'ui/_adventure.scss';
+@import 'ui/adventure';
 @import 'ui/dndcard';

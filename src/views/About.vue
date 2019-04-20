@@ -1,5 +1,9 @@
 <template>
   <div class="content about">
+    <div class="top-bar">
+      <router-link :to="{ name: 'tools' }"><img src="@/assets/logo.png" class="logo"></router-link>
+    </div>
+
     <h1 class="title is-3 is-centered">{{ $route.meta.title }}</h1>
 
     <img src="../assets/logo.png" class="logo sm about" alt="Pocket DM" />

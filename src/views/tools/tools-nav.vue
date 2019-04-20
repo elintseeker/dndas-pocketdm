@@ -1,5 +1,6 @@
 <template>
 <div>
+  <p class="description">{{ $route.meta.description }}</p>
   <div class="nav-tools">
     <div class="nav-item">
       <router-link :to="{ name: 'herogen' }" class="icon">

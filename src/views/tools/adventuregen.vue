@@ -1,5 +1,6 @@
 <template>
   <div class="content generator adventure">
+    <p class="description">{{ $route.meta.description }}</p>
     <a href="#" class="adv-optiontoggle" v-on:click.prevent="toggleOptions"><span>Adventure Options</span></a>
     <div class="adv-options" v-show="showOptions || quest.type === null">
       <div>
