@@ -43,7 +43,7 @@
     <div class="nav-item">
       <router-link :to="{ name: 'keeper' }" class="icon">
         <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="svg-icon">
-          <use href="#icon-map" />
+          <use href="#icon-keeper" />
         </svg>
       </router-link>
       <span>Keeper</span>
