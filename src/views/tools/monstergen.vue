@@ -1,5 +1,7 @@
 <template>
   <div class="content generator">
+    <p class="description">{{ $route.meta.description }}</p>
+
     <div class="mode">
       <strong class="red" v-if="difficulty == 3">Hard mode</strong>
       <strong class="blue" v-else-if="difficulty == 1">Easy mode</strong>

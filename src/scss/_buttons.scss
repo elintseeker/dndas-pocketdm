@@ -1,0 +1,45 @@
+.button {
+  &,
+  &:active,
+  &:hover,
+  &:focus,
+  &:focus:not(:active) {
+    color: $red-dark;
+    background-color: transparent;
+    border: 1px solid $red-dark;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+    box-shadow: none;
+
+    &.is-primary,
+    &.is-primary:hover,
+    &.is-primary:focus,
+    &.is-primary:focus:not(:active) {
+      color: $white;
+      -webkit-tap-highlight-color: transparent;
+      background-color: $red-dark;
+      outline: none;
+      box-shadow: none;
+      // border: 1px solid $red;
+    }
+  }
+
+  &.is-large {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+}
+
+
+.button-group {
+  display: flex;
+  align-items: center;
+
+  .is-primary {
+    flex: 1;
+  }
+
+  .button + .button {
+    margin-left: 8px;
+  }
+}

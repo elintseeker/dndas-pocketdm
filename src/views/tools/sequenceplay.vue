@@ -1,5 +1,7 @@
 <template>
   <div class="content">
+    <p class="description">{{ $route.meta.description }}</p>
+
     <p>On your turn, complete these phases in order:</p>
 
     <ol>

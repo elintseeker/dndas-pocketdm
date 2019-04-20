@@ -1,8 +1,9 @@
 <template>
   <div class="content generator adventure">
+    <p class="description">{{ $route.meta.description }}</p>
+
     <blockquote>
-      "Glad we used that scroll huh? That was a long way down." your companion muttered. Amidst the dust and broken floors around you, apparently you and your 
-      companions stumbled upon a network of tunnels and unfinished caverns bored thru solid rock. "Be prepared people! I don't think we're welcomed here..."
+      "Glad we used that scroll huh? That was a long way down." your companion muttered. Amidst the dust and broken floors around you, apparently you stumbled upon a network of tunnels bored thru solid rock. You don't think you're welcomed here...
     </blockquote>
 
     <div class="xed-title">Components</div>
