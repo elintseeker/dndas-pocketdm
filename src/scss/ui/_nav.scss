@@ -7,9 +7,12 @@
   left: 0; right: 0; bottom: 0;
   height: 54px;
 
-  background-color: $black-lighter;
-  box-shadow: 0 -12px 24px rgba($black, 0.8);
-  border-top: 1px solid $border-separator-color;
+  // background-color: $black-lighter;
+  background: url(/img/navbg.png) 0 0 repeat-x $black-lighter;
+  background-size: 128px;
+  box-shadow: 0 -6px 24px rgba(#111, 0.8);
+  border-top: 1px solid rgba($border-separator-color, 0.6);
+  // border-top: 1px solid rgba(#111, 0.8);
 
   .icon {
     flex: 1;
@@ -24,10 +27,12 @@
     color: $nav-color;
     text-align: center;
     text-decoration: none;
+
+    background-color: rgba($nav-bg-active, 0.33);
     
     &.router-link-exact-active {
       color: $nav-color-active;
-      background-color: $nav-bg-active;
+      background-color: rgba(#111, 0.7);
 
       span {
         color: $red;
@@ -37,9 +42,9 @@
 
   .svg-icon {
     display: block;
-    margin: 0 auto 4px;
-    width: 24px;
-    height: 24px;
+    margin: 0 auto;
+    width: 20px;
+    height: 20px;
   }
 }
 

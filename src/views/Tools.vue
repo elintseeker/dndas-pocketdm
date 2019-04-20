@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img src="@/assets/logo.png" class="logo">
+    <router-link :to="{ name: 'tools' }"><img src="@/assets/logo.png" class="logo"></router-link>
     <p class="description">{{ $route.meta.description }}</p>
     <router-view />
   </div>

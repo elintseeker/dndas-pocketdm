@@ -1,6 +1,6 @@
 <template>
   <div class="content generator adventure">
-    <a href="#" class="adv-optiontoggle" v-bind:class="{ 'xed-title': showOptions || quest.type === null }" v-on:click.prevent="toggleOptions"><span>Adventure Options</span></a>
+    <a href="#" class="adv-optiontoggle" v-on:click.prevent="toggleOptions"><span>Adventure Options</span></a>
     <div class="adv-options" v-show="showOptions || quest.type === null">
       <div>
         <div class="form-select">
@@ -19,16 +19,17 @@
     </div>
 
     <div v-if="quest.type !== null">
-      <div class="adv-intro">
-        <div class="xed-title is-serif" style="text-transform: capitalize;">The {{ quest.type }}</div>
+      <div class="xed-title" style="text-transform: capitalize;">The {{ quest.type }}</div>
+
+      <blockquote>
         <div v-if="quest.type === 'fetch'">{{ quest.intro }} <strong>{{ quest.item }}</strong>.</div>
         <div v-else-if="quest.type === 'hunt'">{{ quest.intro }} <strong>{{ quest.villain }}</strong>!</div>
         <div v-else>
           {{ quest.intro }}
         </div>
-      </div>
+      </blockquote>
 
-      <div class="xed-title is-serif">Components</div>
+      <div class="xed-title">Components</div>
 
       <ul class="components" v-if="quest.type === 'hunt'">
         <li>Starting tile</li>
@@ -96,7 +97,7 @@
       </div>
 
 
-      <div class="xed-title is-serif">Special Rules</div>
+      <div class="xed-title">Special Rules</div>
 
       <!-- HUNT -->
       <div v-if="quest.type === 'hunt'">
@@ -128,13 +129,10 @@
 
         <p>Place <b>{{ quest.villain }}</b> on the dungeon start tile. <b>{{ quest.villain }}</b> activates every Hero's Villain phase.</p>
 
-        <div>
-          <b>Villager</b>:
-          <table class="table is-bordered is-narrow" style="margin-bottom: 16px;">
-            <tr><th>AC</th><th>HP</th><th>Speed</th></tr>
-            <tr><td>12</td><td>6</td><td>4</td></tr>
-          </table>
-        </div>
+        <table class="table is-bordered is-narrow">
+          <tr><th rowspan="2">Villager</th><th>AC</th><th>HP</th><th>Speed</th></tr>
+          <tr><td>12</td><td>6</td><td>4</td></tr>
+        </table>
 
         <!-- states -->
         <p v-if="quest.addTreasure"> <b>{{ quest.extraTile }} tile:</b> When a Hero reveals this tile, instead of drawing a Monster Card, place the <b>{{ quest.item }}</b> on this tile and draw 1 Monster Card or a Monster Token.</p>
@@ -146,6 +144,7 @@
           <b v-if="quest.game === 'WoA'">Tunnel Exit tile:</b>
           <b v-if="quest.game === 'LoD'">Surface Hollow tile:</b> 
           When a Hero reveals and placed this tile, read: </p>
+
         <blockquote class="is-serif is-italic">"Turning around the corner, you stumbled and tripped on a raised floor. Bracing for a trap, you realized a dungeon wall reveals what seems to be an exit from this foul dungeon."</blockquote>
 
         <p><b>Victory: </b> The heroes win the adventure when the Heroes and the Villager safely exits the dungeon from the start tile and/or escaping via the 
@@ -158,7 +157,7 @@
 
 
       <!-- aftermath -->
-      <div class="xed-title is-serif">Aftermath</div>
+      <div class="xed-title">Aftermath</div>
 
       <p>If the Heroes complete the adventure without using any Healing Surges, each hero receives 300 gold pieces.</p>
 
