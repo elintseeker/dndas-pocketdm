@@ -58,13 +58,9 @@ p {
 
 
 #app {
-  .title, .subtitle {
-    margin-bottom: 16px;
-  }
-
   .description {
-    margin-bottom: 16px;
-    max-width: 80%;
+    margin-bottom: 32px;
+    max-width: 75%;
   }
 
   .is-centered {
@@ -117,10 +113,6 @@ p {
       vertical-align: center;
     }
 
-    .xed-title {
-      margin-bottom: 16px;
-    }
-
     .notes { font-size: 14px; }
     .isfloat {
       float: left; 
@@ -131,37 +123,9 @@ p {
   .footer-buttons {
     padding: 32px 0;
   }
-
-  .xed-title {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 16px;
-  
-    &:before,
-    &:after {
-      content: "";
-      flex: 1;
-      height: 0;
-      border-top: 1px solid $gray-darker;
-    }
-
-    &:before {
-      margin-right: 8px;
-    }
-
-    &:after {
-      margin-left: 8px;
-    }
-
-    &.is-serif {
-      font-family: $serif-stack;
-      font-style: italic;
-      font-weight: 600;
-    }
-  }
 }
 
+@import 'titles';
 @import 'forms';
 @import 'ui/nav';
 @import 'ui/generator';

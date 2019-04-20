@@ -43,7 +43,7 @@ export default new Router({
           name: 'seqplayref',
           meta: {
             title: 'Sequence of Play',
-            description: 'Player turn reference'
+            description: 'Standard player turn reference'
           },
           component: function () {
             return import('./views/tools/sequenceplay.vue');
@@ -124,6 +124,17 @@ export default new Router({
           },
           component: function () {
             return import('./views/tools/adventureendless.vue');
+          }
+        },
+        {
+          path: 'keeper',
+          name: 'keeper',
+          meta: {
+            title: 'Keeper',
+            description: 'Keeper - A competitive variant where one player controls the monsters and encounters'
+          },
+          component: function () {
+            return import('./views/tools/keeper.vue');
           }
         },
         {
