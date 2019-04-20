@@ -13,7 +13,7 @@ export default new Router({
       path: '/',
       name: 'home',
       meta: {
-        title: 'DnD Adventure System - Pocket DM'
+        title: 'D&D Adventure System - Pocket DM'
       },
       component: Home
     },
@@ -21,7 +21,7 @@ export default new Router({
       path: '/about',
       name: 'about',
       meta: {
-        title: 'About DnDAS PocketDM'
+        title: 'About D&D Adventure System Pocket DM'
       },
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
@@ -68,7 +68,7 @@ export default new Router({
             description: 'House rules for the D&D Adventure System, pick one or apply them all on your next adventure.'
           },
           component: function () {
-            return import('./views/tools/houserules.vue');
+            return import('./views/homebrew/houserules.vue');
           }
         },
         {
@@ -123,18 +123,18 @@ export default new Router({
             description: 'Endless Dungeon Rules - Get in. How long will you last?'
           },
           component: function () {
-            return import('./views/tools/adventureendless.vue');
+            return import('./views/homebrew/adventureendless.vue');
           }
         },
         {
           path: 'keeper',
           name: 'keeper',
           meta: {
-            title: 'Keeper',
+            title: 'Keeper Rules',
             description: 'Keeper - A competitive variant where one player controls the monsters and encounters'
           },
           component: function () {
-            return import('./views/tools/keeper.vue');
+            return import('./views/homebrew/keeper.vue');
           }
         },
         {
@@ -145,7 +145,7 @@ export default new Router({
             description: 'Tools for your D&D Adventure System Board Game'
           },
           component: function () {
-            return import('./views/tools/nav.vue');
+            return import('./views/tools/tools-nav.vue');
           }
         }
       ]
