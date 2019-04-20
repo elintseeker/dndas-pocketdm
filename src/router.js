@@ -54,7 +54,7 @@ export default new Router({
           name: 'd20roller',
           meta: {
             title: 'd20 Dice Roller',
-            description: 'd20 dice roller'
+            description: 'Simple d20 dice roller'
           },
           component: function () {
             return import('./views/tools/diceroller.vue');
@@ -65,7 +65,7 @@ export default new Router({
           name: 'houserules',
           meta: {
             title: 'House Rules',
-            description: 'Some house rules for the D&D Adventure System, pick one or apply them all on your next adventure.'
+            description: 'House rules for the D&D Adventure System, pick one or apply them all on your next adventure.'
           },
           component: function () {
             return import('./views/tools/houserules.vue');
@@ -109,7 +109,7 @@ export default new Router({
           name: 'adventuregen',
           meta: {
             title: 'Adventure Generator',
-            description: 'Adventure generator - play once or string a couple as a campaign'
+            description: 'Adventure generator - Play once or string a couple as a campaign'
           },
           component: function () {
             return import('./views/tools/adventuregen.vue');
@@ -120,7 +120,7 @@ export default new Router({
           name: 'endless',
           meta: {
             title: 'Endless Dungeon Rules',
-            description: 'Endless Dungeon Rules - Get in, how long will you last?'
+            description: 'Endless Dungeon Rules - Get in. How long will you last?'
           },
           component: function () {
             return import('./views/tools/adventureendless.vue');
