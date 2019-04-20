@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="top-bar">
-      <router-link :to="{ name: 'tools' }"><img src="@/assets/logo.png" class="logo"></router-link>
+      <router-link :to="{ name: 'home' }"><img src="@/assets/logo.png" class="logo"></router-link>
     </div>
 
     <router-view />
@@ -90,13 +90,19 @@
         <path fill="currentColor" d="M327 338c9 30 32 55 69 75l1 32H150v-32c35-3 60-28 76-75V147l245-18-20 64-130 90c0 23 2 42 6 55zM225 67h287v39l-287 19z"/>
         <path fill="currentColor" d="M207 67v174L81 180C20 147 1 89 1 75c0-10 9-8 15-8h191z"/>
       </symbol>
+      <symbol viewBox="0 0 512 512" id="icon-hp">
+        <!-- <path fill="currentColor" d="M256 491C141 448 38 385 38 257l1-191c103-26 175-37 217-45 41 8 114 19 218 45l-1 191c0 128-102 191-217 234zM130 295h42v-46h39v46h43V168h-43v45h-39v-45h-42v127zm138 0h43v-34h13c35 0 58-17 58-47v-1c0-30-23-45-57-45h-57v127zm43-65v-28h11c11 0 18 5 18 14s-7 14-18 14h-11z"/> -->
+        <path fill="currentColor" fill-rule="evenodd" d="M364 439l-8-44-9 54c-28 16-59 30-91 42C141 448 38 385 38 257l10-123-9-32 12-13-12-4V66c103-26 175-37 217-45 29 6 75 13 137 26l22 38 14-30 45 11-1 185-17 20h17c-5 77-49 130-109 168zM130 295h42v-46h39v46h43V168h-43v45h-39v-45h-42v127zm138 0h43v-34h13c35 0 58-17 58-47v-1c0-30-23-45-57-45h-57v127zm43-65v-28h11c11 0 18 5 18 14s-7 14-18 14h-11z"/>
+      </symbol>
+      <symbol viewBox="0 0 512 512" id="icon-tombstone">
+        <path fill="currentColor" fill-rule="evenodd" d="M411 351l10 26-2-36 20-81-10 96 24-65-17 78 24-34-20 49 28-15-32 30 59 13H347l55-10h-34l-33-14-28-15-75 29H102l-1-205 8-20-8-19v-50l51-23 28-42 88-7 89 23 54 67v225zm0 19v31l8-2-8-29zm-90 43l-55 24H89l-76-15 35-10 51 10 81-10h62l64-26 41 16-24 10 16 12 16 11-16 21-35 6-5-20-12-7 34-22zM142 236h22v-19h5l13 19h25l-16-22c8-4 13-11 13-21 0-7-2-11-6-15-4-5-12-8-23-8h-33v66zm22-35v-13h10c5 0 8 3 8 7s-3 6-8 6h-10zm44 35h22v-22h-22v22zm28 0h23v-66h-23v66zm29 0h22v-22h-22v22zm28 0h22v-18h7c18 0 30-8 30-24v-1c0-15-12-23-29-23h-30v66zm22-34v-14h6c6 0 9 2 9 7s-3 7-9 7h-6zm33 34h22v-22h-22v22zm7 196l18-5 8 2 8 3-8 4-17 1-3-4-6-1zm17 16l52-3 23 1 23 2-23 4-50 1-8-4-17-1zm-312 4h227v10L60 452z"/>
+      </symbol>
     </svg>
+
     <transition name="fade">
       <div class="abscenter splash" v-if="splash">
         <div>
-          <router-link :to="{ name: 'tools' }">
-            <img src="@/assets/logo.png" class="logo" alt="Pocket DM" />
-          </router-link>
+          <img src="@/assets/logo.png" class="logo" alt="Pocket DM" />
           <h1 class="appname">{{ $route.meta.title  }}</h1>
           <small>v0.1.2</small>
         </div>
@@ -117,7 +123,7 @@ export default {
     this.$nextTick(() => {
       setTimeout(()=>{
         this.splash = false;
-      }, 3000);
+      }, 2500);
     });
   }
 }

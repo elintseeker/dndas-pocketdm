@@ -55,6 +55,17 @@ export default new Router({
       }
     },
     {
+      path: '/hitpointtracker',
+      name: 'hptracker',
+      meta: {
+        title: 'Hero Hit Point Tracker',
+        description: 'Hit Point Tracker'
+      },
+      component: function () {
+        return import('./views/tools/hptracker.vue');
+      }
+    },
+    {
       path: '/houserules',
       name: 'houserules',
       meta: {

@@ -35,27 +35,6 @@
       <span>Adventure Generator</span>
     </div>
     <div class="nav-item">
-      <router-link :to="{ name: 'd20roller' }" class="icon">
-        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="svg-icon">
-          <use href="#icon-dice" />
-        </svg>
-      </router-link>
-      <span>d20 Dice Roller</span>
-    </div>
-    <div class="nav-item">
-      <router-link :to="{ name: 'seqplayref' }" class="icon">
-        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="svg-icon">
-          <use href="#icon-play" />
-        </svg>
-      </router-link>
-      <span>Sequence of Play</span>
-    </div>
-  </div>
-
-  <div class="separator"></div>
-
-  <div class="nav-tools">
-    <div class="nav-item">
       <router-link :to="{ name: 'endless' }" class="icon">
         <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="svg-icon">
           <use href="#icon-map-inf" />
@@ -80,12 +59,41 @@
       <span>House Rules</span>
     </div>
   </div>
+
+  <div class="separator"></div>
+
+  <div class="nav-tools">
+    <div class="nav-item">
+      <router-link :to="{ name: 'hptracker' }" class="icon">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="svg-icon">
+          <use href="#icon-hp" />
+        </svg>
+      </router-link>
+      <span>Hero HP Tracker</span>
+    </div>
+    <div class="nav-item">
+      <router-link :to="{ name: 'd20roller' }" class="icon">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="svg-icon">
+          <use href="#icon-dice" />
+        </svg>
+      </router-link>
+      <span>d20 Dice Roller</span>
+    </div>
+    <div class="nav-item">
+      <router-link :to="{ name: 'seqplayref' }" class="icon">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="svg-icon">
+          <use href="#icon-play" />
+        </svg>
+      </router-link>
+      <span>Sequence of Play</span>
+    </div>
+  </div>
 </div>
 </template>
 
 <style lang="scss" scoped>
 .separator {
-  margin: 16px auto;
+  margin: 8px auto;
   max-width: 90%;
   border-bottom: 2px solid rgba(0,0,0,0.3);
   border-top: 1px solid rgba(58, 58, 58, 0.8)

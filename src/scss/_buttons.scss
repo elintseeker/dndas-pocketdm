@@ -21,6 +21,10 @@
       outline: none;
       box-shadow: none;
       // border: 1px solid $red;
+
+      &[disabled] {
+        background-color: $red-dark;
+      }
     }
   }
 
