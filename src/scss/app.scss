@@ -140,6 +140,10 @@ blockquote {
     background: url(/img/bg.svg) 0 0 no-repeat;
     background-size: 100% 100%;
 
+    h1 {
+      margin-bottom: 32px;
+    }
+
     > div {
       margin-top: -64px;
     }

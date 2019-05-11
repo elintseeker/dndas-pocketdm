@@ -103,8 +103,8 @@
       <div class="abscenter splash" v-if="splash">
         <div>
           <img src="@/assets/logo.png" class="logo" alt="Pocket DM" />
-          <h1 class="appname">{{ $route.meta.title  }}</h1>
-          <small>v0.1.2</small>
+          <h1 class="appname">D&amp;D Adventure System - Pocket DM</h1>
+          <small>v0.1.3</small>
         </div>
       </div>
     </transition>
