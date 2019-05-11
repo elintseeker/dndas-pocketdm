@@ -64,7 +64,7 @@ export default {
   & > div {
     flex: 1;
     padding: 16px 8px;
-    min-width: 288px;
+    min-width: 266px;
   }
 }
 

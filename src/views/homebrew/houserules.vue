@@ -2,11 +2,6 @@
   <div class="content houserules">
     <p class="description">{{ $route.meta.description }}</p>
 
-    <div class="card" id="dierolls">
-      <h2 class="xed-title">d20 Rolls</h2>
-      <p>Rolling a 20 on d20 is always Critical Hit (+1 damage) and a success. Rolling a 1 is a Critical Miss and always a failure, this includes the Monsters "Miss: X" damage.</p>
-    </div>
-
     <div class="card" id="initiative">
       <h2 class="xed-title">Simple Initiative System I</h2>
       <p><strong>Hero Phase:</strong> Moving to an unexplored edge triggers placement of a new tile. After drawing a new tile, place a monster on the new tile. Roll a d20 for your Hero and roll again for the Monster(s) side.</p>
@@ -30,7 +25,7 @@
     </div>
 
     <div class="card" id="basiclevelup">
-      <h2 class="xed-title">Character Level Up/Progression System <small>(beyond Level 2)</small></h2>
+      <h2 class="xed-title">Character Level Up/Progression System <small>(Level 2+)</small></h2>
       <table class="table is-narrow is-bordered">
         <tr>
           <th>Level</th>
@@ -92,12 +87,21 @@
 
     <div class="card" id="encounters">
       <h2 class="xed-title">Encounter Cards</h2>
-      <p>Only draw an Encounter Card only when the Active Hero's player drew and placed a Black Arrowed tile in his or her Exploration Phase.</p>
+      <p>Only draw an Encounter Card only when the Active Hero's player drew and placed a tile with a black triangle in his or her Exploration Phase.</p>
+
+      <p>OR</p>
+
+      <p>If Active Player did not place a tile during his/her exploration phase or placed a tile with a black triangle, the Active Player rolls a d20. On a result of 1 - 10, draw an encounter card.</p>
     </div>
 
     <div class="card" id="tiles">
       <h2 class="xed-title">Extended Game/Tile Distribution</h2>
       <p>When setting up an adventure: Draw the number of dungeon tiles (minimum of 3) equal to the number of heroes and the Named tile. i.e. If there are 5 heroes playing, draw five dungeon tiles and the Named tile in the adventure. Shuffle the tiles then place the tile stack according to the Adventure Book.</p>
+    </div>
+
+    <div class="card" id="dierolls">
+      <h2 class="xed-title">d20 Rolls</h2>
+      <p>Rolling a 20 on d20 is always Critical Hit (+1 damage) and a success. Rolling a 1 is a Critical Miss and always a failure, this includes the Monsters "Miss: X" damage.</p>
     </div>
   </div>
 </template>
