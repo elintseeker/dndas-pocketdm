@@ -53,6 +53,7 @@
     <p><b>Monster Placement I:</b> Instead of placing a Monster on a revealed tile, use Monster Tokens (available with Castle Ravenloft).</p>
     <p><b>Monster Placement II:</b> Instead of placing a Monster on a revealed tile, draw a Monster card for each Hero in the adventure.</p>
 
+    <p><em>*Need more playtesting on these rules, get in touch on <a href="https://twitter.com/kevinn">Twitter</a>.</em></p>
   </div>
 </template>
 

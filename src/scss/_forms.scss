@@ -1,6 +1,7 @@
 .form-select {
   position: relative;
   margin: 0 auto 16px;
+  max-width: 288px;
 
   &:after {
     content: "";

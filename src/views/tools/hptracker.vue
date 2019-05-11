@@ -1,102 +1,79 @@
 <template>
-  <div class="content generator">
+  <div>
     <p class="description">{{ $route.meta.description }}</p>
 
-    <div class="results" v-if="hitpoints !== 0">
-      <strong v-if="showHP">{{ hitpoints }} HP</strong>
-      <strong v-else>&nbsp;</strong>
-    </div>
-    <div class="results" v-else>
-      <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="svg-icon">
-        <use href="#icon-tombstone" />
-      </svg>
+    <div class="hp-track">
+      <div class="is-centered">
+        <h2 class="xed-title" v-if="numHeroesTracker > 1">Hero 1</h2>
+        <compHPTrack></compHPTrack>
+      </div>
+      <div class="is-centered" v-if="numHeroesTracker > 1">
+        <h2 class="xed-title">Hero 2</h2>
+        <compHPTrack></compHPTrack>
+      </div>
+      <div class="is-centered" v-if="numHeroesTracker > 2">
+        <h2 class="xed-title">Hero 3</h2>
+        <compHPTrack></compHPTrack>
+      </div>
+      <div class="is-centered" v-if="numHeroesTracker > 3">
+        <h2 class="xed-title">Hero 4</h2>
+        <compHPTrack></compHPTrack>
+      </div>
     </div>
 
-    <div class="button-group">
-      <button type="button" class="button is-primary is-large" @click="hpDown" :disabled="hitpoints === 0"> - </button>
-      <button type="button" class="button is-primary is-large" @click="hpUp"   :disabled="hitpoints === 20"> + </button>
-    </div>
-
-    <p class="is-centered">
-      <br /><br />
-      <a href="#" class="link red" v-on:click.prevent="toggleOptions">Select/Reset Hero</a>
-    </p>
-
-    <div class="select-hero" v-show="showOptions || hitpoints === 0">
+    <div class="separator is-centered">
+      <h2 class="xed-title">Number of heroes</h2>
       <div class="form-select">
-        <select v-model="hitpoints">
-          <option value="0" selected>Select hero...</option>
-          <option v-for="(value, key) in hp.hero" v-bind:key="key" v-bind:value="value.hp">{{ value.name }}</option>
+        <select v-model="numHeroesTracker">
+          <option value="1" selected>1 Hero</option>
+          <option value="2">2 Heroes</option>
+          <option value="3">3 Heroes</option>
+          <option value="4">4 Heroes</option>
         </select>
       </div>
+
+      <em>*Does not save hero HP state (yet)</em>
     </div>
   </div>
 </template>
 
 <script>
-import { setTimeout } from 'timers';
+import hptrack from "@/components/HPtracker";
 export default {
-  name: 'hptracker',
+  name: 'hptracking',
+  components: {
+    'compHPTrack': hptrack
+  },
   data: function(){
     return {
-      hitpoints: this.$store.state.hp.hitpoints,
-      showHP: true,
-      showOptions: false,
-      disablePlusButton: false,
-      disableMinusButton: false
-    };
+      'numHeroesTracker': 1
+    }
   },
   methods: {
-    hpUp: function() {
-      this.showHP = false;
-      this.disablePlusButton = true;
-      this.showOptions = false;
-
-      setTimeout(()=>{
-        this.$store.state.hp.hitpoints = this.hitpoints++;
-        this.showHP = true;
-        this.disablePlusButton = false;
-      }, 300);
-    },
-    hpDown: function() {
-      this.showHP = false;
-      this.disableMinusButton = true;
-      this.showOptions = false;
-
-      setTimeout(()=>{
-        this.$store.state.hp.hitpoints = this.hitpoints--;
-        this.showHP = true;
-        this.disableMinusButton = false;
-      }, 300);
-    },
-    toggleOptions: function(){
-      if (this.showOptions) {
-        this.showOptions = false;
-      } else {
-        this.showOptions = true;
-      }
-    }
   },
   computed: {
-    hp: function() {
-      return this.$store.state.hp;
-    }
   }
 };
 </script>
 <style lang="scss" scoped>
-  .results svg {
-    max-height: 80px;
-  }
+.hp-track {
+  display: flex;
+  flex-wrap: wrap;
+  transition: width 300ms linear;
 
-  .button-group,
-  .select-hero {
-    margin: 0 auto;
-    max-width: 320px;
-
-    button {
-      padding-top: 4px;
-      font-size: 22px;
-    }
+  & > div {
+    flex: 1;
+    padding: 16px 8px;
+    min-width: 288px;
   }
+}
+
+.separator {
+  margin: 0 auto;
+  padding: 32px 0;
+
+  .form-select {
+    max-width: 288px;
+  }
+}
 </style>

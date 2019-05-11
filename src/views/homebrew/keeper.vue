@@ -6,10 +6,10 @@
 
     <div class="xed-title is-serif">Setup</div>
 
-    <p>Pick an adventure from the Adventure Book. 
+    <p>Pick an adventure from the Adventure Book.
 
     <p>One player will play as <b>The Keeper</b>, who controls the Monsters and Encounters to thwart the Heroes in the adventure. The Keeper shuffles the Monster Cards into their own deck. Do the same for the Encounter Cards and Treasure Cards, and set it aside for use on this adventure.*</p>
-      
+
     <p>Each player (other than the Keeper) chooses one of the 1st-level Heroes and selects Power Cards for their chosen Hero. Each player also draws a Treasure Card with an item on it and one Healing Surge.</p>
 
     <p>Place the Start tile on the table then place each Hero on any square of the tile.</p>
@@ -19,7 +19,7 @@
     <div class="xed-title is-serif">Hero Phase</div>
 
     <p>Each player rolls the dice for initiative. Play progresses around the table, starting with the player who rolled with the highest initiative.</p>
-    
+
     <p>When a Hero lands on a tile's unexplored edge, it doesn't end the Hero's turn. The Active Player draws the top tile from the Dungeon Tile stack then he or she can use his or her remaining movement if available.</p>
 
     <p><b>Defeating Monsters: </b> When a Hero defeats a Monster the Active Player places its Monster Card into his or her own Experience Pile.</p>
@@ -40,22 +40,22 @@
           <td>10&nbsp;XP or 2000 GP</td>
           <td>+1 Daily Power</td>
           <td rowspan="4">+2 HP <br> +1 AC<br> +1 Surge Value</td>
-        </tr> 
+        </tr>
         <tr>
           <td>3</td>
           <td>20&nbsp;XP or 3000 GP</td>
           <td>+1 Utility Power</td>
-        </tr> 
+        </tr>
         <tr>
           <td>4</td>
           <td>30&nbsp;XP or 4000 GP</td>
           <td>+1 At-Will Power</td>
-        </tr> 
+        </tr>
         <tr>
           <td>5</td>
           <td>40&nbsp;XP or 5000 GP</td>
           <td>+1 Daily Power</td>
-        </tr> 
+        </tr>
       </table>
 
     <p>When all remaining Heroes or Players have played their turn, the Hero Phase ends.</p>
@@ -64,7 +64,7 @@
 
     <p>The Keeper Player draws 5 Monster cards and 3 Encounter Cards. Do not show these cards to the Hero players. The Keeper will always have 5 Monster cards and 3 Encounter cards on their hand.</p>
 
-    <p><b>Playing Monster cards:</b> When a Hero lands on an unexplored edge, the Keeper plays a single Monster Card of his choosing and places the figure on the revealed tile.     
+    <p><b>Playing Monster cards:</b> When a Hero lands on an unexplored edge, the Keeper plays a single Monster Card of his choosing and places the figure on the revealed tile.
 
     <p>If a Hero Player reveals a dungeon tile with a black arrow or a Named dungeon tile, the Keeper can place "X" amount Monsters depending on the number of Active (non-zero HP) Heroes in the adventure.</p>
 
@@ -80,14 +80,15 @@
       <dt class="is-serif"><b>Environment:</b></dt>
       <dd>Play an Environment card whenever a Player's Hero enters a new tile. Environment cards lasts only until the next Keeper Players turn.</dd>
     </dl>
-    
+
     <p>Keeper's Phase ends.</p>
 
     <div class="xed-title is-serif">Aftermath</div>
-    
+
     <p><strong>Victory:</strong> The Heroes complete the adventure if they complete objective from the Adventure Book.</p>
     <p><strong>Defeat:</strong> The Heroes lose the adventure if any Hero has 0 Hit Points at the start of his or her turn and there are no Healing Surge tokens remaining.</p>
 
+    <p><em>*Need playtesting on these rules, get in touch on <a href="https://twitter.com/kevinn">Twitter</a>.</em></p>
   </div>
 </template>
 
