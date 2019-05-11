@@ -54,7 +54,7 @@
         <li v-if="quest.addTreasure || quest.addTile">{{ quest.extraTile }} tile</li>
         <li>
           <span v-if="quest.game === 'CR'">Secret Stairway tile</span>
-          <span v-if="quest.game === 'WoA'">Tunnel Exit tile</span>
+          <span v-if="quest.game === 'WoA'">Secure Exit tile</span>
           <span v-if="quest.game === 'LoD'">Surface Hollow tile</span>
         </li>
         <li>A Villager token/figure</li>
