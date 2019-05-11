@@ -24,9 +24,9 @@
 
     <p><b>Defeating Monsters: </b> When a Hero defeats a Monster the Active Player places its Monster Card into his or her own Experience Pile.</p>
 
-    <p><b>Treasure:</b> An Active Hero who defeats a Monster also draws one Treasure Card per turn, no matter how many Monsters he or she defeats during that turn.</p>
-
     <p><b>Experience Pile:</b> Each player have their own Experience pile which can be used to level up their Hero for 10XP (or equivalent GP) to the next level. Players cannot spend experience points to cancel a Keepers Encounter Card.</p>
+
+    <p><b>Treasure:</b> An Active Hero who defeats a Monster also draws one Treasure Card per turn, no matter how many Monsters he or she defeats during that turn.</p>
 
       <table class="table is-narrow is-bordered">
         <tr>
@@ -62,7 +62,7 @@
 
     <div class="xed-title is-serif">Keeper Phase</div>
 
-    <p>The Keeper Player draws 5 Monster cards and 3 Encounter Cards. Do not show these cards to the Hero players. The Keeper will always have 5 Monster cards and 3 Encounter cards on their hand.</p>
+    <p>The Keeper Player draws upto 5 Monster cards and 3 Encounter Cards. Do not show these cards to the Hero players. The Keeper will always have 5 Monster cards and 3 Encounter cards on their hand.</p>
 
     <p><b>Playing Monster cards:</b> When a Hero lands on an unexplored edge, the Keeper plays a single Monster Card of his choosing and places the figure on the revealed tile.
 
