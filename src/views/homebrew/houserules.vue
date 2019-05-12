@@ -91,7 +91,7 @@
 
       <p>OR</p>
 
-      <p>If Active Player did not place a tile during his/her exploration phase or placed a tile with a black triangle, the Active Player rolls a d20. On a result of 1 - 10, draw an encounter card.</p>
+      <p>If the active Hero's player did not place a tile during his/her exploration phase or placed a tile with a black triangle, the active Hero's player rolls a d20. On a result of 1 - 10, draw an encounter card.</p>
     </div>
 
     <div class="card" id="tiles">

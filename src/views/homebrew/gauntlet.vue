@@ -3,7 +3,7 @@
     <p class="description">{{ $route.meta.description }}</p>
 
     <blockquote>
-      A blood-drenched arena opens before you and your companions. With a faint trace of magic lingering in the air, rotting flesh, discarded weapons, and trinkets litter the ground. Suddenly, a booming voice bellows: "You entered my domain and you will perish here."
+      A blood-drenched arena opens before you and your companions. With a faint trace of magic lingering in the air, rotting flesh, discarded weapons, and trinkets litter the ground. You're not the first ones here..."
     </blockquote>
 
     <div class="xed-title">Components</div>
@@ -27,11 +27,11 @@
     <div class="xed-title">Special Rules</div>
     <p>Players do not draw Encounter Cards while on the Starting/Exit Tile and the Hallway tiles. When all Heroes are on a "chamber" tile, draw Encounter Cards as normal.</p>
 
-    <p><strong>Chamber construction:</strong> When an Active Player's Hero reaches the unexplored edge of a Hallway Tile, draw 5 dungeon tiles to create a "chamber" and place a Hallway tile on the farthest unexplored edge. The Active Player takes a Named Villain card and figure and places the figure on any "chamber" square. The Villain then activates on every player's Villain Phase and worth 5 experience points.</p>
+    <p><strong>Chamber construction:</strong> When a Hero reaches the unexplored edge of a Hallway Tile, draw 5 dungeon tiles to create a "chamber" and place a Hallway tile on the farthest unexplored edge. The active Hero's player takes a Named Villain card and figure and places the figure on any "chamber" square. The Villain then activates on every player's Villain Phase and worth 5 experience points.</p>
 
-    <p><strong>Defeating a Villain: </strong> Each Active Hero draws an Item Card from the Treasure Deck and gains HP at half of their Surge Cost. Heroes can carry a maximum of three items.</p>
+    <p><strong>Defeating a Villain: </strong> Each Active Hero draws an Item Card from the Treasure Deck and gains HP at half of their Surge Cost. Heroes carry a maximum of three items. When a Hero gains an item during the adventure, he/she must replace or discard an item card.</p>
 
-    <p>When all Heroes are on a Hallway tile, the previous "chamber" collapses.</p>
+    <p>When all Heroes are on a Hallway tile, the previous "chamber" collapses. Remove the "chamber" tiles and shuffle it again with the Dungeon Tiles Stack. Rebuild the "chamber" again.</p>
 
     <p>The adventure ends when any Hero has 0 Hit Points at the start of his/her turn and there are no Healing Surge tokens remaining. Count the number of defeated Villains as this will be the groups adventure score.</p>
 
