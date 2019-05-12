@@ -1,5 +1,6 @@
 <template>
   <div class="content generator hptrack">
+    <keep-alive></keep-alive>
     <div class="results" v-if="hitpoints > 0">
       <strong v-if="showHP">{{ hitpoints }} HP</strong>
       <strong v-else>&nbsp;</strong>
@@ -23,12 +24,13 @@ export default {
   name: 'hptracker',
   data: function(){
     return {
-      hitpoints: this.$store.state.hp.hitpoints,
+      id: null,
+      numHeroes: this.$store.state.hp.heroes,
+      hitpoints: 0,
       showHP: true,
       showOptions: false,
       disablePlusButton: false,
       disableMinusButton: false,
-      selectedHero: null
     };
   },
   methods: {
@@ -38,7 +40,8 @@ export default {
       this.showOptions = false;
 
       setTimeout(()=>{
-        this.$store.state.hp.hitpoints = this.hitpoints++;
+        this.hitpoints++;
+        // this.$store.state.hp.hitpoints = this.hitpoints++;
         this.showHP = true;
         this.disablePlusButton = false;
       }, 300);
@@ -49,17 +52,21 @@ export default {
       this.showOptions = false;
 
       setTimeout(()=>{
-        this.$store.state.hp.hitpoints = this.hitpoints--;
+        this.hitpoints--;
+        // this.$store.state.hp.hitpoints = this.hitpoints--;
         this.showHP = true;
         this.disableMinusButton = false;
       }, 300);
     }
   },
-  computed: {
-    hp: function() {
-      return this.$store.state.hp;
-    }
-  }
+  mounted () {
+    this.id = this._uid;
+  },
+  // computed: {
+  //   hp: function() {
+  //     return this.$store.state.hp;
+  //   }
+  // }
 };
 </script>
 <style lang="scss" scoped>

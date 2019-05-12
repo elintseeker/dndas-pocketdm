@@ -4,27 +4,27 @@
 
     <div class="hp-track">
       <div class="is-centered">
-        <h2 class="xed-title" v-if="numHeroesTracker > 1">Hero 1</h2>
+        <h2 class="xed-title" v-if="heroes > 1">Hero 1</h2>
         <compHPTrack></compHPTrack>
       </div>
-      <div class="is-centered" v-if="numHeroesTracker > 1">
+      <div class="is-centered" v-if="heroes > 1">
         <h2 class="xed-title">Hero 2</h2>
         <compHPTrack></compHPTrack>
       </div>
-      <div class="is-centered" v-if="numHeroesTracker > 2">
+      <div class="is-centered" v-if="heroes > 2">
         <h2 class="xed-title">Hero 3</h2>
         <compHPTrack></compHPTrack>
       </div>
-      <div class="is-centered" v-if="numHeroesTracker > 3">
+      <div class="is-centered" v-if="heroes > 3">
         <h2 class="xed-title">Hero 4</h2>
         <compHPTrack></compHPTrack>
       </div>
     </div>
 
     <div class="separator is-centered">
-      <h2 class="xed-title">Number of heroes</h2>
+      <h2 class="xed-title">Number of heroes {{ heroes }}</h2>
       <div class="form-select">
-        <select v-model="numHeroesTracker">
+        <select v-model="heroes" @change="numHeroes">
           <option value="1" selected>1 Hero</option>
           <option value="2">2 Heroes</option>
           <option value="3">3 Heroes</option>
@@ -46,12 +46,15 @@ export default {
   },
   data: function(){
     return {
-      'numHeroesTracker': 1
+      heroes: this.$store.state.hp.heroes
+      // 'numHeroesTracker': this.$store.state.hp.heroes
     }
   },
   methods: {
-  },
-  computed: {
+    numHeroes: function() {
+      this.$store.state.hp.heroes = this.heroes;
+      console.log('blah');
+    }
   }
 };
 </script>
