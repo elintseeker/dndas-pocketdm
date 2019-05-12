@@ -11,6 +11,8 @@
     outline: none;
     box-shadow: none;
 
+    max-width: 288px;
+
     &.is-primary,
     &.is-primary:hover,
     &.is-primary:focus,
@@ -21,6 +23,8 @@
       outline: none;
       box-shadow: none;
       // border: 1px solid $red;
+
+      max-width: 288px;
 
       &[disabled] {
         background-color: $red-dark;

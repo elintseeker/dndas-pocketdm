@@ -22,6 +22,7 @@ export default new Vuex.Store({
       LoD: false
     },
     hp: {
+      heroes: 1,
       hitpoints: 0,
       hero: {
         cleric: {

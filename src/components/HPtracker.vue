@@ -1,14 +1,6 @@
 <template>
   <div class="content generator hptrack">
-    <!-- <div class="select-hero">
-      <div class="form-select">
-        <select v-model="hitpoints">
-          <option value="0" selected>Select hero...</option>
-          <option v-for="(value, key) in hp.hero" v-bind:key="key" v-bind:value="value.hp">{{ value.name }}</option>
-        </select>
-      </div>
-    </div> -->
-
+    <keep-alive></keep-alive>
     <div class="results" v-if="hitpoints > 0">
       <strong v-if="showHP">{{ hitpoints }} HP</strong>
       <strong v-else>&nbsp;</strong>
@@ -20,8 +12,8 @@
     </div>
 
     <div class="button-group">
-      <button type="button" class="button is-primary is-large" @click="hpDown" :disabled="hitpoints <= 0"> - </button>
-      <button type="button" class="button is-primary is-large" @click="hpUp"   :disabled="hitpoints >= 20"> + </button>
+      <button type="button" class="minusbtn" @click="hpDown" :disabled="hitpoints <= 0 || disableMinusButton"> - </button>
+      <button type="button" class="plusbtn" @click="hpUp"   :disabled="hitpoints >= 20 || disablePlusButton"> + </button>
     </div>
   </div>
 </template>
@@ -32,12 +24,13 @@ export default {
   name: 'hptracker',
   data: function(){
     return {
-      hitpoints: this.$store.state.hp.hitpoints,
+      id: null,
+      numHeroes: this.$store.state.hp.heroes,
+      hitpoints: 0,
       showHP: true,
       showOptions: false,
       disablePlusButton: false,
       disableMinusButton: false,
-      selectedHero: null
     };
   },
   methods: {
@@ -47,7 +40,8 @@ export default {
       this.showOptions = false;
 
       setTimeout(()=>{
-        this.$store.state.hp.hitpoints = this.hitpoints++;
+        this.hitpoints++;
+        // this.$store.state.hp.hitpoints = this.hitpoints++;
         this.showHP = true;
         this.disablePlusButton = false;
       }, 300);
@@ -58,24 +52,21 @@ export default {
       this.showOptions = false;
 
       setTimeout(()=>{
-        this.$store.state.hp.hitpoints = this.hitpoints--;
+        this.hitpoints--;
+        // this.$store.state.hp.hitpoints = this.hitpoints--;
         this.showHP = true;
         this.disableMinusButton = false;
       }, 300);
-    },
-    toggleOptions: function(){
-      if (this.showOptions) {
-        this.showOptions = false;
-      } else {
-        this.showOptions = true;
-      }
     }
   },
-  computed: {
-    hp: function() {
-      return this.$store.state.hp;
-    }
-  }
+  mounted () {
+    this.id = this._uid;
+  },
+  // computed: {
+  //   hp: function() {
+  //     return this.$store.state.hp;
+  //   }
+  // }
 };
 </script>
 <style lang="scss" scoped>
@@ -91,17 +82,33 @@ export default {
     }
   }
 
-  .button-group,
-  .select-hero {
+  .button-group {
     margin: 0 auto;
     max-width: 150px;
 
-    .button {
-      padding-top: 4px;
-      font-size: 22px;
-      max-width: 88px;
-      border: 1px solid #fff;
-      background-color: transparent;
+    .plusbtn,
+    .minusbtn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      margin: 0 8px;
+      padding: 0;
+      width: 88px;
+      // height: 44px;
+
+      font-size: 44px;
+      line-height: 1;
+      color: #fff;
+      background: transparent;
+      border: 0;
+
+      cursor: pointer;
+      outline: none;
+
+      &[disabled] {
+        opacity: 0.5;
+      }
     }
   }
   .hptrack {

@@ -77,6 +77,17 @@ export default new Router({
       }
     },
     {
+      path: '/gauntlet',
+      name: 'gauntlet',
+      meta: {
+        title: 'The Gauntlet',
+        description: 'Boss Rush, D&D AS - style'
+      },
+      component: function () {
+        return import('./views/homebrew/gauntlet.vue');
+      }
+    },
+    {
       path: '/herogen',
       name: 'herogen',
       meta: {
