@@ -40,7 +40,7 @@
       </tr>
       <tr>
         <td>11 &mdash; 15</td>
-        <td>Draw 2 Monster cards for this tile.</td>
+        <td>Draw a Monster card for each Hero in the adventure</td>
       </tr>
       <tr>
         <td>16 &mdash; 20</td>
@@ -48,10 +48,9 @@
       </tr>
     </table>
 
-    <p><strong>Dungeon Lord:</strong> When the 15th tile is revealed and a Dungeon Lord hasn't appeared yet. The active Hero's player takes a Named Villain Card and figure and places it on this tile instead.</p>
+    <p>When the 15th tile is revealed and a Dungeon Lord hasn't appeared yet. The active Hero's player takes a Named Villain Card and figure and places it on this tile instead.</p>
 
-    <p><b>Monster Placement I:</b> Instead of placing a Monster on a revealed tile, use Monster Tokens (available with Castle Ravenloft).</p>
-    <p><b>Monster Placement II:</b> Instead of placing a Monster on a revealed tile, draw a Monster card for each Hero in the adventure.</p>
+    <p><b>Monster Placement:</b> Instead of placing a Monster on a revealed tile, use Monster Tokens (available with Castle Ravenloft).</p>
 
     <p><em>*Need more playtesting on these rules, get in touch on <a href="https://twitter.com/kevinn">Twitter</a>.</em></p>
   </div>
