@@ -147,7 +147,7 @@ export default new Router({
       name: 'keeper',
       meta: {
         title: 'Keeper Rules',
-        description: 'Keeper - A competitive variant where one player controls the monsters and encounters'
+        description: 'Keeper - A variant where a player controls the monsters and encounters'
       },
       component: function () {
         return import('./views/homebrew/keeper.vue');
