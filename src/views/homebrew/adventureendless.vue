@@ -48,7 +48,7 @@
       </tr>
     </table>
 
-    <p>When the 15th tile is placed and the Dungeon Lord hasn't appeared yet. The Active Hero takes the Villain Card and figure and places it on this tile for the final battle.</p>
+    <p>When the 15th tile is placed and a Dungeon Lord hasn't appeared yet. The Active Hero takes the Villain Card and figure and places it on this tile for the final battle.</p>
 
     <p><b>Monster Placement I:</b> Instead of placing a Monster on a revealed tile, use Monster Tokens (available with Castle Ravenloft).</p>
     <p><b>Monster Placement II:</b> Instead of placing a Monster on a revealed tile, draw a Monster card for each Hero in the adventure.</p>

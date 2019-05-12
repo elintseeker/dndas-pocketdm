@@ -58,7 +58,7 @@ export default new Router({
       path: '/hitpointtracker',
       name: 'hptracker',
       meta: {
-        title: 'Hero Hit Point Tracker',
+        title: 'Hero Hit Point Tracker for your heroes (4 max)',
         description: 'Hit Point Tracker'
       },
       component: function () {

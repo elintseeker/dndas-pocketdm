@@ -1,6 +1,6 @@
 .top-bar {
   position: fixed;
-  top: 0; right: 0; left: 0;
+  top: 8px; right: 0; left: 0;
   z-index: 100;
 
   display: flex;
@@ -8,9 +8,9 @@
   justify-content: center;
   height: 44px;
 
-  background: rgba($black-lighter, 1);
-  box-shadow: 0 6px 24px rgba(#111, 0.8);
-  border-top: 1px solid rgba($border-separator-color, 0.6);
+  // background: rgba($black-lighter, 1);
+  // box-shadow: 0 6px 24px rgba(#111, 0.8);
+  // border-top: 1px solid rgba($border-separator-color, 0.6);
 
   .logo {
     margin: -4px 8px 0;
