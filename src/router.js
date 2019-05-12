@@ -81,7 +81,7 @@ export default new Router({
       name: 'gauntlet',
       meta: {
         title: 'The Gauntlet',
-        description: 'Boss Rush, D&D AS - style'
+        description: 'Boss Rush, D&D Adventure System Style'
       },
       component: function () {
         return import('./views/homebrew/gauntlet.vue');
@@ -136,7 +136,7 @@ export default new Router({
       name: 'endless',
       meta: {
         title: 'Endless Dungeon Rules',
-        description: 'Endless Dungeon Rules - Get in. How long will you last?'
+        description: 'Endless Dungeon Rules - Get in, but how long will you last?'
       },
       component: function () {
         return import('./views/homebrew/adventureendless.vue');
