@@ -1,14 +1,5 @@
 <template>
   <div class="content generator hptrack">
-    <!-- <div class="select-hero">
-      <div class="form-select">
-        <select v-model="hitpoints">
-          <option value="0" selected>Select hero...</option>
-          <option v-for="(value, key) in hp.hero" v-bind:key="key" v-bind:value="value.hp">{{ value.name }}</option>
-        </select>
-      </div>
-    </div> -->
-
     <div class="results" v-if="hitpoints > 0">
       <strong v-if="showHP">{{ hitpoints }} HP</strong>
       <strong v-else>&nbsp;</strong>
@@ -20,8 +11,8 @@
     </div>
 
     <div class="button-group">
-      <button type="button" class="button is-primary is-large" @click="hpDown" :disabled="hitpoints <= 0"> - </button>
-      <button type="button" class="button is-primary is-large" @click="hpUp"   :disabled="hitpoints >= 20"> + </button>
+      <button type="button" class="minusbtn" @click="hpDown" :disabled="hitpoints <= 0 || disableMinusButton"> - </button>
+      <button type="button" class="plusbtn" @click="hpUp"   :disabled="hitpoints >= 20 || disablePlusButton"> + </button>
     </div>
   </div>
 </template>
@@ -62,13 +53,6 @@ export default {
         this.showHP = true;
         this.disableMinusButton = false;
       }, 300);
-    },
-    toggleOptions: function(){
-      if (this.showOptions) {
-        this.showOptions = false;
-      } else {
-        this.showOptions = true;
-      }
     }
   },
   computed: {
@@ -91,17 +75,33 @@ export default {
     }
   }
 
-  .button-group,
-  .select-hero {
+  .button-group {
     margin: 0 auto;
     max-width: 150px;
 
-    .button {
-      padding-top: 4px;
-      font-size: 22px;
-      max-width: 88px;
-      border: 1px solid #fff;
-      background-color: transparent;
+    .plusbtn,
+    .minusbtn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      margin: 0 8px;
+      padding: 0;
+      width: 88px;
+      // height: 44px;
+
+      font-size: 44px;
+      line-height: 1;
+      color: #fff;
+      background: transparent;
+      border: 0;
+
+      cursor: pointer;
+      outline: none;
+
+      &[disabled] {
+        opacity: 0.5;
+      }
     }
   }
   .hptrack {
