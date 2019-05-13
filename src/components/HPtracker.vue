@@ -1,15 +1,9 @@
 <template>
-  <div class="content generator hptrack">
-    <keep-alive></keep-alive>
-    <div class="results" v-if="hitpoints > 0">
-      <strong v-if="showHP">{{ hitpoints }} HP</strong>
-      <strong v-else>&nbsp;</strong>
-    </div>
-    <div class="results" v-else>
-      <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="svg-icon">
-        <use href="#icon-tombstone" />
-      </svg>
-    </div>
+  <div class="content hptrack">
+    <input type="number" :value="hitpoints" class="hitpoints-score" readonly v-if="hitpoints > 0">
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="svg-icon" v-else>
+      <use href="#icon-tombstone" />
+    </svg>
 
     <div class="button-group">
       <button type="button" class="minusbtn" @click="hpDown" :disabled="hitpoints <= 0 || disableMinusButton"> - </button>
@@ -58,28 +52,28 @@ export default {
         this.disableMinusButton = false;
       }, 300);
     }
-  },
-  mounted () {
-    this.id = this._uid;
-  },
-  // computed: {
-  //   hp: function() {
-  //     return this.$store.state.hp;
-  //   }
-  // }
+  }
 };
 </script>
 <style lang="scss" scoped>
-  .results {
-    margin-bottom: 32px;
-    min-height: 1px;
-    white-space: nowrap;
+  svg {
+    display: block;
+    margin: 0 auto;
+    width: 95px;
     height: 80px;
+  }
 
-    svg {
-      max-width: 180px;
-      max-height: 80px;
-    }
+  .hitpoints-score {
+    margin: 0; padding: 2px 0 2px 24px;
+    font-size: 64px;
+    font-weight: 700;
+    color: #fff;
+    appearance: none;
+    background: transparent;
+    text-align: center;
+    width: 95px;
+    border: 0;
+    outline: none;
   }
 
   .button-group {

@@ -5,24 +5,32 @@
     <div class="hp-track">
       <div class="is-centered">
         <h2 class="xed-title" v-if="heroes > 1">Hero 1</h2>
-        <compHPTrack></compHPTrack>
+        <keep-alive>
+        <compHPTrack id="hp1"></compHPTrack>
+        </keep-alive>
       </div>
-      <div class="is-centered" v-if="heroes > 1">
+      <div class="is-centered" v-show="heroes > 1">
         <h2 class="xed-title">Hero 2</h2>
-        <compHPTrack></compHPTrack>
+        <keep-alive>
+        <compHPTrack id="hp2"></compHPTrack>
+        </keep-alive>
       </div>
-      <div class="is-centered" v-if="heroes > 2">
+      <div class="is-centered" v-show="heroes > 2">
         <h2 class="xed-title">Hero 3</h2>
-        <compHPTrack></compHPTrack>
+        <keep-alive>
+        <compHPTrack id="hp3"></compHPTrack>
+        </keep-alive>
       </div>
-      <div class="is-centered" v-if="heroes > 3">
+      <div class="is-centered" v-show="heroes > 3">
         <h2 class="xed-title">Hero 4</h2>
-        <compHPTrack></compHPTrack>
+        <keep-alive>
+        <compHPTrack id="hp4"></compHPTrack>
+        </keep-alive>
       </div>
     </div>
 
     <div class="separator is-centered">
-      <h2 class="xed-title">Number of heroes {{ heroes }}</h2>
+      <h2 class="xed-title">Number of heroes</h2>
       <div class="form-select">
         <select v-model="heroes" @change="numHeroes">
           <option value="1" selected>1 Hero</option>
@@ -55,6 +63,9 @@ export default {
       this.$store.state.hp.heroes = this.heroes;
       console.log('blah');
     }
+  },
+  mounted: {
+
   }
 };
 </script>
