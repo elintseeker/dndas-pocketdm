@@ -12,8 +12,8 @@
           </select>
         </div>
 
-        <label><input type="checkbox" v-model="quest.addVillain">  Additional Named Villain</label>
-        <label><input type="checkbox" v-model="quest.addTreasure">  Additional Treasure Card</label>
+        <label><input type="checkbox" v-model="quest.addVillain"> Additional Named Villain</label>
+        <label><input type="checkbox" v-model="quest.addTreasure"> Additional Treasure Card</label>
         <label><input type="checkbox" v-model="quest.addTile"> Additional Named Tile</label>
         <button type="button" class="button is-primary is-large is-fullwidth" @click="generateAdventure" :disabled="disableButton">Generate adventure</button>
       </div>
@@ -30,7 +30,7 @@
         </div>
       </blockquote>
 
-      <div class="xed-title">Components</div>
+      <div class="xed-title">Adventure Setup</div>
 
       <ul class="components" v-if="quest.type === 'hunt'">
         <li>Starting tile</li>

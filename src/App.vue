@@ -106,7 +106,7 @@
         <div>
           <img src="@/assets/logo.png" class="logo" alt="Pocket DM" />
           <h1 class="appname">D&amp;D Adventure System - Pocket DM</h1>
-          <small>v0.1.3g</small>
+          <small>v0.1.3</small>
         </div>
       </div>
     </transition>
@@ -130,7 +130,6 @@ export default {
   }
 }
 </script>
-
 
 <style lang="scss">
 @import './scss/app.scss';
