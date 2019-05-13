@@ -25,7 +25,7 @@
     <p><strong>Starting Items:</strong> Each Player draws a random Item Card and a Healing Surge for their Hero.</p>
 
     <div class="xed-title">Special Rules</div>
-    <p>Players do not draw Encounter Cards while on the Starting/Exit Tile and the Hallway tiles. When all Heroes are on a "chamber" tile, draw Encounter Cards as normal.</p>
+    <p>Players do not draw Encounter cards while on the Starting/Exit Tile and the Hallway tiles. When all Heroes are on a "chamber" tile, draw Encounter cards as normal.</p>
 
     <p><strong>Chamber construction:</strong> When a Hero reaches the unexplored edge of a Hallway Tile, draw 5 dungeon tiles to create a "chamber" and place a Hallway tile on the farthest unexplored edge. The active Hero's player takes a Named Villain card and figure and places the figure on any "chamber" square. The Villain then activates on every player's Villain Phase and worth 5 experience points.</p>
 

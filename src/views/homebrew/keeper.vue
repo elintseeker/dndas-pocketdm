@@ -6,15 +6,15 @@
 
     <div class="xed-title is-serif">Setup</div>
 
-    <p>Pick an adventure from the Adventure Book.
+    <p>Pick an adventure from the Adventure Book.</p>
 
-    <p>One player will play as <b>The Keeper</b>, who controls the Monsters and Encounters to thwart the Heroes in the adventure. The Keeper shuffles the Monster Cards into their own deck. Do the same for the Encounter Cards and Treasure Cards, and set it aside for use on this adventure.*</p>
+    <p>One player will play as <b>The Keeper</b>, who controls the Monsters and Encounters to thwart the Heroes in the adventure. The Keeper shuffles the Monster cards into their own deck. Do the same for the Encounter cards and Treasure cards, and set it aside for use on this adventure.*</p>
 
-    <p>Each player (other than the Keeper) chooses one of the 1st-level Heroes and selects Power Cards for their chosen Hero and draws an Item Card from the Treasure Deck. All Heroes gets one Healing Surge token for their character.</p>
+    <p>Each player (other than the Keeper) chooses one of the 1st-level Heroes and selects Power cards for their chosen Hero and draws an Item Card from the Treasure Deck. All Heroes gets one Healing Surge token for their character.</p>
 
     <p>Place the Start tile on the table then place each Hero on any square of the tile.</p>
 
-    <footer><small>* Remove all Encounter Cards that are beneficial to the Heroes and place it back to the box.</small></footer>
+    <footer><small>* Remove all Encounter cards that are beneficial to the Heroes and place it back to the box.</small></footer>
 
     <div class="xed-title is-serif">Hero Phase</div>
 

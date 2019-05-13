@@ -104,7 +104,7 @@
       <div v-if="quest.type === 'hunt'">
         <p><b>{{ quest.tile }} tile:</b> When a Hero reveals the {{ quest.tile }}, instead of drawing Monster cards for the active tile, the active player takes the {{ quest.villain }} card and places the figure on this tile. Then draw an Encounter Card.</p>
         <p v-if="quest.addTreasure"><b>{{ quest.extraTile }} tile:</b> When a Hero reveals this tile, instead of drawing Monster cards, place <b>{{ quest.item }}</b> token on this tile instead then draw a Monster Card.</p>
-        <p v-else-if="quest.addTile"><b>{{ quest.extraTile }} tile:</b> When a Hero reveals this tile, the active player draws 2 Monsters Cards for this tile instead.</p>
+        <p v-else-if="quest.addTile"><b>{{ quest.extraTile }} tile:</b> When a Hero reveals this tile, the active player draws 2 Monsters cards for this tile instead.</p>
 
         <p><b>Victory: </b> The heroes win the adventure when they defeat <b>{{ quest.villain }}</b>.</p>
       </div>
@@ -113,7 +113,7 @@
       <div v-if="quest.type === 'fetch'">
         <p><b>{{ quest.tile }} tile:</b> When a Hero reveals the {{ quest.tile }}, instead of drawing Monster cards for the active tile, place the {{ quest.item }} token on this tile instead then draw 2 Monster Cards.</p>
         <p v-if="quest.addVillain"><b>{{ quest.extraTile }} tile:</b> When a Hero reveals this tile, instead of drawing Monster cards, the active player takes the <b>{{ quest.villain }}</b> card and places the figure on this tile.</p>
-        <p v-else-if="quest.addTile"><b>{{ quest.extraTile }} tile:</b> When a Hero reveals this tile, the active player draws 2 Monsters Cards for this tile instead.</p>
+        <p v-else-if="quest.addTile"><b>{{ quest.extraTile }} tile:</b> When a Hero reveals this tile, the active player draws 2 Monsters cards for this tile instead.</p>
 
         <p><b>Victory: </b> The heroes win the adventure when they acquire the <b>{{ quest.item }}</b>.</p>
       </div>
@@ -137,7 +137,7 @@
 
         <!-- states -->
         <p v-if="quest.addTreasure"> <b>{{ quest.extraTile }} tile:</b> When a Hero reveals this tile, instead of drawing a Monster Card, place the <b>{{ quest.item }}</b> on this tile and draw 1 Monster Card or a Monster Token.</p>
-        <p v-else-if="quest.addTile"><b>{{ quest.extraTile }} tile:</b> When a Hero reveals this tile, the active player draws 2 Monsters Cards for this tile instead.</p>
+        <p v-else-if="quest.addTile"><b>{{ quest.extraTile }} tile:</b> When a Hero reveals this tile, the active player draws 2 Monsters cards for this tile instead.</p>
 
         <!-- exit tile -->
         <p>
