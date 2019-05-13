@@ -23,25 +23,24 @@ export default new Vuex.Store({
     },
     hp: {
       heroes: 1,
-      hitpoints: 0,
-      hero: {
-        cleric: {
-          name: "Cleric",
-          hp: 8
-        },
-        fighter: {
-          name: "Fighter/Paladin",
-          hp: 10
-        },
-        mage: {
-          name: "Sorcerer/Wizard",
-          hp: 6
-        },
-        rogue: {
-          name: "Ranger/Rogue",
-          hp: 8
-        }
-      }
+      hero1: 8,
+      hero2: 0,
+      hero3: 0,
+      hero4: 0,
+      // classes: {
+      //   cleric: {
+      //     name: "Cleric", basehp: 8
+      //   },
+      //   fighter: {
+      //     name: "Fighter/Paladin", basehp: 10
+      //   },
+      //   mage: {
+      //     name: "Sorcerer/Wizard", basehp: 6
+      //   },
+      //   rogue: {
+      //     name: "Ranger/Rogue", basehp: 8
+      //   }
+      // }
     }
   },
   mutations: {

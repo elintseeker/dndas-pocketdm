@@ -4,7 +4,7 @@
 
     <div class="card" id="initiative">
       <h2 class="xed-title">Simple Initiative System I</h2>
-      <p><strong>Hero Phase:</strong> Moving to an unexplored edge triggers placement of a new tile. After drawing a new tile, place a monster on the new tile. Roll a d20 for your Hero and roll again for the Monster(s) side.</p>
+      <p><strong>Hero Phase:</strong> Moving to an unexplored edge triggers placement of a new tile. After drawing a new tile, place a monster(s) on the new tile. Roll a d20 for your Hero and roll again for the Monster(s) side.</p>
       <ul>
         <li><strong>Active Hero rolled higher than the Monster(s)</strong> - Use the remaining movement points and/or attack actions, if applicable.</li>
         <li><strong>Monster(s) rolled higher than the Active Hero</strong> - Hero Phase ends and start the Villain Phase.</li>
@@ -61,7 +61,7 @@
     <div class="card" id="monstertokens">
       <h2 class="xed-title">Monster tokens</h2>
       <p>When revealing a tile, use the Monster Tokens (from Castle Ravenloft) instead of drawing a Monster Card. This is to add a random number of Monsters for each revealed tile.</p>
-      <p>Shuffle the Monster Tokens (in a container or bag), draw and flip over the token then draw that many Monster Cards for that tile.</p>
+      <p>Shuffle the Monster Tokens (in a container or bag), draw and flip over the token then draw that many Monster cards for that tile.</p>
 
       <table class="table is-narrow is-bordered isfloat">
         <tr><th colspan="2">Normal (5 tokens)</th></tr>
