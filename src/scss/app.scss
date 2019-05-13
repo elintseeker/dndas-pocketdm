@@ -44,7 +44,9 @@ h1, h2, h3 {
   filter: drop-shadow(0 0 8px rgba(0,0,0,0.8));
 }
 
-a:not([class]) {
+a:not([class]),
+a:not([class]):visited,
+a:not([class]):active {
   color: $red;
   text-decoration: none;
   border-bottom: 1px solid $red;
