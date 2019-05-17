@@ -15,7 +15,6 @@
 </template>
 
 <script>
-import { setTimeout } from 'timers';
 export default {
   name: 'hpTracker',
   props: ['herohp', 'id'],
