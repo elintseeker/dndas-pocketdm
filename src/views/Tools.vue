@@ -58,14 +58,6 @@
       </router-link>
       <span>Gauntlet</span>
     </div>
-    <div class="nav-item">
-      <router-link :to="{ name: 'houserules' }" class="icon">
-        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="svg-icon">
-          <use href="#icon-houserules" />
-        </svg>
-      </router-link>
-      <span>House Rules</span>
-    </div>
   </div>
 
   <div class="separator"></div>
@@ -95,15 +87,25 @@
       </router-link>
       <span>Sequence of Play</span>
     </div>
+    <div class="nav-item">
+      <router-link :to="{ name: 'houserules' }" class="icon">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="svg-icon">
+          <use href="#icon-houserules" />
+        </svg>
+      </router-link>
+      <span>House Rules</span>
+    </div>
   </div>
 </div>
 </template>
 
 <style lang="scss" scoped>
 .separator {
-  margin: 8px auto;
+  margin: 24px auto 16px;
   max-width: 90%;
-  border-bottom: 2px solid rgba(0,0,0,0.3);
+  border-bottom: 1px solid rgba(0,0,0,0.3);
   border-top: 1px solid rgba(58, 58, 58, 0.8)
+  // flex-basis: 100%;
+  // height: 0;
 }
 </style>
