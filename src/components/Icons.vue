@@ -72,9 +72,3 @@
     </symbol>
   </svg>
 </template>
-
-<script>
-export default {
-  name: 'Icons'
-}
-</script>
