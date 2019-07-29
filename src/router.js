@@ -13,7 +13,7 @@ export default new Router({
       path: '/',
       name: 'home',
       meta: {
-        title: 'D&D Adventure System - Pocket DM'
+        title: 'Welcome!'
       },
       component: function () {
         return import('./views/Tools.vue');
@@ -110,7 +110,7 @@ export default new Router({
       }
     },
     {
-      path: 'treasuregen',
+      path: '/treasuregen',
       name: 'treasuregen',
       meta: {
         title: 'Treasure Generator',
