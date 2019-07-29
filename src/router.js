@@ -23,7 +23,7 @@ export default new Router({
       path: '/about',
       name: 'about',
       meta: {
-        title: 'About D&D Adventure System Pocket DM'
+        title: 'About'
       },
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
