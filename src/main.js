@@ -17,6 +17,11 @@ router.beforeEach((to, from, next) => {
   next();
 });
 
+// router.afterEach(( to, from ) => {
+//   window.ga('set', 'page', to.path);
+//   window.ga('send', 'pageview');
+// });
+
 Vue.mixin(Helper);
 
 new Vue({
